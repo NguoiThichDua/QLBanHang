@@ -2,8 +2,9 @@
     if(isset($_GET['page'])){
         $page = $_GET['page'];
         
-        if(isset($_SESSION['admin'])){
+        if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){
             require "view/component/include/navbar.php";
+            
             switch ($page) {
                 case 'quanli':
                     require "view/component/quanli/index.php";
@@ -23,6 +24,10 @@
                 default:
                     break;
             }
+        }else if(isset($_SESSION['khachhang'])){
+            require "view/component/include/navbar.php";
+
+
         }else{
             require "view/component/dangnhap/dangnhap.php";
         }
@@ -30,9 +35,10 @@
        
          
     }else{
-        if(isset($_SESSION['admin'])){
+        if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){
             require "view/component/include/navbar.php";
             require "view/component/quanli/index.php";
+
         }else{
             require "view/component/dangnhap/dangnhap.php";
         }

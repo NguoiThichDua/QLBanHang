@@ -63,7 +63,7 @@
             </div>
         </div>
        <?php
-    }else{
-
+    }else if(isset($_SESSION['khachhang'])){
+       
     }
 ?>
