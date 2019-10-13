@@ -11,3 +11,14 @@ body{
     background-origin:border-box;
     background-repeat: no-repeat;
 }
+
+.titledangnhap{
+    color: red;
+}
+.titlequanli{
+    color: red;
+}
+.img-quanli{
+    width: 250px;
+    height: 250px;
+}
