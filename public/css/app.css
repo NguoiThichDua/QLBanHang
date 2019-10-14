@@ -22,3 +22,12 @@ body{
     width: 250px;
     height: 250px;
 }
+
+span.need{
+    color: red;
+}
+
+.container-fluid{
+    padding-left: 250px;
+    padding-right: 250px;
+}

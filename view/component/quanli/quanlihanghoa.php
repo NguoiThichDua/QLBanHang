@@ -34,36 +34,38 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <table class="table table-dark mt-3">
-            <thead>
-                <tr class="text-center">
-                    <th scope="col">#</th>
-                    <th scope="col">Tên hàng</th>
-                    <th scope="col">Giá</th>
-                    <th scope="col">Chức năng</th>
-                </tr>
-            </thead>
-            <?php 
-                $stt = 1;
+        <div class="table-responsive">
+            <table class="table table-dark mt-3">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
+                        <th scope="col">Tên hàng</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Chức năng</th>
+                    </tr>
+                </thead>
+                <?php 
+                    $stt = 1;
 
-                $hanghoa = new hanghoaclass();
-                $thongtin = $hanghoa->LayTatCaHangHoa();
+                    $hanghoa = new hanghoaclass();
+                    $thongtin = $hanghoa->LayTatCaHangHoa();
 
-                foreach ($thongtin as $tt) {
-            ?>
-            <tbody>
-                <tr class="text-center">
-                    <th><?php echo $stt++; ?></th>
-                    <td><?php echo $tt->tenhanghoa; ?></td>
-                    <td><?php echo $tt->gia; ?></td>
-                    <td>
-                        <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
-                        <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
-                    </td>
-                </tr>
-            <?php }?>
-            </tbody>
-        </table>
+                    foreach ($thongtin as $tt) {
+                ?>
+                <tbody>
+                    <tr class="text-center">
+                        <th><?php echo $stt++; ?></th>
+                        <td><?php echo $tt->tenhanghoa; ?></td>
+                        <td><?php echo $tt->gia; ?></td>
+                        <td>
+                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
+                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
+                        </td>
+                    </tr>
+                <?php }?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 

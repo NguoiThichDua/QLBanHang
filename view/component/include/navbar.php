@@ -20,8 +20,6 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.php?page=quanlikhachhang">Quản lí khách hàng</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="index.php?page=quanlinhanvien">Quản lí nhân viên</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="index.php?page=quanlihanghoa">Quản lí hàng hóa</a>
             </div>
         </li>

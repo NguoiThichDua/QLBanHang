@@ -13,7 +13,7 @@
     require $file;
   
     class khachhangclass extends databaseKhachHang{
-        
+        #Kiểm tra đăng nhập
         #Kiểm tra đăng nhập
         public function checkDangNhap($tentaikhoan, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? AND matkhau=?");
@@ -28,7 +28,6 @@
                 return NULL;
                 }
             }
-
         #Kiểm tra tên tài khoản
         public function checkTenKhachHang($tentaikhoan){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? ");
@@ -91,17 +90,17 @@
         }
 
         # Chỉnh sửa tài khoản
-        public function SuaKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao, $makhachhang){
-            $cauLenh = 'UPDATE khachhang SET tentaikhoan = ?, matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ?, ngaytao = ? WHERE khachhang.makhachhang = ?';
+        public function SuaKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET tentaikhoan = ?, matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
-            $capNhat->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao, $makhachhang));
+            $capNhat->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang));
         }
 
         # Xóa tài khoản
         public function XoaKhachHang($makhachhang){
             $cauLenh = 'DELETE FROM khachhang WHERE khachhang.makhachhang = ?';
             $xoa = $this->connect->prepare($cauLenh);
-            $xoa->execute(array($id));
+            $xoa->execute(array($makhachhang));
         }
     }
 ?>
