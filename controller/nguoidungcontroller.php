@@ -2,6 +2,7 @@
     session_start();
 
     require "../model/khachhangclass.php";   
+    require "../model/adminclass.php";   
 
     if(isset($_GET["yc"])){
        
@@ -28,14 +29,21 @@
                     $nguoiDung = new khachhangclass();
                     $revalue_khachhang = $nguoiDung->checkDangNhap($tentaikhoan, $md5);
                     
-                    if($revalue_khachhang != null){
+                    $nguoiDung = new adminclass();
+                    $revalue_admin= $nguoiDung->checkDangNhap($tentaikhoan, $md5);                    
+
+                    if($revalue_khachhang != null || $revalue_admin != null){
                       if($revalue_khachhang == "khachhang"){
                             $_SESSION['khachhang'] = $tentaikhoan;
-                            header("Location: ../index.php?page=quanli&ketqua=dangnhapthanhcong");
+                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong");
+                        }
+                      if($revalue_admin == "admin"){
+                            $_SESSION['admin'] = $tentaikhoan;
+                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong");
                         }
                     # nếu không phải là admin hay user
                     }else{
-                        header("Location: ../index.php?ketqua=saimatkhau");
+                        header("Location: ../index.php?kq=saimatkhau");
                     }
                 }
                 break;

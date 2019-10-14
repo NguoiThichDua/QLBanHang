@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3">
         <img src="public/images/logo.png" alt="" srcset="" width="auto" height="100px">
@@ -8,9 +9,18 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3">
         <h3>ĐĂNG NHẬP</h3>
     </div>
+
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3 w-100">
+        <?php 
+            require "view/component/include/message.php";
+        ?>
+    </div>
+    
+
     <div class="col col-sm col-md col-lg col-xl-3"></div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 d-flex justify-content-center mt-3">
-        <form action="controller/taikhoancontroller.php?yc=dangnhap" method="post" class="w-50">   
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
+        <form action="controller/nguoidungcontroller.php?yc=dangnhap" method="post" class="w-100">   
             <div class="form-group">
                 <label for="" class="text-dark">Tên tài khoản:</label>
                 <input type="text" name="tentaikhoan" id="tentaikhoandangnhap" class="form-control" required>

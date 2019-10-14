@@ -48,7 +48,7 @@
         }
 
         #Lấy thông tin 1 tài khoản
-        public function LayMotkhachhangkhachhang($makhachhang){
+        public function LayMotkhachhang($makhachhang){
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where makhachhang = ?");
 			$khachhang->setFetchMode(PDO::FETCH_OBJ);
 			$khachhang->execute(array($makhachhang));
