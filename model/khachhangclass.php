@@ -14,7 +14,6 @@
   
     class khachhangclass extends databaseKhachHang{
         #Kiểm tra đăng nhập
-        #Kiểm tra đăng nhập
         public function checkDangNhap($tentaikhoan, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? AND matkhau=?");
             $check->setFetchMode(PDO::FETCH_OBJ);

@@ -11,10 +11,10 @@
             
             case 'them':
                 $tentaikhoan = trim($_POST['tentaikhoan']);
-                $matkhau = trim($_POST['tentaikhoan']);
-                $diachi = trim($_POST['tentaikhoan']);
-                $sodienthoai = trim($_POST['tentaikhoan']);
-                $hoten = trim($_POST['tentaikhoan']);
+                $matkhau = trim($_POST['matkhau']);
+                $diachi = trim($_POST['diachi']);
+                $sodienthoai = trim($_POST['sodienthoai']);
+                $hoten = trim($_POST['hoten']);
                 $ngaytao = date("Y-m-d");
 
                 $md5 = md5($matkhau, false);

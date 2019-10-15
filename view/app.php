@@ -33,8 +33,11 @@
             require "view/component/include/message.php";
 
             switch ($page) {
-                case 'themdonhangcho':
-                    require "view/component/khachhang/themdonhangcho.php";
+                case 'donhangcho':
+                    require "view/component/khachhang/donhangcho.php";
+                    break;
+                case 'taodonhangcho':
+                    require "view/component/khachhang/taodonhangcho.php";
                     break;
                 case 'xemthongtindonhang':
                     # code...

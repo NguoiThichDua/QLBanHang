@@ -47,20 +47,20 @@
 			<a class="nav-link font-weight-bold ml-3" href="index.php?page=quanli">Trang chủ</a>
 		</li>
 		<li class="nav-item dropdown text-center">
-			<a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link dropdown-toggle font-weight-bold text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			Quản lí
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="index.php?page=themdonhangcho">Thêm đơn hàng chờ</a>
+				<a class="dropdown-item text-center" href="index.php?page=donhangcho">Tạo đơn hàng chờ</a>
                 <div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="index.php?page=xemthongtindonhang">Xem thông tin đơn hàng</a>
+				<a class="dropdown-item text-center" href="index.php?page=xemthongtindonhang">Xem thông tin đơn hàng</a>
 			</div>
 		</li>
 		<li class="nav-item dropdown text-center">
 			<a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			Chức năng
 			</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="controller/nguoidungcontroller.php?yc=dangxuat">Đăng xuất</a>
 			</div>
 		</li>

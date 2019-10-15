@@ -6,6 +6,37 @@
                     # Nhận biến kết quả và kiểm tra để in ra thông báo
                 switch ($ketQua) {
                     
+
+                    case 'daguidonhangcho':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thành công!</strong> Đã gửi đơn hàng chờ...!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'khoitaodonhangchothanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thành công!</strong> Khởi tạo thành công...!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'khonglayduocthontinkhachhang':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thất bại!</strong> Không lấy được thông tin khách hàng...!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
                     case 'dasuakhachhang':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">

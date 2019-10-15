@@ -28,7 +28,7 @@
                     # check đăng nhập xem phải là user hay không
                     $nguoiDung = new khachhangclass();
                     $revalue_khachhang = $nguoiDung->checkDangNhap($tentaikhoan, $md5);
-                    
+
                     $nguoiDung = new adminclass();
                     $revalue_admin= $nguoiDung->checkDangNhap($tentaikhoan, $md5);                    
 
