@@ -24,7 +24,7 @@
                             <span>=></span>
                         </div>
                         <div class="col-5">
-                            <input type="text" name="soluong" id="soluongsua" class="form-control" required>
+                            <input type="number" name="soluong" id="soluongsua" class="form-control" required>
                         </div>
                     </div>
                 </div>

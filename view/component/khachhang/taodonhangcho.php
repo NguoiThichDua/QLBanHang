@@ -52,10 +52,9 @@
                         <textarea name="ghichu" id="" cols="" rows="2" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        
                         <?php
                             if(isset($_REQUEST['kq'])){
-                                if($_REQUEST['kq'] == "dathemhang" || $_REQUEST['kq'] == "datontaimonhang"){
+                                if($_REQUEST['kq'] == "dathemhang" || $_REQUEST['kq'] == "datontaimonhang" || $_REQUEST['kq'] == "thaydoisoluongthanhcong"){
                                 ?>
                                     <input type="submit" class="btn btn-success " value="Xác nhận thêm đơn hàng chờ">
                                 <?php
