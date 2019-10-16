@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -9,7 +8,7 @@
             </button>
         </div>
         <div class="modal-body">
-            Xác nhận tạo đơn hàng mới
+            Xác nhận tạo đơn hàng chờ mới...?
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>

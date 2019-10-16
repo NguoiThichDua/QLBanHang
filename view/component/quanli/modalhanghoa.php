@@ -11,11 +11,11 @@
          <div class="modal-body">
             <form action="controller/hanghoacontroller.php?yc=xoa" method="post">
                <div class="form-group">
-                  <input type="text" name="mahanghoa" class="form-control" id="mahanghoaxoa" required readonly style="display:none"> 
+                  <input type="text" name="mahanghoa" class="form-control rounded-pill" id="mahanghoaxoa" required readonly style="display:none"> 
                </div>
                <div class="form-group">
                   <label for="" class="text-dark">Bạn muốn xóa món hàng:</label>
-                  <input type="text" name="tenhanghoa" class="form-control" id="tenhanghoaxoa" required readonly style="border:none;">
+                  <input type="text" name="tenhanghoa" class="form-control rounded-pill" id="tenhanghoaxoa" required readonly style="border:none;">
                </div>
                <div class="form-group">
                   <div class="modal-footer">
@@ -42,15 +42,15 @@
          <form action="controller/hanghoacontroller.php?yc=sua" method="post">
             <div class="form-group">
                <label for="" class="text-dark">Mã hàng hóa:</label>
-               <input type="text" name="mahanghoa" class="form-control" id="mahanghoasua" required readonly> 
+               <input type="text" name="mahanghoa" class="form-control rounded-pill" id="mahanghoasua" required readonly title="Không thể thay đổi dữ liệu này"> 
             </div>
             <div class="form-group">
                <label for="" class="text-dark">Tên hàng hóa:</label>
-               <input type="text" name="tenhanghoa" class="form-control" id="tenhanghoasua" required>
+               <input type="text" name="tenhanghoa" class="form-control rounded-pill" id="tenhanghoasua" required title="Không được để trống tên hàng">
             </div>
             <div class="form-group">
                <label for="" class="text-dark">Giá:</label>
-               <input type="number" name="gia" class="form-control" id="giahanghoasua" required>
+               <input type="number" name="gia" class="form-control rounded-pill" id="giahanghoasua" required min="0" title="Giá phải lớn hơn hoặc bằng 0">
             </div>
             <div class="form-group">
                <div class="modal-footer">

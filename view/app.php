@@ -39,9 +39,10 @@
                 case 'taodonhangcho':
                     require "view/component/khachhang/taodonhangcho.php";
                     break;
-                case 'xemthongtindonhang':
-                    # code...
+                case 'quanli':
+                require "view/component/khachhang/index.php";
                     break;
+                    
                 default:
 
                     break;

@@ -11,11 +11,11 @@
          <div class="modal-body">
             <form action="controller/khachhangcontroller.php?yc=xoa" method="post">
                <div class="form-group">
-                  <input type="text" name="makhachhang" class="form-control" id="makhachhangxoa" required readonly style="display:none"> 
+                  <input type="text" name="makhachhang" class="form-control rounded-pill" id="makhachhangxoa" required readonly style="display:none"> 
                </div>
                <div class="form-group">
                   <label for="" class="text-dark">Bạn muốn khách hàng:</label>
-                  <input type="text" name="tenkhachhang" class="form-control" id="tenkhachhangxoa" required readonly style="border:none;">
+                  <input type="text" name="tenkhachhang" class="form-control rounded-pill" id="tenkhachhangxoa" required readonly style="border:none;">
                </div>
                <div class="form-group">
                   <div class="modal-footer">
@@ -43,29 +43,29 @@
             <form action="controller/khachhangcontroller.php?yc=sua" method="post" class="w-100">   
                 <div class="form-group">
                     <label for="" class="text-dark">Mã tài khoản: (<span class="need">*</span>) </label>
-                    <input type="text" name="makhachhang" id="makhachhangsua" class="form-control" required readonly>
+                    <input type="text" name="makhachhang" id="makhachhangsua" class="form-control rounded-pill" required readonly title="Không thể thay đổi giá trị này">
                 </div> 
                 <div class="form-group">
                     <label for="" class="text-dark">Tên tài khoản: (<span class="need">*</span>) </label>
-                    <input type="text" name="tentaikhoan" id="tentaikhoansua" class="form-control" required>
+                    <input type="text" name="tentaikhoan" id="tentaikhoansua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div> 
                 
                 <div class="form-group">
                     <label for="" class="text-dark">Mật khẩu: (<span class="need">*</span>)</label>
-                    <input type="text" name="matkhau" id="matkhausua" class="form-control" required>
+                    <input type="text" name="matkhau" id="matkhausua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div>
 
                 <div class="form-group">
                     <label for="" class="text-dark">Địa chỉ: (<span class="need">*</span>)</label>
-                    <input type="text" name="diachi" id="diachisua" class="form-control" required>
+                    <input type="text" name="diachi" id="diachisua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div>
                 <div class="form-group">
                     <label for="" class="text-dark">Số điện thoại: (<span class="need">*</span>)</label>
-                    <input type="text" name="sodienthoai" id="sodienthoaisua" class="form-control" required>
+                    <input type="text" name="sodienthoai" id="sodienthoaisua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div>
                 <div class="form-group">
                     <label for="" class="text-dark">Họ tên: (<span class="need">*</span>)</label>
-                    <input type="text" name="hoten" id="hotensua" class="form-control" required>
+                    <input type="text" name="hoten" id="hotensua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Thay đổi" class="btn btn-success">

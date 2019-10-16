@@ -18,12 +18,12 @@
                 <form action="controller/hanghoacontroller.php?yc=them" method="post" class="w-100">   
                     <div class="form-group">
                         <label for="" class="text-dark">Tên hàng hóa:</label>
-                        <input type="text" name="tenhanghoa" class="form-control" required>
+                        <input type="text" name="tenhanghoa" class="form-control rounded-pill" required  title="Không được để trống tên hàng">
                     </div> 
                     
                     <div class="form-group">
                         <label for="" class="text-dark">Giá:</label>
-                        <input type="number" name="gia" class="form-control" required>
+                        <input type="number" name="gia" class="form-control rounded-pill" min="0" title="Giá phải lớn hơn hoặc bằng 0">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Thêm" class="btn btn-success">
@@ -44,25 +44,31 @@
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
-                <?php 
-                    $stt = 1;
-
-                    $hanghoa = new hanghoaclass();
-                    $thongtin = $hanghoa->LayTatCaHangHoa();
-
-                    foreach ($thongtin as $tt) {
-                ?>
                 <tbody>
-                    <tr class="text-center">
-                        <th><?php echo $stt++; ?></th>
-                        <td><?php echo $tt->tenhanghoa; ?></td>
-                        <td><?php echo $tt->gia; ?></td>
-                        <td>
-                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
-                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
-                        </td>
-                    </tr>
-                <?php }?>
+                    <?php 
+                        $stt = 1;
+
+                        try {
+                            $hanghoa = new hanghoaclass();
+                            $thongtin = $hanghoa->LayTatCaHangHoa();
+
+                            foreach ($thongtin as $tt) {
+                                ?>
+                                    <tr class="text-center">
+                                        <th><?php echo $stt++; ?></th>
+                                        <td><?php echo $tt->tenhanghoa; ?></td>
+                                        <td><?php echo $tt->gia; ?></td>
+                                        <td>
+                                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
+                                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
+                                        </td>
+                                    </tr>
+                                <?php
+                            }
+                        } catch (Exception $e) {
+                            echo $e;
+                        }
+                       ?>
                 </tbody>
             </table>
         </div>

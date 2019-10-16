@@ -30,7 +30,6 @@
             break;
             case 'xoa':
                 $makhachhang = $_POST['makhachhang'];
-
                 $khachhang = new khachhangclass();
 
                 if($makhachhang == ""){

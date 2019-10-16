@@ -18,13 +18,13 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-5">
-                            <input type="text" name="" id="soluongmacdinh" class="form-control" disabled>
+                            <input type="text" name="" id="soluongmacdinh" class="form-control rounded-pill" disabled>
                         </div>
                         <div class="col-2">
                             <span>=></span>
                         </div>
                         <div class="col-5">
-                            <input type="number" name="soluong" id="soluongsua" class="form-control" required>
+                            <input type="number" name="soluong" id="soluongsua" class="form-control rounded-pill" required>
                         </div>
                     </div>
                 </div>

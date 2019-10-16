@@ -24,25 +24,25 @@
                     <form action="controller/khachhangcontroller.php?yc=them" method="post" class="w-100">   
                         <div class="form-group">
                             <label for="" class="text-dark">Tên tài khoản: (<span class="need">*</span>) </label>
-                            <input type="text" name="tentaikhoan" class="form-control" required>
+                            <input type="text" name="tentaikhoan" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                         </div> 
                         
                         <div class="form-group">
                             <label for="" class="text-dark">Mật khẩu: (<span class="need">*</span>)</label>
-                            <input type="text" name="matkhau" class="form-control" required>
+                            <input type="text" name="matkhau" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                         </div>
 
                         <div class="form-group">
                             <label for="" class="text-dark">Địa chỉ: (<span class="need">*</span>)</label>
-                            <input type="text" name="diachi" class="form-control" required>
+                            <input type="text" name="diachi" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                         </div>
                         <div class="form-group">
                             <label for="" class="text-dark">Số điện thoại: (<span class="need">*</span>)</label>
-                            <input type="text" name="sodienthoai" class="form-control" required>
+                            <input type="text" name="sodienthoai" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                         </div>
                         <div class="form-group">
                             <label for="" class="text-dark">Họ tên: (<span class="need">*</span>)</label>
-                            <input type="text" name="hoten" class="form-control" required>
+                            <input type="text" name="hoten" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Thêm" class="btn btn-success">
@@ -70,30 +70,37 @@
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
-                <?php 
-                    $stt = 1;
-
-                    $khachhang = new khachhangclass();
-                    $thongtin = $khachhang->LayTatCaKhachHang();
-
-                    foreach ($thongtin as $tt) {
-                ?>
                 <tbody>
-                    <tr class="text-center">
-                        <th><?php echo $stt++; ?></th>
-                        <td><?php echo $tt->tentaikhoan; ?></td>
-                        <td><?php echo $tt->matkhau; ?></td>
-                        <td><?php echo $tt->hoten; ?></td>
-                        <td><?php echo $tt->sodienthoai; ?></td>
-                        <td><?php echo $tt->diachi; ?></td>
-                        <td><?php echo $tt->ngaytao; ?></td>
-                        <td>
-                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>')">Sửa</div>
-                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">Xóa</div>
-                        </td>
-                    </tr>
-                <?php }?>
-                </tbody>
+                    <?php 
+                        $stt = 1;
+                        
+                        try {
+                            $khachhang = new khachhangclass();
+                            $thongtin = $khachhang->LayTatCaKhachHang();
+
+                            foreach ($thongtin as $tt) {
+                                ?>
+                                     <tr class="text-center">
+                                        <th><?php echo $stt++; ?></th>
+                                        <td><?php echo $tt->tentaikhoan; ?></td>
+                                        <td><?php echo $tt->matkhau; ?></td>
+                                        <td><?php echo $tt->hoten; ?></td>
+                                        <td><?php echo $tt->sodienthoai; ?></td>
+                                        <td><?php echo $tt->diachi; ?></td>
+                                        <td><?php echo $tt->ngaytao; ?></td>
+                                        <td>
+                                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>')">Sửa</div>
+                                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">Xóa</div>
+                                        </td>
+                                    </tr>
+                                <?php
+                            }
+                        } catch (Exception $e) {
+                            echo $e;
+                        }
+                        
+                    ?>
+                 </tbody>
             </table>
         </div>
     </div>

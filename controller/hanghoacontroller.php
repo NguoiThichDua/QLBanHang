@@ -17,6 +17,8 @@
 
                 if(strlen($tenhanghoa) == 0){
                     header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
+                }else if($gia < 0){
+                    header("Location: ../index.php?page=quanlihanghoa&kq=giaam");
                 }else if($tenhanghoa == "" || $gia == null){
                     header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
                 }
@@ -28,8 +30,7 @@
             case 'xoa':
                 $mahanghoa = $_POST['mahanghoa'];
                 $hanghoa = new hanghoaclass();
-
-                if($mahanghoa == ""){
+                if($mahanghoa == "" || $mahanghoa == null){
                     header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
                 }else{
                     $hanghoa->XoaHangHoa($mahanghoa);
@@ -45,6 +46,8 @@
 
                 if(strlen($tenhanghoa) == 0){
                     header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
+                }else if($gia < 0){
+                    header("Location: ../index.php?page=quanlihanghoa&kq=giaam");
                 }else if($tenhanghoa == "" || $mahanghoa == "" || $gia == ""){
                     header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
                 }
