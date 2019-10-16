@@ -15,14 +15,3 @@ function XoaHangHoa(mahanghoa, tenhanghoa){
     mahanghoaxoa.value = mahanghoa;
     tenhanghoaxoa.value = tenhanghoa;
 }
-
-function ThemHangHoa(){
-   var themmahanghoacho = document.getElementById("themmahanghoacho");
-   var soluongthemhangcho = document.getElementById("soluongthemhangcho");
-
-   // var btn = document.createElement("span");
-   // btn.innerHTML = "<input class='form-control' type='text' value='"+themmahanghoacho.innerHTML +" - Số lượng: "+soluongthemhangcho.value+ "' >"
-   // xemhangdat.appendChild(btn);
-
-  //alert("asad");
-}

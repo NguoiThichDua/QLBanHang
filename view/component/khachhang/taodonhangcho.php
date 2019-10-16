@@ -5,35 +5,63 @@
     require "model/khachhangclass.php";
 ?>
 <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="card mt-3">
             <div class="card-body">
                 <form action="controller/donhangchocontroller.php?yc=themhanghoachodonhangcho" method="post">
                     <div class="row">
-                        <div class="col-md-6">
-                            <select class=form-control name="mahang">
-                            <?php 
-                                $hanghoa = new hanghoaclass();
-                                $thongtin = $hanghoa->LayTatCaHangHoa();
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select class=form-control name="mahang">
+                                <?php 
 
-                                foreach ($thongtin as $tt) {
+                                    $hanghoa = new hanghoaclass();
+                                    $thongtin = $hanghoa->LayTatCaHangHoa();
+        
+                                    foreach ($thongtin as $tt) {
+                                    ?>
+                                        <option value="<?php echo $tt->mahanghoa;?>"><?php echo $tt->tenhanghoa; ?></option>
+                                    <?php
+                                    }
                                 ?>
-                                    <option value="<?php echo $tt->mahanghoa;?>"><?php echo $tt->tenhanghoa; ?></option>
-                                <?php
-                                }
-                            ?>
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <input type="number" name="soluong" class="form-control" placeholder="Số lượng" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <button class="form-control mt-3 btn btn-primary" onclick="ThemHangHoa()">Chọn</button>
+                                <button class="mt-3 btn btn-primary">Thêm vào đơn hàng</button>
                             </div>
                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="card mt-3">
+            <div class="card-body">
+                <form action="controller/donhangchocontroller.php?yc=guichoadmin" method="post">
+                    <div class="form-group">
+                        <label for="">Ghi chú cho đơn hàng này: </label>
+                        <textarea name="ghichu" id="" cols="" rows="2" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        
+                        <?php
+                            if(isset($_REQUEST['kq'])){
+                                if($_REQUEST['kq'] == "dathemhang" || $_REQUEST['kq'] == "datontaimonhang"){
+                                ?>
+                                    <input type="submit" class="btn btn-success " value="Xác nhận thêm đơn hàng chờ">
+                                <?php
+                                }
+                            }
+                        ?>
                     </div>
                 </form>
             </div>
@@ -79,8 +107,20 @@
                             </td>
                             <td><?php echo $tt->soluong;?></td>
                             <td>
-                                <button class="btn btn-warning">Sửa</button>
-                                <button class="btn btn-danger">Xóa</button>
+                                <div class=row>
+                                    <div class="col-6">
+
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#thaydoisoluonghanghoa" onclick="ThayDoiSoLuongHang('<?php echo $tt->macthh?>', '<?php echo $tt->madonhangcho;?>', '<?php echo $tt->soluong?>')">
+                                        Thay đổi số lượng
+                                    </button>
+                                       
+                                    </div>
+                                    <div class="col-6">
+                                        <form action="controller/donhangchocontroller.php?yc=xoahanghoatrongdonhangcho&madonhangcho=<?php echo $madonhangcho?>&macthh=<?php echo $tt->macthh?>" method="post">
+                                            <input type="submit" class="btn btn-danger ml-3" value="Loại bỏ">
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                        <?php
@@ -88,18 +128,21 @@
                 ?>
                 </tbody>
             </table>
-
-            <div class="card mt-3">
-                <div class="card-body">
-                    <form action="controller/donhangchocontroller.php?yc=guichoadmin" method="post" class="d-flex justify-content-center">
-                        <input type="submit" class="btn btn-success " value="Xác nhận thêm đơn hàng chờ">
-                    </form>
-                    <hr>
-                    <form action="controller/donhangchocontroller.php?yc=huydonhangcho" method="post" class="d-flex justify-content-center">
-                        <input type="submit" class="btn btn-danger " value="Hủy bỏ đơn hàng này">
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
+<div class="mt-3">
+    <form action="controller/donhangchocontroller.php?yc=huydonhangcho&madonhangcho=<?php echo $madonhangcho?>" method="post">
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Hủy bỏ đơn hàng này">
+        </div>
+    </form>
+</div>
+
+
+<!-- Button trigger modal -->
+
+<?php
+    require "modaldonhangcho.php"
+?>

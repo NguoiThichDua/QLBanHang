@@ -52,8 +52,6 @@
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item text-center" href="index.php?page=donhangcho">Tạo đơn hàng chờ</a>
-                <div class="dropdown-divider"></div>
-				<a class="dropdown-item text-center" href="index.php?page=xemthongtindonhang">Xem thông tin đơn hàng</a>
 			</div>
 		</li>
 		<li class="nav-item dropdown text-center">

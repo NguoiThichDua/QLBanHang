@@ -15,7 +15,7 @@
     class chitiethanghoaclass extends databaseChiTietKetNoiHangHoa{
 
         public function LayHangHoaCuaDonHangDangTao($madonhangcho){
-            $donhangcho = $this->connect->prepare("SELECT hh.tenhanghoa, cthh.soluong FROM hanghoa hh, chitiethanghoa cthh, donhangcho dhc WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ?");
+            $donhangcho = $this->connect->prepare("SELECT hh.tenhanghoa, cthh.soluong, cthh.macthh, cthh.madonhangcho FROM hanghoa hh, chitiethanghoa cthh, donhangcho dhc WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($madonhangcho));
 			$list = $donhangcho->fetchAll(); 
@@ -36,10 +36,10 @@
         }
 
         # Xóa tài khoản
-        public function XoaAdmin($macthh){
-            $cauLenh = 'DELETE FROM chitiethanghoa WHERE chitiethanghoa.macthh = ?';
+        public function XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho){
+            $cauLenh = 'DELETE FROM chitiethanghoa WHERE chitiethanghoa.madonhangcho = ?';
             $xoa = $this->connect->prepare($cauLenh);
-            $xoa->execute(array($macthh));
+            $xoa->execute(array($madonhangcho));
         }
     }
 ?>

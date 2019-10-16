@@ -27,13 +27,15 @@
         </div>
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="table-responsive ">
-                <table class="table table-dark mt-3 text-center">
+            <div class="table-responsive">
+                <table class="table table-dark mt-3 text-center table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Ngày tạo</th>
                             <th scope="col">Trạng thái</th>
+                            <th scope="col">Ghi chú</th>
+                            <th scope="col">Ngày tạo</th>
+                            <th scope="col">Hàng đã đặt</th>
                             <th scope="col">Chức năng</th>
                         </tr>
                     </thead>
@@ -52,19 +54,53 @@
 
                         foreach ($thongtin as $tt) {
                         ?>
-                            <tr>
-                                <th><?php echo $stt++; ?></th>
-                                <td><?php echo $tt->ngaytao;?></td>
+                            <tr class="ChiTietDonHangCho">
+                                <td><?php echo $stt++; ?></td>
                                 <td><?php 
                                     if($tt->trangthai=="dagui"){
-                                        echo "<span class='text-primary'>Đã gửi</span>";
+                                        echo "<span class='text-warning'>Đã gửi</span>";
+                                    }else  if($tt->trangthai=="chuagui"){
+                                        echo "<span class='text-danger'>Chưa gửi</span>";
                                     }
-                                    ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ChiTietDonHangCho" onclick="ChiTietDonHangCho('<?php echo $tt->madonhangcho;?>')">
-                                        Chi tiết
-                                    </button>
+                                    ?>
                                 </td>
+                                <td>
+                                <?php 
+                                    if($tt->trangthai=="chuagui"){
+                                        echo "<span class='text-danger'>Đơn hàng chưa được gửi. Hãy xóa nó...!</span>";
+                                    }else{
+                                        echo $tt->ghichu;
+                                    }
+                                   
+                                ?>
+                                   
+                                </td>
+                                <td><?php echo $tt->ngaytao;?></td>
+                                <td>
+                                <?php 
+                                     $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($makhachhang, $tt->madonhangcho);
+                                     foreach ($thongtinhangcuadonhangcho as $tth) {
+                                        ?>
+                                            <?php echo $tth->tenhanghoa .": ".  $tth->soluong . "<br>"?>
+                                        <?php
+                                    }
+                                ?>
+                                </td>
+                                <td>
+                                    <?php
+                                        if($tt->trangthai=="chuagui"){
+                                           ?>
+                                                <form action="controller/donhangchocontroller.php?yc=xoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
+                                                    <input type="submit" value="Xóa" class="btn btn-outline-danger">
+                                                </form>
+                                           <?php
+                                        }else{
+                                            ?>
+                                                <div class="text-warning">Không thể thao tác</div> 
+                                            <?php
+                                        }
+                                    ?>
+                                <td/>
                             </tr>
                         <?php
                         }

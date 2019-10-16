@@ -7,6 +7,46 @@
                 switch ($ketQua) {
                     
 
+                    case 'thaydoisoluongthanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thành công!</strong> thay đổi số lượng thành công..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'daloaibohangkhoidonhangcho':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thành công!</strong> đã loại món hàng khỏi đơn hàng..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'datontaimonhang':
+                    ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thất bại!</strong> món hàng đã có trong danh sách...! <strong>Bạn có thể thay đổi thông tin bên dưới</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'daxoadonhangcho':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
+                            <strong>Thành công!</strong> Đã xóa đơn hàng chờ...!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
                     case 'daguidonhangcho':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="message">
