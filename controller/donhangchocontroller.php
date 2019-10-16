@@ -35,12 +35,8 @@
                 
             break;
             case 'themhanghoachodonhangcho':
-
-               
-                
-
-                $mahanghoa = $_POST['mahang'];
-                $soluong = $_POST['soluong'];
+                $mahanghoa = trim($_POST['mahang']);
+                $soluong = trim($_POST['soluong']);
 
                 if (isset($_SESSION['khachhang'])) {
                     $tentaikhoan = $_SESSION['khachhang'];
@@ -54,20 +50,22 @@
 
                     $madonhangcho = $thongtin->MAX;
 
-                     # kiem tra hang hoa da them vao don hang cho chua (chua->them || roi->update so luong)
-                    $checkhanghoa = new donhangchoclass();
-                    $sosanpham = $checkhanghoa->KiemTraHangHoaCoTrongDonHangCho($madonhangcho, $mahanghoa);
-
-                    if($sosanpham->soluong > 0){
-                        header("Location: ../index.php?page=taodonhangcho&kq=datontaimonhang");
+                    if($mahanghoa == "" || $soluong == ""){
+                        header("Location: ../index.php?page=taodonhangcho&kq=dulieurong");
                     }else{
-                        $chitiethanghoa = new chitiethanghoaclass();
-                        $chitiethanghoa->ThemChiTietHangHoa($mahanghoa, $soluong, $madonhangcho);
-                        header("Location: ../index.php?page=taodonhangcho&kq=dathemhang");
-                    }
-                   
+                         # kiem tra hang hoa da them vao don hang cho chua (chua->them || roi->update so luong)
+                        $checkhanghoa = new donhangchoclass();
+                        $sosanpham = $checkhanghoa->KiemTraHangHoaCoTrongDonHangCho($madonhangcho, $mahanghoa);
 
-                  
+                        if($sosanpham->soluong > 0){
+                            header("Location: ../index.php?page=taodonhangcho&kq=datontaimonhang");
+                        }else{
+                            $chitiethanghoa = new chitiethanghoaclass();
+                            $chitiethanghoa->ThemChiTietHangHoa($mahanghoa, $soluong, $madonhangcho);
+                            header("Location: ../index.php?page=taodonhangcho&kq=dathemhang");
+                        }
+                    }
+                    
                 }else{
                     header("Location: ../index.php?page=quanli&kq=khonglayduocthontinkhachhang");
                 }
@@ -86,12 +84,19 @@
 
                     $madonhangcho = $thongtin->MAX;
 
-                    $ghichu = $_POST['ghichu'];
-
                     $gui = new donhangchoclass();
-                    $gui->GuiDonHangChoAdmin($ghichu,$madonhangcho);
 
-                    header("Location: ../index.php?page=donhangcho&kq=daguidonhangcho");
+                    if(isset($_POST['ghichu'])){
+                        $ghichu = $_POST['ghichu'];
+                       
+                        $gui->GuiDonHangChoAdmin($ghichu,$madonhangcho);
+
+                        header("Location: ../index.php?page=donhangcho&kq=daguidonhangcho");
+                    }else{
+                        $gui->GuiDonHangChoAdmin("",$madonhangcho);
+
+                        header("Location: ../index.php?page=donhangcho&kq=daguidonhangcho");
+                    }
                 break;
             case 'xoadonhangchuagui':
                 $madonhangcho = $_REQUEST['madonhangcho'];
@@ -107,6 +112,7 @@
                 break;
             case 'huydonhangcho':
                 $madonhangcho = $_REQUEST['madonhangcho'];
+
 
                 $donhang = new donhangchoclass();
                 $donhang->XoaDonHangCho($madonhangcho);
