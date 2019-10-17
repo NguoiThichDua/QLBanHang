@@ -86,6 +86,8 @@
 
                     if($tentaikhoankhachhang >= 1){
                         header("Location: ../index.php?page=dangki&kq=tentaikhoantontai");
+                    }else if(strlen($tentaikhoan) <= 4){
+                        header("Location: ../index.php?page=dangki&kq=tentaikhoanngan");
                     }else if($matkhau != $matkhaunhaplai){
                         header("Location: ../index.php?page=dangki&kq=matkhaukhongkhop");
                    }else if(strlen($matkhau) <= 5){

@@ -36,6 +36,12 @@
                     <input type="submit" value="Đăng Nhập" class="btn btn-success m-3 rounded-lg">
                 </div>
             </div>
+
+            <div class="form-group">
+                <div class="d-flex justify-content-center">
+                    <a href="index.php" class="">Quên mật khẩu...?</a>
+                </div>
+            </div>
         </form>
     </div>
     <div class="col col-sm col-md col-lg col-xl-3"></div>

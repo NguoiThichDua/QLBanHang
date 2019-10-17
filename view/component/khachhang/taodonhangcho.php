@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="number" name="soluong" class="form-control rounded-pill" placeholder="Số lượng" required>
+                                <input type="number" name="soluong" min="1" class="form-control rounded-pill" placeholder="Số lượng" required title="Số lượng phải lớn hơn 0">
                             </div>
                         </div>
                         <div class="col-md-12">

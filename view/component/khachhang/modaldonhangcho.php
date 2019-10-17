@@ -24,7 +24,7 @@
                             <span>=></span>
                         </div>
                         <div class="col-5">
-                            <input type="number" name="soluong" id="soluongsua" class="form-control rounded-pill" required>
+                            <input type="number" name="soluong" id="soluongsua" min="1" title="Giá trị phải lớn hơn 1" class="form-control rounded-pill" required>
                         </div>
                     </div>
                 </div>

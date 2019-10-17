@@ -6,6 +6,16 @@
                     # Nhận biến kết quả và kiểm tra để in ra thông báo
                 switch ($ketQua) {
                     
+                    case 'tentaikhoanngan':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> tên tài khoản phải từ 5 kí tự..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
                     case 'dangkithanhcong':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
@@ -155,7 +165,7 @@
                     case 'khoitaodonhangchothanhcong':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
-                            <strong>Thành công!</strong> Khởi tạo thành công...!
+                            <strong>Thành công!</strong> Khởi tạo đơn hàng thành công...!
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
