@@ -5,6 +5,68 @@
                 $ketQua = $_GET['kq'];
                     # Nhận biến kết quả và kiểm tra để in ra thông báo
                 switch ($ketQua) {
+                    
+                    case 'dangkithanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thành công!</strong> đăng kí tài khoản thành công..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break; 
+
+                    case 'matkhauyeu':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> mật khẩu phải từ 6 kí tự..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;   
+                    case 'tentaikhoantontai':
+                    ?>
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> tên tài khoản đã được sử dụng..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;   
+                    case 'sodienthoaitontai':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> số điện thoại này đã được sử dụng..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;   
+                    case 'matkhaukhongkhop':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> mật khẩu bạn nhập không giống nhau..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;  
+                    case 'thongtinrong':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> vui lòng điền đầy đủ tất cả thông tin..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;  
                     case 'dulieurong':
                     ?>
                         <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message">
@@ -26,9 +88,14 @@
                         <?php
                         break;
                     case 'dangnhapthanhcong':
+
+                    if(isset($_REQUEST['hoten'])){
+                        $hoten = $_REQUEST['hoten'];
+                    }
+
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
-                            <strong>Thành công!</strong> đăng nhập thành công..!
+                            Chào mừng <strong><?php echo $hoten;?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

@@ -35,7 +35,10 @@
                     if($revalue_khachhang != null || $revalue_admin != null){
                       if($revalue_khachhang == "khachhang"){
                             $_SESSION['khachhang'] = $tentaikhoan;
-                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong");
+                            
+                            $nguoiDung = new khachhangclass();
+                            $thongtin = $nguoiDung->LayMotKhachHangBangTen($tentaikhoan);
+                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong&hoten=$thongtin->hoten");
                         }
                       if($revalue_admin == "admin"){
                             $_SESSION['admin'] = $tentaikhoan;

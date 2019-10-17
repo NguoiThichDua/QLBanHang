@@ -23,7 +23,7 @@
         <form action="controller/nguoidungcontroller.php?yc=dangnhap" method="post" class="w-100">   
             <div class="form-group">
                 <label for="" class="text-dark">Tên tài khoản:</label>
-                <input type="text" name="tentaikhoan" id="tentaikhoandangnhap" class="form-control rounded-pill" required>
+                <input type="text" name="tentaikhoan" id="tentaikhoandangnhap" class="form-control rounded-pill" required value="<?php if(isset($_REQUEST['tentaikhoan'])){echo $_REQUEST['tentaikhoan'];} ?>">
             </div> 
             
             <div class="form-group">

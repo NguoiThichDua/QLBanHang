@@ -47,10 +47,19 @@
 
                     break;
             }
-
-
         }else{
-            require "view/component/dangnhap/dangnhap.php";
+
+            switch ($page) {
+                case 'dangki':
+                    require "view/component/dangki/dangki.php";
+                    break;
+                
+                default:
+                    require "view/component/dangnhap/dangnhap.php";
+                    break;
+            }
+
+            
         }
 
        
