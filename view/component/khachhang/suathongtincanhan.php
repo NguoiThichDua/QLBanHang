@@ -1,5 +1,10 @@
-<?php
+<!-- 
+    # vi day la trang duoc goi len boi ajax nen can required file khachhangclass vao
+    # lay duoc thong tin $tentaikhoan bang SESSION 
+    # tu $tentaikhoan hien thi ra cac thong tin can sua
+ -->
 
+<?php
     session_start();
 
     require "../../../model/khachhangclass.php";

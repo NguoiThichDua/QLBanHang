@@ -13,7 +13,8 @@
     require $file;
   
     class khachhangclass extends databaseKhachHang{
-        #Kiểm tra đăng nhập
+        
+        # Kiem tra dang nhap cho khach hang
         public function checkDangNhap($tentaikhoan, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? AND matkhau=?");
             $check->setFetchMode(PDO::FETCH_OBJ);
@@ -27,7 +28,8 @@
                 return NULL;
                 }
             }
-        #Kiểm tra tên tài khoản
+
+        # Kiem tra ten tai khoan da ton tai chua
         public function checkTenKhachHang($tentaikhoan){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? ");
             $check->setFetchMode(PDO::FETCH_OBJ);
@@ -36,7 +38,7 @@
             return $count;
         }
 
-        # Lấy tất cả tài khoản quản trị
+        # Lay tat ca tai khoan khach hang
         public function LayTatCaKhachHang(){
             $khachhang = $this->connect->prepare('SELECT * FROM khachhang');
             $khachhang->setFetchMode(PDO::FETCH_OBJ);
@@ -45,7 +47,7 @@
             return $listkhachhang;
         }
 
-        #Lấy thông tin 1 tài khoản
+        # Lay thong tin cua 1 khach hang bang ma khach hang
         public function LayMotkhachhang($makhachhang){
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where makhachhang = ?");
 			$khachhang->setFetchMode(PDO::FETCH_OBJ);
@@ -54,7 +56,7 @@
 			return $list;
         }
 
-        #Lấy thông tin 1 tài khoản
+        # Lay thong tin cua 1 khach hang bang ten tai khoan (khi dang nhap thanh cong thi tai khoan dang nhap duoc gan session bang tentaikhoan, dua vao ten tai khoan nay de dieu huong)
         public function LayMotKhachHangBangTen($tentaikhoan){
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where tentaikhoan = ?");
             $khachhang->setFetchMode(PDO::FETCH_OBJ);
@@ -63,16 +65,7 @@
             return $list;
         }
 
-        # Kiểm tra tài khoản có tồn tại không
-        public function KiemTrakhachHang($tentaikhoan){
-            $checkTK = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=?");
-            $checkTK->setFetchMode(PDO::FETCH_OBJ);
-            $checkTK->execute(array($tentaikhoan));
-            $count = count($checkTK->fetchAll());
-            return $count;
-        }
-
-        # Kiểm tra số điện thoại đã được sử dụng chưa
+        # Kiem tra so dien thoai da duoc su dung chua
         public function KiemTraSoDienThoai($sodienthoai){
             $checkSDT = $this->connect->prepare("SELECT * FROM khachhang WHERE sodienthoai=?");
             $checkSDT->setFetchMode(PDO::FETCH_OBJ);
@@ -81,21 +74,21 @@
             return $count;
         }
         
-        # Thêm tài khoản mới
+        # Them tai khoan khach hang moi
         public function ThemKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao){
             $cauLenh = 'INSERT INTO khachhang (tentaikhoan, matkhau, hoten, diachi, sodienthoai, ngaytao) VALUES (?,?,?,?,?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao));
         }
 
-        # Chỉnh sửa tài khoản
+        # Chinh sua tai khoan khach hang
         public function SuaKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang){
             $cauLenh = 'UPDATE khachhang SET tentaikhoan = ?, matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang));
         }
 
-        # Xóa tài khoản
+        # Xoa tai khoan khach hang
         public function XoaKhachHang($makhachhang){
             $cauLenh = 'DELETE FROM khachhang WHERE khachhang.makhachhang = ?';
             $xoa = $this->connect->prepare($cauLenh);
@@ -103,3 +96,4 @@
         }
     }
 ?>
+
