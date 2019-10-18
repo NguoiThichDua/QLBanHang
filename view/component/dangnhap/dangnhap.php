@@ -27,9 +27,22 @@
             </div> 
             
             <div class="form-group">
-                <label for="" class="text-dark">Mật khẩu:</label>
-                <input type="password" name="matkhau" id="matkhaudangnhap" class="form-control rounded-pill" required>
+                
             </div>
+
+            <div class="form-group">
+                <label for="" class="text-dark">Mật khẩu:</label>
+                <div class="input-group mb-3">
+                    <input type="password" name="matkhau" id="matkhaudangnhap" aria-label="" aria-describedby="basic-addon2" id="matkhaudangnhap" class="form-control rounded-pill" required>
+                    <div class="input-group-append">
+                        <img src="public/images/eye.png" class="input-group-text rounded-pill" onclick="showpassdangnhap()" id="basic-addon2" alt="" width="50px">
+                    </div>
+                </div>
+                <small class="d-flex justify-content-end mt-3" id="showmatkhaunhaplai"></small>
+            </div>
+
+
+
             <div class="form-group">
                 <div class="d-flex justify-content-center">
                     <a href="index.php?page=dangki" class="btn btn-secondary m-3 rounded-lg">Đăng Kí</a>

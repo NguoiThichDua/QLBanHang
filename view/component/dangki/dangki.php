@@ -40,7 +40,13 @@
 
                             <div class="form-group">
                                 <label for="" class="text-dark">Nhập lại mật khẩu: (<span class="need">*</span>)</label>
-                                <input type="password" name="matkhaunhaplai" id="matkhaunhaplai" onkeyup="checknhaplaimatkhau()" class="form-control rounded-pill" required title="Không được để rỗng trường này">
+                                
+                                <div class="input-group mb-3">
+                                    <input type="password" name="matkhaunhaplai" id="matkhaunhaplai" aria-label="" aria-describedby="basic-addon2" onkeyup="checknhaplaimatkhau()" class="form-control rounded-pill" required title="Không được để rỗng trường này">
+                                    <div class="input-group-append rounded-pill">
+                                        <img src="public/images/eye.png" class="input-group-text rounded-pill" onclick="showpassdangki()" id="basic-addon2" alt="" width="50px">
+                                    </div>
+                                </div>
                                 <small class="d-flex justify-content-end mt-3" id="showmatkhaunhaplai"></small>
                             </div>
                         </div>

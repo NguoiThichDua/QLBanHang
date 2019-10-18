@@ -13,7 +13,7 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-        <a href="#" class="w-100 text-decoration-none">
+        <a href="index.php?page=trangcanhan" class="w-100 text-decoration-none">
             <div class="card w-100 ">
             <div class="d-flex justify-content-center">
                 <img src="public/images/man.png" alt="" srcset="" width="auto" class="img-quanli">

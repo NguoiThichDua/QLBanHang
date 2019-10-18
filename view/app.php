@@ -40,7 +40,10 @@
                     require "view/component/khachhang/taodonhangcho.php";
                     break;
                 case 'quanli':
-                require "view/component/khachhang/index.php";
+                    require "view/component/khachhang/index.php";
+                    break;
+                case 'trangcanhan':
+                    require "view/component/khachhang/trangcanhan.php";
                     break;
                     
                 default:

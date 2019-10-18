@@ -48,3 +48,22 @@ function checksodienthoai(){
        
    });
 }
+
+
+function showpassdangki(){
+    var pass = document.getElementById('matkhaunhaplai');
+    if(pass.type == "password"){
+        pass.type = "text";
+    }else{
+        pass.type = "password"
+    }
+}
+
+function showpassdangnhap(){
+    var pass = document.getElementById('matkhaudangnhap');
+    if(pass.type == "password"){
+        pass.type = "text";
+    }else{
+        pass.type = "password"
+    }
+}

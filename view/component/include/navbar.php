@@ -79,7 +79,7 @@
             ?>
 
             <li class="nav-item text-center float-right">
-                Welcome to - <strong><?php echo $thongtin->hoten;?></strong>
+                Chào mừng - <strong><?php echo $thongtin->hoten;?></strong>
             </li>
         </ul>
 	</div>
