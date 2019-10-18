@@ -56,7 +56,8 @@
                     Quản lí
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item text-center" href="index.php?page=trangcanhan">Trang cá nhân</a>
+                    <a class="dropdown-item text-center" href="index.php?page=trangcanhan">Trang cá nhân</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-center" href="index.php?page=donhangcho">Quản lí đơn hàng</a>
                 </div>
             </li>

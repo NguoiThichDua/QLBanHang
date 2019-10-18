@@ -20,8 +20,10 @@
                     Thông tin của bạn:
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
-
+                    <form action="controller/khachhangcontroller.php?yc=khachhangsua" method="post">
+                        <div class="form-group">
+                            <input type="text" name="makhachhang" value="<?php echo $thongtinkhachang->makhachhang?>" class="form-control rounded-pill d-none" required>
+                        </div>
                         <div class="form-group">
                             <label for=""> Họ & Tên:</label>
                             <input type="text" name="hoten" value="<?php echo $thongtinkhachang->hoten?>" class="form-control rounded-pill" required>
@@ -29,7 +31,7 @@
 
                          <div class="form-group">
                          <label for="">Số điện thoại: </label>
-                            <input type="text" name="dodienthoai" value="<?php echo $thongtinkhachang->sodienthoai?>" required class="form-control rounded-pill">
+                            <input type="number" name="sodienthoai" value="<?php echo $thongtinkhachang->sodienthoai?>" required class="form-control rounded-pill">
                         </div>
 
                         <div class="form-group">

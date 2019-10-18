@@ -30,10 +30,19 @@
             }
 
         # Kiem tra ten tai khoan da ton tai chua
-        public function checkTenKhachHang($tentaikhoan){
-            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? ");
+        public function checkTenKhachHang($makhachhang, $matkhau){
+            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? AND matkhau=? ");
             $check->setFetchMode(PDO::FETCH_OBJ);
-            $check -> execute(array($tentaikhoan));
+            $check -> execute(array($makhachhang, $matkhau));
+            $count = count($check->fetchAll());
+            return $count;
+        }
+
+         # Kiem tra mat khau cu dung khong
+         public function checkMatKhauCu($makhachhang){
+            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? ");
+            $check->setFetchMode(PDO::FETCH_OBJ);
+            $check -> execute(array($makhachhang));
             $count = count($check->fetchAll());
             return $count;
         }
@@ -52,6 +61,15 @@
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where makhachhang = ?");
 			$khachhang->setFetchMode(PDO::FETCH_OBJ);
 			$khachhang->execute(array($makhachhang));
+			$list = $khachhang->fetch(); 
+			return $list;
+        }
+
+         # Lay thong tin cua 1 khach hang bang so dien thoai
+         public function LayMotkhachhangBangSoDienThoai($sodienthoai, $makhachhang){
+            $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where sodienthoai = ? AND khachhang.makhachhang = ?");
+			$khachhang->setFetchMode(PDO::FETCH_OBJ);
+			$khachhang->execute(array($sodienthoai, $makhachhang));
 			$list = $khachhang->fetch(); 
 			return $list;
         }
@@ -86,6 +104,20 @@
             $cauLenh = 'UPDATE khachhang SET tentaikhoan = ?, matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang));
+        }
+
+        # chuc nang danh cho khach hang muon sua thong tin tai khoan
+        public function KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
+            $capNhat = $this->connect->prepare($cauLenh);
+            $capNhat->execute(array($hoten, $diachi, $sodienthoai, $makhachhang));
+        }
+
+         # chuc nang danh cho khach hang muon sua thong tin mat khau
+         public function KhachHangSuaMatKhau($matkhau, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET matkhau = ? WHERE khachhang.makhachhang = ?';
+            $capNhat = $this->connect->prepare($cauLenh);
+            $capNhat->execute(array($matkhau, $makhachhang));
         }
 
         # Xoa tai khoan khach hang

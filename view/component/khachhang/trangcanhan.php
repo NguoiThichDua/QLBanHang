@@ -74,6 +74,17 @@
                                 <button class="btn btn-success suathongtin">Sửa thông tin</button>
                             </div>
                         </div>
+
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                Bảo mật tài khoản:
+                            </div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#thaymatkhau">
+                                    Thay đổi mật khẩu
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -96,3 +107,6 @@
 ?>
 
 
+<?php 
+    require "view/component/khachhang/modalkhachhang.php";
+?>

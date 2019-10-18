@@ -102,6 +102,74 @@
 
                 }
                 break;
+            case 'khachhangsua':
+                if(isset($_POST['hoten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi'])){
+                    $hoten = trim($_POST['hoten']);
+                    $sodienthoai = trim($_POST['sodienthoai']);
+                    $diachi = trim($_POST['diachi']);
+                    $makhachhang =  trim($_POST['makhachhang']);
+    
+                    if(strlen($hoten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($makhachhang) <= 0){
+                        header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
+                    }else{
+                        $khachhang = new khachhangclass();  
+                        $dienthoai = $khachhang->KiemTraSoDienThoai($sodienthoai);
+
+                        $thongtin = $khachhang->LayMotkhachhangBangSoDienThoai($sodienthoai,$makhachhang);
+                        $somacdinh = $thongtin->sodienthoai;
+
+                        if($somacdinh == $sodienthoai){
+                            $khachhang->KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang);
+                            header("Location: ../index.php?page=trangcanhan&kq=thaydoithanhcong");
+                        }else{
+                             if($dienthoai >= 1){
+                                header("Location: ../index.php?page=trangcanhan&kq=sodienthoaitontai");
+                            }else {
+                                $khachhang->KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang);
+                                header("Location: ../index.php?page=trangcanhan&kq=thaydoithanhcong");
+                            }
+                        }
+                    }
+                }else{
+                    header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
+                }
+                break;
+            case 'thaymatkhau':
+                if(isset($_POST['matkhaucu']) && isset($_POST['matkhau']) && isset($_POST['matkhaunhaplai']) && isset($_POST['makhachhang'])){
+                    $matkhaucu = trim($_POST['matkhaucu']);
+                    $matkhau = trim($_POST['matkhau']);
+                    $matkhaunhaplai = trim($_POST['matkhaunhaplai']);
+
+                    $makhachhang = $_POST['makhachhang'];
+
+                    $md5 = md5($matkhaucu, false);
+                   
+                    if(strlen($matkhaucu) <= 0 || strlen($matkhau) <= 0 || strlen($matkhaunhaplai) <= 0){
+                        header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
+                    }else{
+                        $khachhang = new khachhangclass();  
+                        $thongtin = $khachhang->checkTenKhachHang($makhachhang, $md5);
+
+                        // mat khau cu sai
+                        if($thongtin == 0){
+                            header("Location: ../index.php?page=trangcanhan&kq=saimatkhaucu");
+                        }else if($thongtin == 1){
+                            if($matkhau != $matkhaunhaplai){
+                                header("Location: ../index.php?page=trangcanhan&kq=matkhaukhongkhop");
+                            }else if(strlen($matkhau) < 5){
+                                header("Location: ../index.php?page=trangcanhan&kq=matkhauyeu");
+                            }else{
+                                $md5doi = md5($matkhau, false);
+                                $khachhang->KhachHangSuaMatKhau($md5doi, $makhachhang);
+                                header("Location: ../index.php?page=trangcanhan&kq=thaydoithanhcong");
+                            }
+                        }
+                       
+                    }
+                }else{
+                    header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
+                }
+                break;
             default:
                 # code...
                 break;

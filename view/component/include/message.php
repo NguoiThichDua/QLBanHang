@@ -5,7 +5,28 @@
                 $ketQua = $_GET['kq'];
                     # Nhận biến kết quả và kiểm tra để in ra thông báo
                 switch ($ketQua) {
+
                     
+                    case 'saimatkhaucu':
+                    ?>
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> sai mật khẩu cũ..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
+                    case 'thaydoithanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thành công!</strong> đã thay đổi thông tin..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
                     case 'tentaikhoanngan':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
