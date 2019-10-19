@@ -9,7 +9,6 @@
         $yeuCau = $_GET["yc"];
 
         switch ($yeuCau) {
-            
             case 'dangxuat':
                 # Thoát khỏi session khi đã đăng nhập
                 session_destroy();
@@ -38,11 +37,15 @@
                             
                             $nguoiDung = new khachhangclass();
                             $thongtin = $nguoiDung->LayMotKhachHangBangTen($tentaikhoan);
+
                             header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong&hoten=$thongtin->hoten");
                         }
                       if($revalue_admin == "admin"){
                             $_SESSION['admin'] = $tentaikhoan;
-                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong");
+
+                            $admin = new adminclass();
+                            $thongtin = $admin->LayMotAdminBangTen($tentaikhoan);
+                            header("Location: ../index.php?page=quanli&kq=dangnhapthanhcong&hoten=$thongtin->hoten");
                         }
                     # nếu không phải là admin hay user
                     }else{

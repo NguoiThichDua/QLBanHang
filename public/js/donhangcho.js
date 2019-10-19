@@ -6,6 +6,9 @@ function ThayDoiSoLuongHang( macthh, madonhangcho,soluong){
    macthhsua.value = macthh;
    madonhangchosua.value = madonhangcho;
    soluongmacdinh.value = soluong;
+}
 
-   
+function LayMaDonHangCho(madonhangcho){
+   var madonhangchothem = document.getElementById("madonhangchothem");
+   madonhangchothem.value = madonhangcho;
 }

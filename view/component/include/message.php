@@ -123,10 +123,9 @@
                     if(isset($_REQUEST['hoten'])){
                         $hoten = $_REQUEST['hoten'];
                     }
-
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message">
-                            Chào mừng <strong><?php echo $hoten;?></strong>
+                            Chào mừng bạn đã trở lại <strong><?php echo $hoten;?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

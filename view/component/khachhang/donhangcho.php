@@ -52,55 +52,58 @@
                             $stt = 1;
 
                             foreach ($thongtin as $tt) {
-                               ?>
-                                    <tr class="ChiTietDonHangCho">
-                                        <td><?php echo $stt++; ?></td>
-                                        <td><?php 
-                                            if($tt->trangthai=="dagui"){
-                                                echo "<span class='text-warning'>Đã gửi</span>";
-                                            }else  if($tt->trangthai=="chuagui"){
-                                                echo "<span class='text-danger'>Chưa gửi</span>";
-                                            }
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <?php 
-                                                if($tt->trangthai=="chuagui"){
-                                                    echo "<span class='text-danger'>Đơn hàng chưa được gửi. Hãy xóa nó...!</span>";
-                                                }else{
-                                                    echo $tt->ghichu;
+                                if($tt->trangthai == "daduyet"){
+                                }else{
+                                    ?>
+                                        <tr class="ChiTietDonHangCho">
+                                            <td><?php echo $stt++; ?></td>
+                                            <td><?php 
+                                                if($tt->trangthai=="dagui"){
+                                                    echo "<span class='text-warning'>Đã gửi</span>";
+                                                }else  if($tt->trangthai=="chuagui"){
+                                                    echo "<span class='text-danger'>Chưa gửi</span>";
                                                 }
-                                            
-                                            ?>
-                                        </td>
-                                        <td class="text-success"><?php echo $tt->ngaytao;?></td>
-                                        <td>
-                                            <?php 
-                                                $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($makhachhang, $tt->madonhangcho);
-                                                foreach ($thongtinhangcuadonhangcho as $tth) {
-                                                    ?>
-                                                        <?php echo $tth->tenhanghoa .": <span class='text-info'>".  $tth->soluong . "</span><br>"?>
-                                                    <?php
-                                                }
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <?php
-                                                if($tt->trangthai=="chuagui"){
                                                 ?>
-                                                    <form action="controller/donhangchocontroller.php?yc=xoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
-                                                        <input type="submit" value="Xóa" class="btn btn-danger">
-                                                    </form>
+                                            </td>
+                                            <td>
+                                                <?php 
+                                                    if($tt->trangthai=="chuagui"){
+                                                        echo "<span class='text-danger'>Đơn hàng chưa được gửi. Hãy xóa nó...!</span>";
+                                                    }else{
+                                                        echo $tt->ghichu;
+                                                    }
+                                                
+                                                ?>
+                                            </td>
+                                            <td class="text-success"><?php echo $tt->ngaytao;?></td>
+                                            <td>
+                                                <?php 
+                                                    $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($makhachhang, $tt->madonhangcho);
+                                                    foreach ($thongtinhangcuadonhangcho as $tth) {
+                                                        ?>
+                                                            <?php echo $tth->tenhanghoa .": <span class='text-info'>".  $tth->soluong . "</span><br>"?>
+                                                        <?php
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td>
                                                 <?php
-                                                }else{
+                                                    if($tt->trangthai=="chuagui"){
                                                     ?>
-                                                        <div class="text-danger">Chỉ xem</div> 
+                                                        <form action="controller/donhangchocontroller.php?yc=xoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
+                                                            <input type="submit" value="Xóa" class="btn btn-danger">
+                                                        </form>
                                                     <?php
-                                                }
-                                            ?>
-                                        <td/>
-                                    </tr>
-                               <?php
+                                                    }else{
+                                                        ?>
+                                                            <div class="text-danger">Chỉ xem</div> 
+                                                        <?php
+                                                    }
+                                                ?>
+                                            <td/>
+                                        </tr>
+                                    <?php
+                                }
                             }
                         } catch (Exception $e ) {
                             echo $e;

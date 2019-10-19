@@ -7,4 +7,8 @@ $(document).ready(function(e) {
         $("#suathongtincanhan").load("view/component/khachhang/suathongtincanhan.php" , {hotenkhachhang: hotenkhachhang});
 		
 	});
+
+	$(".duyetdonhangcho").click(function(){
+		
+	});
 });

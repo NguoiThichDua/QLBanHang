@@ -17,13 +17,13 @@
                     require "view/component/quanli/quanlinhanvien.php";
                     break;
                 case 'quanlikhachhang':
-                    require "view/component/quanli/quanlikhachhang.php";
+                    require "view/component/quanli/khachhang/quanlikhachhang.php";
                     break;
                 case 'quanlidonhang':
-                    require "view/component/quanli/quanlidonhang.php";
+                    require "view/component/quanli/donhangcuakhach/menuquanlidonhang.php";
                     break;
                 case 'quanlihanghoa':
-                    require "view/component/quanli/quanlihanghoa.php";
+                    require "view/component/quanli/hanghoa/quanlihanghoa.php";
                     break;
                 default:
                     break;
