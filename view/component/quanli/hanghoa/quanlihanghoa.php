@@ -22,7 +22,7 @@
                     </div> 
                     
                     <div class="form-group">
-                        <label for="" class="text-dark">Giá:</label>
+                        <label for="" class="text-dark">Giá mặc định:</label>
                         <input type="number" name="gia" class="form-control rounded-pill" min="0" title="Giá phải lớn hơn hoặc bằng 0">
                     </div>
                     <div class="form-group">

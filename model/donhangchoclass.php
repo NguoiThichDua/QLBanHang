@@ -2,14 +2,18 @@
     $str1 = 'database/ketnoidonhangcho.php';
     $str2 = '../database/ketnoidonhangcho.php';
     $str3 = '../../../database/ketnoidonhangcho.php';
+    $str4 = '../../../../database/ketnoidonhangcho.php';
 
     if(file_exists($str1)){
         $file = $str1;
     }else if(file_exists($str2)){
         $file = $str2;
-    }else{
+    }else if(file_exists($str3)){
         $file = $str3;
+    }else{
+        $file = $str4;
     }
+
     require $file;
   
     class donhangchoclass extends databaseDonHangCho{
@@ -23,7 +27,7 @@
         }
 
         public function LayTatCaDonHangChoCuaKhachHang($makhachhang){
-            $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE makhachhang = ?');
+            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND makhachhang = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($makhachhang));
 			$list = $donhangcho->fetchAll(); 

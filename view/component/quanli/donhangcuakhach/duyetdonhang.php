@@ -18,6 +18,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Mã đơn hàng chờ</th>
                         <th scope="col">Tên khách hàng</th>
                         <th scope="col">Ghi chú</th>
                         <th scope="col">Ngày tạo</th>
@@ -38,8 +39,9 @@
                             if($tt->trangthai == "dagui"){
                         ?>
                             
-                                <tr class="ChiTietDonHangCho">
+                                <tr class="ChiTietDonHangCho duyetdonhangcho">
                                     <td><?php echo $stt++; ?></td>
+                                    <td><?php echo $tt->madonhangcho; ?></td>
                                     <td><?php 
                                             $khachhang = new khachhangclass();
                                             $thongtinkhach = $khachhang->LayMotkhachhang($tt->makhachhang);
@@ -77,7 +79,7 @@
                                             <?php
                                             }else{
                                                 ?>
-                                                    <button type="button" class="btn btn-primary duyetdonhangcho" onclick="LayMaDonHangCho('<?php echo $tt->madonhangcho; ?>')" data-toggle="modal" data-target="#duyetdonhang">
+                                                    <button type="button" class="btn btn-primary" onclick="LayMaDonHangCho('<?php echo $tt->madonhangcho; ?>')" data-toggle="modal" data-target="#duyetdonhang">
                                                         Duyệt
                                                     </button>
                                                 <?php

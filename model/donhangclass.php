@@ -32,10 +32,10 @@
         }
         
         # Them don hang moi
-        public function ThemDonHang($ngaytao, $solo_nsx, $mabill, $congno, $madonhangcho){
-            $cauLenh = 'INSERT INTO donhang (ngaytao, solo_nsx, mabill, congno, madonhangcho) VALUES (?,?,?,?,?);';
+        public function ThemDonHang($ngaytao, $solo_nsx, $mabill, $congno, $madonhangcho, $thanhtien){
+            $cauLenh = 'INSERT INTO donhang (ngaytao, solo_nsx, mabill, congno, madonhangcho, thanhtien) VALUES (?,?,?,?,?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
-            $themMoi->execute(array($ngaytao, $solo_nsx, $mabill, $congno, $madonhangcho));
+            $themMoi->execute(array($ngaytao, $solo_nsx, $mabill, $congno, $madonhangcho, $thanhtien));
 
             $cauLenh2 = 'UPDATE donhangcho SET trangthai = "daduyet" WHERE donhangcho.madonhangcho = ?';
             $suatrangthai = $this->connect->prepare($cauLenh2);

@@ -2,20 +2,23 @@
     $str1 = 'database/ketnoichitiethanghoa.php';
     $str2 = '../database/ketnoichitiethanghoa.php';
     $str3 = '../../../database/ketnoichitiethanghoa.php';
+    $str4 = '../../../../database/ketnoichitiethanghoa.php';
 
     if(file_exists($str1)){
         $file = $str1;
     }else if(file_exists($str2)){
         $file = $str2;
-    }else{
+    }else if(file_exists($str3)){
         $file = $str3;
+    }else{
+        $file = $str4;
     }
     require $file;
   
     class chitiethanghoaclass extends databaseChiTietKetNoiHangHoa{
 
         public function LayHangHoaCuaDonHangDangTao($madonhangcho){
-            $donhangcho = $this->connect->prepare("SELECT hh.tenhanghoa, cthh.soluong, cthh.macthh, cthh.madonhangcho FROM hanghoa hh, chitiethanghoa cthh, donhangcho dhc WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ?");
+            $donhangcho = $this->connect->prepare("SELECT hh.mahanghoa, hh.tenhanghoa, cthh.soluong, cthh.macthh, cthh.madonhangcho FROM hanghoa hh, chitiethanghoa cthh, donhangcho dhc WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($madonhangcho));
 			$list = $donhangcho->fetchAll(); 

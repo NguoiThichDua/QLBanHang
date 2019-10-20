@@ -9,6 +9,8 @@ $(document).ready(function(e) {
 	});
 
 	$(".duyetdonhangcho").click(function(){
-		
+		var madonhangcho = $(this).children("td:nth-child(2)").html();
+		$("#hanghoagia").load("view/component/quanli/donhangcuakhach/tenhangvagia.php" , {madonhangcho: madonhangcho});
+
 	});
 });

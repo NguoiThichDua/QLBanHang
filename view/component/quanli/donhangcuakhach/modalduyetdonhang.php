@@ -30,9 +30,9 @@
                     </div>
 
                     <div class="form-group">
-                        <?php
-                            $donhangcho = new donhangchoclass();
-                        ?>
+                        <div id="hanghoagia">
+                        
+                        </div>
                     </div>
 
                     <div class="form-group">
