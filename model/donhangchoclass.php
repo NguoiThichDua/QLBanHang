@@ -43,7 +43,7 @@
         }
 
         public function LayTatCaDonHangChoCuaKhachHangDaGui($makhachhang){
-            $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE trangthai = "dagui" and makhachhang = ?');
+            $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE makhachhang = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($makhachhang));
 			$list = $donhangcho->fetchAll(); 

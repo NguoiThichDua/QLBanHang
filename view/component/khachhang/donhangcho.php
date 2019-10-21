@@ -59,11 +59,11 @@
                                         <tr class="ChiTietDonHangCho">
                                             <td><?php echo $stt++; ?></td>
                                             <td><?php 
-                                                if($tt->trangthai=="dagui"){
-                                                    echo "<span class='text-warning'>Đã gửi</span>";
-                                                }else  if($tt->trangthai=="chuagui"){
-                                                    echo "<span class='text-danger'>Chưa gửi</span>";
-                                                }
+                                                    if($tt->trangthai=="dagui"){
+                                                        echo "<span class='text-warning'>Đã gửi</span>";
+                                                    }else if($tt->trangthai=="chuagui"){
+                                                        echo "<span class='text-danger'>Chưa gửi</span>";
+                                                    }
                                                 ?>
                                             </td>
                                             <td>
