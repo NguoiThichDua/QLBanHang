@@ -82,7 +82,7 @@
 
                     $khachhang = new khachhangclass();
                     $dienthoai = $khachhang->KiemTraSoDienThoai($sodienthoai);
-                    $tentaikhoankhachhang = $khachhang->KiemTrakhachHang($tentaikhoan);
+                    $tentaikhoankhachhang = $khachhang->checkTenKhachHang($tenkhachhang);
 
                     if($tentaikhoankhachhang >= 1){
                         header("Location: ../index.php?page=dangki&kq=tentaikhoantontai");

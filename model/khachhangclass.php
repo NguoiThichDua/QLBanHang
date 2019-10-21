@@ -30,10 +30,10 @@
             }
 
         # Kiem tra ten tai khoan da ton tai chua
-        public function checkTenKhachHang($makhachhang, $matkhau){
-            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? AND matkhau=? ");
+        public function checkTenKhachHang($tenkhachhang){
+            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=?");
             $check->setFetchMode(PDO::FETCH_OBJ);
-            $check -> execute(array($makhachhang, $matkhau));
+            $check -> execute(array($tenkhachhang));
             $count = count($check->fetchAll());
             return $count;
         }

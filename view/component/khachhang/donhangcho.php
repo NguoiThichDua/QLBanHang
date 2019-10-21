@@ -47,12 +47,13 @@
                             $makhachhang = $thongtin->makhachhang;
 
                             $donhangcho = new donhangchoclass();
-                            $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHang($makhachhang);
+                            $thongtindonhang = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaGui($makhachhang);
 
                             $stt = 1;
 
-                            foreach ($thongtin as $tt) {
+                            foreach ($thongtindonhang as $tt) {
                                 if($tt->trangthai == "daduyet"){
+                                   
                                 }else{
                                     ?>
                                         <tr class="ChiTietDonHangCho">
