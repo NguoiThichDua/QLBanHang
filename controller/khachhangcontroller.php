@@ -148,7 +148,7 @@
                         header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
                     }else{
                         $khachhang = new khachhangclass();  
-                        $thongtin = $khachhang->checkTenKhachHang($makhachhang, $md5);
+                        $thongtin = $khachhang->checkMatKhauDoiMatKhauMoi($makhachhang, $md5);
 
                         // mat khau cu sai
                         if($thongtin == 0){

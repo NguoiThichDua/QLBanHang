@@ -38,6 +38,14 @@
             return $count;
         }
 
+        public function checkMatKhauDoiMatKhauMoi($makhachhang, $matkhau){
+            $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? AND matkhau=?");
+            $check->setFetchMode(PDO::FETCH_OBJ);
+            $check -> execute(array($makhachhang,$matkhau));
+            $count = count($check->fetchAll());
+            return $count;
+        }
+
          # Kiem tra mat khau cu dung khong
          public function checkMatKhauCu($makhachhang){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? ");
