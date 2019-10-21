@@ -27,7 +27,23 @@
         }
 
         public function LayTatCaDonHangChoCuaKhachHang($makhachhang){
-            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND makhachhang = ?');
+            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai="daduyet" AND makhachhang = ?');
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($makhachhang));
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
+        public function LayTatCaDonHangChoCuaKhachHangDaDuyet(){
+            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai = "daduyet"');
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array());
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
+        public function LayTatCaDonHangChoCuaKhachHangDaGui($makhachhang){
+            $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE trangthai = "dagui" and makhachhang = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($makhachhang));
 			$list = $donhangcho->fetchAll(); 
