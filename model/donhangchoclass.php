@@ -42,6 +42,22 @@
 			return $list;
         }
 
+        public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach){
+            $donhangcho = $this->connect->prepare("SELECT dhc.*, dh.*, kh.* FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%'");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach));
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
+        public function CongNoCuaKhachHangDaDuyetTheoTen($tenkhach){
+            $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%'");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach));
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
         public function LayTatCaDonHangChoCuaKhachHangDaGui($makhachhang){
             $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE makhachhang = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);

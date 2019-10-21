@@ -47,7 +47,7 @@
                 </div> 
                 <div class="form-group">
                     <label for="" class="text-dark">Tên tài khoản: (<span class="need">*</span>) </label>
-                    <input type="text" name="tentaikhoan" id="tentaikhoansua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
+                    <input type="number" name="tentaikhoan" id="tentaikhoansua" class="form-control rounded-pill" required title="Không được để rỗng trường này" readonly>
                 </div> 
                 
                 <div class="form-group">
@@ -67,6 +67,24 @@
                     <label for="" class="text-dark">Họ tên: (<span class="need">*</span>)</label>
                     <input type="text" name="hoten" id="hotensua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
                 </div>
+                <div class="form-group">
+                  <label for="" class="text-dark">Trực thuộc: (<span class="need">*</span>)</label>
+                  <input type="text" name="tructhuoc" id="tructhuocsua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
+               </div>
+               <div class="form-group">
+                  <label for="" class="text-dark">Cấp bậc: (<span class="need">*</span>)</label>
+                  <select name="capbac" class="form-control rounded-pill" id="capbacsua">
+                     <option value="si">Sĩ</option>
+                     <option value="le">Lẻ</option>
+                     <option value="chinhanh">Chi nhánh</option>
+                     <option value="daili">Đại lí</option>
+                     <option value="tongdaili">Tổng đại lí</option>
+                     <option value="nhaphanphoi">Nhà phân phối</option>
+                     <option value="nhaphanphoivang">Nhà phân phối vàng</option>
+                     <option value="nhaphanphoikimcuong">Nhà phân phối kim cương</option>
+                     <option value="giamdockinhdoanh">Giám đốc kinh doanh</option>
+                  </select>
+               </div>
                 <div class="form-group">
                     <input type="submit" value="Thay đổi" class="btn btn-success">
                 </div>

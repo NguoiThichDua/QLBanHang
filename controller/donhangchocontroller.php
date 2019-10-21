@@ -110,6 +110,18 @@
                 header("Location: ../index.php?page=donhangcho&kq=daxoadonhangcho");
                 
                 break;
+
+            case 'adminxoadonhangchuagui':
+                $madonhangcho = $_REQUEST['madonhangcho'];
+
+                $chitiethanghoa = new chitiethanghoaclass();
+                $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
+
+                $donhang = new donhangchoclass();
+                $donhang->XoaDonHangCho($madonhangcho);
+
+                header("Location: ../index.php?page=quanlidonhang&yc=duyetdonhang");
+                break;
             case 'huydonhangcho':
                 $madonhangcho = $_REQUEST['madonhangcho'];
 

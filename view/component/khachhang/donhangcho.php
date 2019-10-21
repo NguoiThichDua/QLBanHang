@@ -89,7 +89,7 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                    if($tt->trangthai=="chuagui"){
+                                                    if($tt->trangthai=="chuagui" || $tt->trangthai == "dagui"){
                                                     ?>
                                                         <form action="controller/donhangchocontroller.php?yc=xoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
                                                             <input type="submit" value="Xóa" class="btn btn-danger">

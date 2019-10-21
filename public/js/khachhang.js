@@ -6,13 +6,15 @@ function XoaKhachHang(makhachhang, tenkhachhang){
     tenkhachhangxoa.value = tenkhachhang;
 }
 
-function SuaKhachHang(makhachhang, tentaikhoan, matkhau, hoten, sodienthoai, diachi){
+function SuaKhachHang(makhachhang, tentaikhoan, matkhau, hoten, sodienthoai, diachi, tructhuoc, capbac){
     makhachhangsua = document.getElementById("makhachhangsua");
     tentaikhoansua = document.getElementById("tentaikhoansua");
     matkhausua = document.getElementById("matkhausua");
     hotensua = document.getElementById("hotensua");
     sodienthoaisua = document.getElementById("sodienthoaisua");
     diachisua = document.getElementById("diachisua");
+    tructhuocsua = document.getElementById("tructhuocsua");
+    capbacsua = document.getElementById("capbacsua");
 
     makhachhangsua.value = makhachhang;
     tentaikhoansua.value = tentaikhoan;
@@ -20,4 +22,6 @@ function SuaKhachHang(makhachhang, tentaikhoan, matkhau, hoten, sodienthoai, dia
     hotensua.value = hoten;
     sodienthoaisua.value = sodienthoai;
     diachisua.value = diachi;
+    tructhuocsua.value = tructhuoc;
+    capbacsua.value = capbac;
 }

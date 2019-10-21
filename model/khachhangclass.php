@@ -2,13 +2,17 @@
     $str1 = 'database/ketnoikhachhang.php';
     $str2 = '../database/ketnoikhachhang.php';
     $str3 = '../../../database/ketnoikhachhang.php';
+    $str4 = '../../../../database/ketnoikhachhang.php';
+
 
     if(file_exists($str1)){
         $file = $str1;
     }else if(file_exists($str2)){
         $file = $str2;
-    }else{
+    }else if(file_exists($str3)){
         $file = $str3;
+    }else{
+        $file = $str4;
     }
     require $file;
   
@@ -101,17 +105,17 @@
         }
         
         # Them tai khoan khach hang moi
-        public function ThemKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao){
-            $cauLenh = 'INSERT INTO khachhang (tentaikhoan, matkhau, hoten, diachi, sodienthoai, ngaytao) VALUES (?,?,?,?,?,?)';
+        public function ThemKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $ngaytao){
+            $cauLenh = 'INSERT INTO khachhang (tentaikhoan, matkhau, hoten, diachi, sodienthoai, tructhuoc, capbac, ngaytao) VALUES (?,?,?,?,?,?,?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
-            $themMoi->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao));
+            $themMoi->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $ngaytao));
         }
 
         # Chinh sua tai khoan khach hang
-        public function SuaKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang){
-            $cauLenh = 'UPDATE khachhang SET tentaikhoan = ?, matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
+        public function SuaKhachHang($matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ?, tructhuoc = ?, capbac = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
-            $capNhat->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $makhachhang));
+            $capNhat->execute(array($matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang));
         }
 
         # chuc nang danh cho khach hang muon sua thong tin tai khoan

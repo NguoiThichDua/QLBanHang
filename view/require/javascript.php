@@ -7,3 +7,4 @@
 <script src="public/js/ajax.js"></script>
 <script src="public/js/donhangcho.js"></script>
 <script src="public/js/checkdangki.js"></script>
+<script src="public/js/donhang.js"></script>

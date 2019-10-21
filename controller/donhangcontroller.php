@@ -59,7 +59,18 @@
                 }
                 
             break;
+            case 'suacongno':
+                if(isset($_POST['madonhang']) && isset($_POST['congno'])){
+                    $madonhang = $_POST['madonhang'];
+                    $congno = $_POST['congno'];
 
+                    $donhang = new donhangclass();
+                    $donhang->SuaCongNoDonHang($congno, $madonhang);
+                    header("Location: ../index.php?page=quanlidonhang&yc=daduyet&kq=thaydoithanhcong");
+                }else{
+                    header("Location: ../index.php?page=quanlidonhang&yc=daduyet&kq=thongtinrong");
+                }
+                break;
             default:
                 # code...
                 break;

@@ -82,6 +82,10 @@
                                                     <button type="button" class="btn btn-primary" onclick="LayMaDonHangCho('<?php echo $tt->madonhangcho; ?>')" data-toggle="modal" data-target="#duyetdonhang">
                                                         Duyệt
                                                     </button>
+
+                                                    <form action="controller/donhangchocontroller.php?yc=adminxoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
+                                                        <input type="submit" value="Xóa" class="btn btn-danger">
+                                                    </form>
                                                 <?php
                                             }
                                         ?>
