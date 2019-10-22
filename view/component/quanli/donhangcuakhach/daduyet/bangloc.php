@@ -1,8 +1,9 @@
 <?php
-    require "../../../../model/donhangchoclass.php";
-    require "../../../../model/khachhangclass.php";
-    require "../../../../model/donhangclass.php";
+    require "../../../../../model/donhangchoclass.php";
+    require "../../../../../model/khachhangclass.php";
+    require "../../../../../model/donhangclass.php";
 
+    # kiem tra cac thong tin lay qua co day du hay khong => donhang.js
     if(isset($_REQUEST['tenkhach']) && isset($_REQUEST['sodienthoai']) && isset($_REQUEST['ngayketthuctim']) && isset($_REQUEST['ngaybatdautim'])){
 
         $tenkhach = $_REQUEST['tenkhach'];
@@ -13,18 +14,25 @@
         try {
                     
             $donhangcho = new donhangchoclass();
-
             $stt = 1;
 
             if($ngaybatdautim != "" && $ngayketthuctim != ""){
-                $thongtin = $donhangcho-> LayTatCaDonHangChoCuaKhachHangDaDuyetTheoSoDienThoai($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim);
+                # lay tat ca cac don hang cua khach - so dien thoai - ngay bat dau - ngay ket thuc
+                $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaDuyetTheoSoDienThoai($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim);
+                # tinh cong no tat ca cac don hang cua khach - so dien thoai - ngay bat dau - ngay ket thuc
                 $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoNgayThang($tenkhach,$sodienthoai, $ngaybatdautim, $ngayketthuctim);
-            }else{
-                $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
-                $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
-            }
             
+                $tongtungsanpham = $donhangcho->TongSanPhamTheoNgayThang($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim);
+            }else{
+                # lay tat ca cac don hang cua khach - so dien thoai
+                $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
+                # tinh cong no tat ca cac don hang cua khach - so dien thoai
+                $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
+                #tinh tong cac san pham theo ten va so dien thoai
+                $tongtungsanpham = $donhangcho->TongSanPhamTheoTen($tenkhach, $sodienthoai);
+            }
 
+            # cho nay duoc ajax (donhang.js)) goi len truyen vao id loctheodieukien cua bangdaduyet.php
             foreach ($thongtin as $tt) {
                 if($tt->trangthai == "daduyet"){
             ?>
@@ -88,18 +96,30 @@
             <?php
                 }
             }
-
             ?>
-                 <tr>
-                        <td colspan="10">
-                            <?php foreach ($tongcongnocuakhach as $cn) {
-                                if($_REQUEST['tenkhach'] != ""){
-                                    echo "TỔNG CÔNG NỢ: " . $cn->tongcongno;
-                                }
-                                
-                            }; ?>
-                        </td>
-                    </tr>
+                <tr>
+                    <td colspan="10">
+                        <h3>Những Món Hàng Đã Đặt</h3>
+                        <?php
+                            foreach ($tongtungsanpham as $ttsp) {
+                                ?>
+                                    <ul>
+                                        <li><?php  echo "<h5>".$ttsp->tenhanghoa .": <span class='text-warning'>". $ttsp->soluong . "<span></h5>";?></li>
+                                    </ul>
+                                <?php
+                            }
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="10">
+                        <?php foreach ($tongcongnocuakhach as $cn) {
+                            if($_REQUEST['tenkhach'] != ""){
+                                echo "<h3>TỔNG CÔNG NỢ: <span class='text-info'>" . $cn->tongcongno . "</span> nghìn đồng</h3> ";
+                            }
+                        }; ?>
+                    </td>
+                </tr>
             <?php
         } catch (Exception $e ) {
             echo $e;

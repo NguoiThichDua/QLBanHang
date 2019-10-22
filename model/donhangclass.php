@@ -2,7 +2,8 @@
     $str1 = 'database/ketnoidonhang.php';
     $str2 = '../database/ketnoidonhang.php';
     $str3 = '../../../database/ketnoidonhang.php';
-    $str3 = '../../../../database/ketnoidonhang.php';
+    $str4 = '../../../../database/ketnoidonhang.php';
+    $str5 = '../../../../../database/ketnoidonhang.php';
 
 
     if(file_exists($str1)){
@@ -11,9 +12,12 @@
         $file = $str2;
     }else if(file_exists($str3)){
         $file = $str3;
-    }else{
+    }else if(file_exists($str4)){
         $file = $str4;
+    }else{
+        $file = $str5;
     }
+    
     require $file;
   
     class donhangclass extends databaseDonHang{

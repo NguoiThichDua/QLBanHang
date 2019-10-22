@@ -10,50 +10,57 @@
         switch ($yeuCau) {
             
             case 'them':
-                $tenhanghoa = trim($_POST['tenhanghoa']);;
-                $gia = $_POST['gia'];
-
-                $hanghoa = new hanghoaclass();
-
-                if(strlen($tenhanghoa) == 0){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
-                }else if($gia < 0){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=giaam");
-                }else if($tenhanghoa == "" || $gia == null){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
-                }
-                else{
-                    $hanghoa->ThemHangHoa($tenhanghoa, $gia);
-                    header("Location: ../index.php?page=quanlihanghoa&kq=dathemhang");
-                }
-            break;
-            case 'xoa':
-                $mahanghoa = $_POST['mahanghoa'];
-                $hanghoa = new hanghoaclass();
-                if($mahanghoa == "" || $mahanghoa == null){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
+                if(isset($_POST['tenhanghoa'])){
+                    $tenhanghoa = trim($_POST['tenhanghoa']);;
+                    // $gia = $_POST['gia'];
+    
+                    $hanghoa = new hanghoaclass();
+    
+                    if(strlen($tenhanghoa) == 0){
+                        header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
+                    }else{
+                        $hanghoa->ThemHangHoa($tenhanghoa);
+                        header("Location: ../index.php?page=quanlihanghoa&kq=dathemhang");
+                    }
                 }else{
-                    $hanghoa->XoaHangHoa($mahanghoa);
-                    header("Location: ../index.php?page=quanlihanghoa&kq=daxoahang");
+                    header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
                 }
+              
+                break;
+            case 'xoa':
+                if(isset($_POST['mahanghoa'])){
+                    $mahanghoa = $_POST['mahanghoa'];
+
+                    $hanghoa = new hanghoaclass();
+                    if($mahanghoa == "" || $mahanghoa == null){
+                        header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
+                    }else{
+                        $hanghoa->XoaHangHoa($mahanghoa);
+                        header("Location: ../index.php?page=quanlihanghoa&kq=daxoahang");
+                    }
+                }else{
+                    header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
+                }
+              
                 break;
             case 'sua':
-                $mahanghoa = $_POST['mahanghoa'];
-                $tenhanghoa = trim($_POST['tenhanghoa']);;
-                $gia = $_POST['gia'];
-
-                $hanghoa = new hanghoaclass();
-
-                if(strlen($tenhanghoa) == 0){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
-                }else if($gia < 0){
-                    header("Location: ../index.php?page=quanlihanghoa&kq=giaam");
-                }else if($tenhanghoa == "" || $mahanghoa == "" || $gia == ""){
+                if(isset($_POST['mahanghoa']) && isset($_POST['tenhanghoa'])){
+                    $mahanghoa = $_POST['mahanghoa'];
+                    $tenhanghoa = trim($_POST['tenhanghoa']);
+                    
+                    $hanghoa = new hanghoaclass();
+    
+                    if(strlen($tenhanghoa) == 0){
+                        header("Location: ../index.php?page=quanlihanghoa&kq=tenhangtrong");
+                    }else if($tenhanghoa == "" || $mahanghoa == ""){
+                        header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
+                    }
+                    else{
+                        $hanghoa->SuaHangHoa($tenhanghoa, $mahanghoa);
+                        header("Location: ../index.php?page=quanlihanghoa&kq=dasuahang");
+                    }
+                }else{
                     header("Location: ../index.php?page=quanlihanghoa&kq=dulieurong");
-                }
-                else{
-                    $hanghoa->SuaHangHoa($tenhanghoa, $gia, $mahanghoa);
-                    header("Location: ../index.php?page=quanlihanghoa&kq=dasuahang");
                 }
                 break;
             default:

@@ -15,7 +15,7 @@ function TimTenKhachHang(){
         var ngaybatdautim = document.getElementById("ngaybatdautim").value;
         var ngayketthuctim = document.getElementById("ngayketthuctim").value;
       
-        $("#loctheodieukien").load("view/component/quanli/donhangcuakhach/loc.php" , {tenkhach: tenkhach, sodienthoai: sodienthoai, ngaybatdautim: ngaybatdautim, ngayketthuctim: ngayketthuctim});
+        $("#loctheodieukien").load("view/component/quanli/donhangcuakhach/daduyet/bangloc.php" , {tenkhach: tenkhach, sodienthoai: sodienthoai, ngaybatdautim: ngaybatdautim, ngayketthuctim: ngayketthuctim});
       
    });
 }

@@ -14,6 +14,7 @@
   
     class hanghoaclass extends databaseHangHoa{
 
+        # lay tat ca cac hang hoa
         public function LayTatCaHangHoa(){
             $hanghoa = $this->connect->prepare('SELECT * FROM hanghoa');
             $hanghoa->setFetchMode(PDO::FETCH_OBJ);
@@ -22,7 +23,7 @@
             return $listhanghoa;
         }
 
-        #Lấy thông tin 1 tài khoản
+        # lay 1 mon hang bang ma hang
         public function LayMotHangHoa($mahanghoa){
             $admin = $this->connect->prepare("SELECT * FROM hanghoa Where mahanghoa = ?");
 			$admin->setFetchMode(PDO::FETCH_OBJ);
@@ -31,21 +32,21 @@
 			return $list;
         }
         
-        # Thêm tài khoản mới
-        public function ThemHangHoa($tenhanghoa, $gia){
-            $cauLenh = 'INSERT INTO hanghoa (tenhanghoa, gia) VALUES (?,?)';
+        # them hang hoa moi
+        public function ThemHangHoa($tenhanghoa){
+            $cauLenh = 'INSERT INTO hanghoa (tenhanghoa) VALUES (?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
-            $themMoi->execute(array($tenhanghoa, $gia));
+            $themMoi->execute(array($tenhanghoa));
         }
 
-        # Chỉnh sửa tài khoản
-        public function SuaHangHoa($tenhanghoa, $gia, $mahanghoa){
-            $cauLenh = 'UPDATE hanghoa SET tenhanghoa = ? , gia = ? WHERE hanghoa.mahanghoa = ?';
+        # chinh sua hang hoa
+        public function SuaHangHoa($tenhanghoa, $mahanghoa){
+            $cauLenh = 'UPDATE hanghoa SET tenhanghoa = ? WHERE hanghoa.mahanghoa = ?';
             $capNhat = $this->connect->prepare($cauLenh);
-            $capNhat->execute(array($tenhanghoa, $gia, $mahanghoa));
+            $capNhat->execute(array($tenhanghoa, $mahanghoa));
         }
 
-        # Xóa tài khoản
+        # xoa hang hoa
         public function XoaHangHoa($mahanghoa){
             $cauLenh = 'DELETE FROM hanghoa WHERE hanghoa.mahanghoa = ?';
             $xoa = $this->connect->prepare($cauLenh);

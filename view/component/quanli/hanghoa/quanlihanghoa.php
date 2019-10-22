@@ -21,10 +21,10 @@
                         <input type="text" name="tenhanghoa" class="form-control rounded-pill" required  title="Không được để trống tên hàng">
                     </div> 
                     
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="" class="text-dark">Giá mặc định:</label>
                         <input type="number" name="gia" class="form-control rounded-pill" min="0" title="Giá phải lớn hơn hoặc bằng 0">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <input type="submit" value="Thêm" class="btn btn-success">
                     </div>
@@ -40,7 +40,7 @@
                     <tr class="text-center">
                         <th scope="col">#</th>
                         <th scope="col">Tên hàng</th>
-                        <th scope="col">Giá</th>
+                        <!-- <th scope="col">Giá</th> -->
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
@@ -57,7 +57,7 @@
                                     <tr class="text-center">
                                         <th><?php echo $stt++; ?></th>
                                         <td><?php echo $tt->tenhanghoa; ?></td>
-                                        <td><?php echo $tt->gia; ?></td>
+                                        <!-- <td><?php echo $tt->gia; ?></td> -->
                                         <td>
                                             <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
                                             <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
@@ -74,8 +74,6 @@
         </div>
     </div>
 </div>
-
-
 
 <?php 
     require "modalhanghoa.php";

@@ -3,6 +3,7 @@
     $str2 = '../database/ketnoidonhangcho.php';
     $str3 = '../../../database/ketnoidonhangcho.php';
     $str4 = '../../../../database/ketnoidonhangcho.php';
+    $str5 = '../../../../../database/ketnoidonhangcho.php';
 
     if(file_exists($str1)){
         $file = $str1;
@@ -10,8 +11,10 @@
         $file = $str2;
     }else if(file_exists($str3)){
         $file = $str3;
-    }else{
+    }else if(file_exists($str4)){
         $file = $str4;
+    }else{
+        $file = $str5;
     }
 
     require $file;
@@ -43,6 +46,7 @@
 			return $list;
         }
 
+        # loc don hang theo ten va so dien thoai
         public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai){
             $donhangcho = $this->connect->prepare("SELECT DISTINCT dhc.*, dh.*, kh.*, dh.ngaytao AS ngayduyet FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' ORDER BY dh.ngaytao DESC");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -51,27 +55,49 @@
 			return $list;
         }
 
+        # loc don hang theo ten, so dien thoai va ngay thang
         public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoSoDienThoai($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim){
             $donhangcho = $this->connect->prepare("SELECT DISTINCT dhc.*, dh.*, kh.*, dh.ngaytao AS ngayduyet FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' AND dh.ngaytao >= '$ngaybatdautim' AND dh.ngaytao <= '$ngayketthuctim' ORDER BY dh.ngaytao DESC");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
-			$donhangcho->execute(array($tenkhach,$sodienthoai));
+			$donhangcho->execute(array($tenkhach,$sodienthoai, $ngaybatdautim, $ngayketthuctim));
 			$list = $donhangcho->fetchAll(); 
 			return $list;
         }
 
+        # tinh cong no theo ten va so dien thoai
         public function CongNoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai){
             $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%'");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
-			$donhangcho->execute(array($tenkhach));
+			$donhangcho->execute(array($tenkhach, $sodienthoai));
 			$list = $donhangcho->fetchAll(); 
 			return $list;
         }
+
+        # tinh cong no theo ten, so dien thoai va ngay thang
         public function CongNoCuaKhachHangDaDuyetTheoNgayThang($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim){
             $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' AND dh.ngaytao >= '$ngaybatdautim' AND dh.ngaytao <= '$ngayketthuctim'");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
-			$donhangcho->execute(array($tenkhach));
+			$donhangcho->execute(array($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim));
 			$list = $donhangcho->fetchAll(); 
 			return $list;
+        }
+
+        # tong san pham theo ten va so dien thoai
+        public function TongSanPhamTheoTen($tenkhach, $sodienthoai){
+            $donhangcho = $this->connect->prepare("SELECT DISTINCT hh.tenhanghoa, SUM(cthh.soluong) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh, chitiethanghoa cthh, hanghoa hh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = cthh.madonhangcho AND cthh.mahanghoa = hh.mahanghoa AND kh.makhachhang = dhc.makhachhang AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' GROUP BY hh.tenhanghoa");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach, $sodienthoai));
+			$list = $donhangcho->fetchAll(); 
+            return $list;
+        }
+
+        # tong san pham theo ngay thang
+        public function TongSanPhamTheoNgayThang($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim){
+            $donhangcho = $this->connect->prepare("SELECT DISTINCT hh.tenhanghoa, SUM(cthh.soluong) AS soluong, dh.ngaytao AS daduyet FROM donhangcho dhc, donhang dh, khachhang kh, chitiethanghoa cthh, hanghoa hh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = cthh.madonhangcho AND cthh.mahanghoa = hh.mahanghoa AND kh.makhachhang = dhc.makhachhang AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' AND dh.ngaytao >= '$ngaybatdautim' AND dh.ngaytao <= '$ngayketthuctim' GROUP BY hh.tenhanghoa");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim));
+			$list = $donhangcho->fetchAll(); 
+            return $list;
         }
 
         # tu ma khach hang lay duoc cac don hang cho da gui cua tai khoan do

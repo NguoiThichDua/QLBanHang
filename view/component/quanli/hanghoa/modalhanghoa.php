@@ -28,6 +28,7 @@
       </div>
    </div>
 </div>
+
 <!-- Modal Sửa hàng hóa -->
 <div class="modal fade" id="SuaHangHoa" tabindex="-1" role="dialog" aria-labelledby="SuaHangHoaModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
@@ -47,10 +48,6 @@
             <div class="form-group">
                <label for="" class="text-dark">Tên hàng hóa:</label>
                <input type="text" name="tenhanghoa" class="form-control rounded-pill" id="tenhanghoasua" required title="Không được để trống tên hàng">
-            </div>
-            <div class="form-group">
-               <label for="" class="text-dark">Giá:</label>
-               <input type="number" name="gia" class="form-control rounded-pill" id="giahanghoasua" required min="0" title="Giá phải lớn hơn hoặc bằng 0">
             </div>
             <div class="form-group">
                <div class="modal-footer">

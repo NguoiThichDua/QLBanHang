@@ -3,6 +3,7 @@
     $str2 = '../database/ketnoikhachhang.php';
     $str3 = '../../../database/ketnoikhachhang.php';
     $str4 = '../../../../database/ketnoikhachhang.php';
+    $str5 = '../../../../../database/ketnoikhachhang.php';
 
 
     if(file_exists($str1)){
@@ -11,9 +12,12 @@
         $file = $str2;
     }else if(file_exists($str3)){
         $file = $str3;
-    }else{
+    }else if(file_exists($str4)){
         $file = $str4;
+    }else{
+        $file = $str5;
     }
+
     require $file;
   
     class khachhangclass extends databaseKhachHang{
