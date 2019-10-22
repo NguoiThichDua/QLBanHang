@@ -28,6 +28,13 @@ span.need{
 }
 
 .container-fluid{
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.container{
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }

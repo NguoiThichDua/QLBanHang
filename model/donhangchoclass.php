@@ -27,7 +27,7 @@
         }
 
         public function LayTatCaDonHangChoCuaKhachHang($makhachhang){
-            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai="daduyet" AND makhachhang = ?');
+            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai="daduyet" AND makhachhang = ? ORDER BY dh.ngaytao DESC');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($makhachhang));
 			$list = $donhangcho->fetchAll(); 
@@ -35,23 +35,38 @@
         }
 
         public function LayTatCaDonHangChoCuaKhachHangDaDuyet(){
-            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai = "daduyet"');
+            $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.*, kh.*, dh.ngaytao AS ngayduyet FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = "daduyet" ORDER BY dh.ngaytao DESC');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array());
 			$list = $donhangcho->fetchAll(); 
 			return $list;
         }
 
-        public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach){
-            $donhangcho = $this->connect->prepare("SELECT dhc.*, dh.*, kh.* FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%'");
+        public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai){
+            $donhangcho = $this->connect->prepare("SELECT DISTINCT dhc.*, dh.*, kh.*, dh.ngaytao AS ngayduyet FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' ORDER BY dh.ngaytao DESC");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach,$sodienthoai));
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
+        public function LayTatCaDonHangChoCuaKhachHangDaDuyetTheoSoDienThoai($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim){
+            $donhangcho = $this->connect->prepare("SELECT DISTINCT dhc.*, dh.*, kh.*, dh.ngaytao AS ngayduyet FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' AND dh.ngaytao >= '$ngaybatdautim' AND dh.ngaytao <= '$ngayketthuctim' ORDER BY dh.ngaytao DESC");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tenkhach,$sodienthoai));
+			$list = $donhangcho->fetchAll(); 
+			return $list;
+        }
+
+        public function CongNoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai){
+            $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%'");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($tenkhach));
 			$list = $donhangcho->fetchAll(); 
 			return $list;
         }
-
-        public function CongNoCuaKhachHangDaDuyetTheoTen($tenkhach){
-            $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%'");
+        public function CongNoCuaKhachHangDaDuyetTheoNgayThang($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim){
+            $donhangcho = $this->connect->prepare("SELECT SUM(congno) AS tongcongno, COUNT(congno) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh WHERE dh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND dhc.trangthai = 'daduyet' AND kh.hoten LIKE '%$tenkhach%' AND kh.sodienthoai LIKE '%$sodienthoai%' AND dh.ngaytao >= '$ngaybatdautim' AND dh.ngaytao <= '$ngayketthuctim'");
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
 			$donhangcho->execute(array($tenkhach));
 			$list = $donhangcho->fetchAll(); 

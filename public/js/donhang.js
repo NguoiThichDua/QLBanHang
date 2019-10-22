@@ -10,8 +10,12 @@ function ThayDoiCongNo(madonhang,congno){
 function TimTenKhachHang(){
     $(document).ready(function(e) {
         var tenkhach = document.getElementById("tenkhachhangtim").value.trim();
+        var sodienthoai = document.getElementById("sodienthoaikhachhangtim").value.trim();
 
-        $("#loctheodieukien").load("view/component/quanli/donhangcuakhach/loc.php" , {tenkhach: tenkhach});
+        var ngaybatdautim = document.getElementById("ngaybatdautim").value;
+        var ngayketthuctim = document.getElementById("ngayketthuctim").value;
+      
+        $("#loctheodieukien").load("view/component/quanli/donhangcuakhach/loc.php" , {tenkhach: tenkhach, sodienthoai: sodienthoai, ngaybatdautim: ngaybatdautim, ngayketthuctim: ngayketthuctim});
       
    });
 }

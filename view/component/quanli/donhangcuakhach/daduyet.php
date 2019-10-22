@@ -6,8 +6,6 @@
 ?>
 
 <div class="row">
-   
-
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" >
         <div class="card mb-3">
             <div class="card-header bg-dark text-light">
@@ -26,14 +24,33 @@
                     <div class="card card-body">
                         <form action="" method="post">
                             <div class="form-group">
-                                <label for="">Nhập tên: </label>
-                                <input type="text" class="form-control rounded-pill" id="tenkhachhangtim" onkeyup="TimTenKhachHang()">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="">Nhập tên: </label>
+                                        <input type="text" class="form-control rounded-pill" id="tenkhachhangtim" onkeyup="TimTenKhachHang()">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Nhập số điện thoại: </label>
+                                        <input type="text" class="form-control rounded-pill" id="sodienthoaikhachhangtim" onkeyup="TimTenKhachHang()">
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <label for="">Ngày tháng: </label>
-                                <input type="date" class="form-control rounded-pill">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="">Ngày bắt đầu: </label>
+                                        <input type="date" class="form-control rounded-pill" id="ngaybatdautim" onkeyup="TimTenKhachHang()">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Ngày kết thúc tìm: </label>
+                                        <input type="date" class="form-control rounded-pill" id="ngayketthuctim" onkeyup="TimTenKhachHang()">
+                                    </div>
+                                </div>
                             </div>
+                          
                         </form>
+                        <button class="btn btn-success col-3" onclick="TimTenKhachHang()">Lọc theo ngày</button>
                     </div>
                 </div>
 
@@ -64,12 +81,13 @@
                         <!-- <th scope="col">Mã đơn hàng chờ</th> -->
                         <th scope="col">Tên khách hàng</th>
                         <th scope="col">Ghi chú</th>
-                        <th scope="col">Ngày tạo</th>
+                        <th scope="col">Ngày duyệt</th>
                         <th scope="col">Hàng đã đặt</th>
 
                         <th scope="col">Số lô - NXS</th>
                         <th scope="col">Thành tiền</th>
                         <th scope="col">Công nợ</th>
+                        <th scope="col">SĐT</th>
 
                         <th scope="col">Chức năng</th>
                     </tr>
@@ -107,7 +125,7 @@
                                             }
                                         ?>
                                     </td>
-                                    <td class="text-success"><?php echo $tt->ngaytao;?></td>
+                                    <td class="text-success"><?php echo $tt->ngayduyet;?></td>
                                     <td>
                                         <?php 
                                             $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($tt->makhachhang, $tt->madonhangcho);
@@ -122,6 +140,7 @@
                                     <td><?php echo $tt->solo_nsx;?></td>
                                     <td><?php echo $tt->thanhtien;?></td>
                                     <td><?php echo $tt->congno;?></td>
+                                    <td><?php echo $tt->sodienthoai;?></td>
 
                                     <td>
                                         <?php

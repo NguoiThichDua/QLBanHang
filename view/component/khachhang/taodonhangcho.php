@@ -56,7 +56,7 @@
                 <hr>
                 <form action="controller/donhangchocontroller.php?yc=guichoadmin" method="post">
                     <div class="form-group">
-                        <textarea name="ghichu" id="" cols="" rows="3" class="form-control pb-2 rounded-pill"></textarea>
+                        <textarea name="ghichu" id="" cols="" rows="3" class="form-control pb-2"></textarea>
                     </div>
                     <div class="form-group">
                         <?php

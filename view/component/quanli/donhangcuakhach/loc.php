@@ -3,9 +3,12 @@
     require "../../../../model/khachhangclass.php";
     require "../../../../model/donhangclass.php";
 
-    if(isset($_REQUEST['tenkhach'])){
+    if(isset($_REQUEST['tenkhach']) && isset($_REQUEST['sodienthoai']) && isset($_REQUEST['ngayketthuctim']) && isset($_REQUEST['ngaybatdautim'])){
 
         $tenkhach = $_REQUEST['tenkhach'];
+        $sodienthoai = $_REQUEST['sodienthoai'];
+        $ngaybatdautim = $_REQUEST['ngaybatdautim'];
+        $ngayketthuctim = $_REQUEST['ngayketthuctim'];
         
         try {
                     
@@ -13,8 +16,14 @@
 
             $stt = 1;
 
-            $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach);
-            $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoTen($tenkhach);
+            if($ngaybatdautim != "" && $ngayketthuctim != ""){
+                $thongtin = $donhangcho-> LayTatCaDonHangChoCuaKhachHangDaDuyetTheoSoDienThoai($tenkhach, $sodienthoai, $ngaybatdautim, $ngayketthuctim);
+                $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoNgayThang($tenkhach,$sodienthoai, $ngaybatdautim, $ngayketthuctim);
+            }else{
+                $thongtin = $donhangcho->LayTatCaDonHangChoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
+                $tongcongnocuakhach = $donhangcho->CongNoCuaKhachHangDaDuyetTheoTen($tenkhach, $sodienthoai);
+            }
+            
 
             foreach ($thongtin as $tt) {
                 if($tt->trangthai == "daduyet"){
@@ -39,7 +48,7 @@
                                 }
                             ?>
                         </td>
-                        <td class="text-success"><?php echo $tt->ngaytao;?></td>
+                        <td class="text-success"><?php echo $tt->ngayduyet;?></td>
                         <td>
                             <?php 
                                 $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($tt->makhachhang, $tt->madonhangcho);
@@ -54,6 +63,7 @@
                         <td><?php echo $tt->solo_nsx;?></td>
                         <td><?php echo $tt->thanhtien;?></td>
                         <td><?php echo $tt->congno;?></td>
+                        <td><?php echo $tt->sodienthoai;?></td>
 
                         <td>
                             <?php
@@ -81,7 +91,7 @@
 
             ?>
                  <tr>
-                        <td colspan="9">
+                        <td colspan="10">
                             <?php foreach ($tongcongnocuakhach as $cn) {
                                 if($_REQUEST['tenkhach'] != ""){
                                     echo "TỔNG CÔNG NỢ: " . $cn->tongcongno;
@@ -95,5 +105,13 @@
             echo $e;
         }
 
+    }else{
+       ?>
+         <tr>
+            <td colspan="9">
+                Thông tin nhận được bị gián đoạn
+            </td>
+        </tr>
+       <?php
     }
 ?>

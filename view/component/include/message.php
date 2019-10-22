@@ -5,7 +5,16 @@
                 $ketQua = $_GET['kq'];
                     # Nhận biến kết quả và kiểm tra để in ra thông báo
                 switch ($ketQua) {
-
+                    case 'sodienthoaikhonghople':
+                    ?>
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert" id="message">
+                            <strong>Thất bại!</strong> số điện thoại không hợp lệ..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <?php
+                        break;
                     
                     case 'saimatkhaucu':
                     ?>

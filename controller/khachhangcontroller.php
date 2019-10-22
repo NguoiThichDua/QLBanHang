@@ -25,8 +25,13 @@
                 if(strlen($tentaikhoan) == 0 || strlen($matkhau) == 0 || strlen($diachi) == 0 || strlen($hoten) == 0 ||  strlen($tructhuoc) == 0 ||  strlen($capbac) == 0){
                     header("Location: ../index.php?page=quanlikhachhang&kq=dulieurong");
                 }else{
-                    $khachhang->ThemKhachHang($tentaikhoan, $md5, $hoten, $diachi, $tentaikhoan, $tructhuoc, $capbac, $ngaytao);
-                    header("Location: ../index.php?page=quanlikhachhang&kq=dathemkhachhang");
+                    if($tentaikhoan <10){
+                        header("Location: ../index.php?page=quanlikhachhang&kq=sodienthoaikhonghople");
+                    }else{
+                        $khachhang->ThemKhachHang($tentaikhoan, $md5, $hoten, $diachi, $tentaikhoan, $tructhuoc, $capbac, $ngaytao);
+                        header("Location: ../index.php?page=quanlikhachhang&kq=dathemkhachhang");
+                    }
+                   
                 }
             break;
             case 'xoa':
