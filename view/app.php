@@ -43,7 +43,7 @@
                     require "view/component/khachhang/index.php";
                     break;
                 case 'trangcanhan':
-                    require "view/component/khachhang/trangcanhan.php";
+                    require "view/component/khachhang/canhan/trangcanhan.php";
                     break;
                     
                 default:

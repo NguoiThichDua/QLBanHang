@@ -76,11 +76,10 @@
                     <tr class="text-center">
                         <th scope="col">#</th>
                         <th scope="col">Tên tài khoản</th>
-                        <th scope="col">Mật khẩu</th>
                         <th scope="col">Họ tên</th>
-                        <th scope="col">Số điện thoại</th>
                         <th scope="col">Địa chỉ</th>
                         <th scope="col">Ngày tạo</th>
+                        <th scope="col">Đã nghĩ</th>
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
@@ -93,21 +92,58 @@
                             $thongtin = $khachhang->LayTatCaKhachHang();
 
                             foreach ($thongtin as $tt) {
-                                ?>
-                                     <tr class="text-center">
+                                if($tt->danghi == "chưa nghĩ"){
+                               ?>
+                                    <tr class="text-center bg-dark">
                                         <th><?php echo $stt++; ?></th>
                                         <td><?php echo $tt->tentaikhoan; ?></td>
-                                        <td><?php echo $tt->matkhau; ?></td>
                                         <td><?php echo $tt->hoten; ?></td>
-                                        <td><?php echo $tt->sodienthoai; ?></td>
                                         <td><?php echo $tt->diachi; ?></td>
                                         <td><?php echo $tt->ngaytao; ?></td>
                                         <td>
+                                            <?php 
+                                                if($tt->danghi == "chưa nghĩ"){?>
+                                                    <form action="controller/khachhangcontroller.php?yc=nghiban&makhachang=<?php echo $tt->makhachhang;?>" method="post">
+                                                       <input type="submit" value="chưa nghĩ" class="btn btn-success">
+                                                    </form>
+                                                  
+                                                <?php 
+                                                }        
+                                            ?>
+                                           
+                                        </td>
+                                        <td>
                                             <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>', '<?php echo $tt->tructhuoc;?>', '<?php echo $tt->capbac; ?>')">Sửa</div>
-                                            <div class="btn btn-danger" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">Xóa</div>
+                                            <div class="btn btn-warning" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">Xóa</div>
                                         </td>
                                     </tr>
                                 <?php
+                                 }else{
+                                     ?>
+                                    <tr class="text-center bg-dark" style="color: #6E6E6E">
+                                    <th><?php echo $stt++; ?></th>
+                                    <td><?php echo $tt->tentaikhoan; ?></td>
+                                    <td><?php echo $tt->hoten; ?></td>
+                                    <td><?php echo $tt->diachi; ?></td>
+                                    <td><?php echo $tt->ngaytao; ?></td>
+                                    <td>
+                                        <?php 
+                                            if($tt->danghi == "đã nghĩ"){?>
+                                               <form action="controller/khachhangcontroller.php?yc=conban&makhachang=<?php echo $tt->makhachhang;?>" method="post">
+                                                    <input type="submit" value="đã nghĩ" class="btn btn-danger">
+                                                </form>
+                                            <?php 
+                                            }        
+                                        ?>
+                                       
+                                    </td>
+                                    <td>
+                                        <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>', '<?php echo $tt->tructhuoc;?>', '<?php echo $tt->capbac; ?>')">Sửa</div>
+                                        <div class="btn btn-warning" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">Xóa</div>
+                                    </td>
+                                </tr>
+                                <?php
+                                 }
                             }
                         } catch (Exception $e) {
                             echo $e;

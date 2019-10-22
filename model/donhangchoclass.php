@@ -26,6 +26,7 @@
             return $listdonhangcho;
         }
 
+        # lay tat ca cac don hang cua khach hang da duoc duyet va hien thi
         public function LayTatCaDonHangChoCuaKhachHang($makhachhang){
             $donhangcho = $this->connect->prepare('SELECT dhc.*, dh.* FROM donhangcho dhc, donhang dh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.trangthai="daduyet" AND makhachhang = ? ORDER BY dh.ngaytao DESC');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -73,6 +74,7 @@
 			return $list;
         }
 
+        # tu ma khach hang lay duoc cac don hang cho da gui cua tai khoan do
         public function LayTatCaDonHangChoCuaKhachHangDaGui($makhachhang){
             $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho WHERE makhachhang = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -81,6 +83,7 @@
 			return $list;
         }
 
+        # lay ten hang hoa va so luong cua mot don hang cho da gui
         public function ChiTietMotDonHangDaGui($makhachhang ,$madonhang){
             $donhangcho = $this->connect->prepare('SELECT hh.tenhanghoa, cthh.soluong FROM chitiethanghoa cthh, donhangcho dhc, hanghoa hh, khachhang kh WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND kh.makhachhang = dhc.makhachhang AND kh.makhachhang = ? AND dhc.madonhangcho = ?');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -113,6 +116,8 @@
             return $list;
         }
 
+        # lay don hang cho dang tao hien tai cua 1 khach hang bang makhachhang
+        # thuat toan la lay ma don hang cho lon nhat de tim
         public function LayMotDonHangChoDuaVaoKhachHang($makhachhang){
             $donhangcho = $this->connect->prepare("SELECT MAX(dhc.madonhangcho) AS MAX FROM donhangcho dhc, khachhang kh WHERE kh.makhachhang = dhc.makhachhang AND kh.makhachhang = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);

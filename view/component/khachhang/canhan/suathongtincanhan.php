@@ -7,12 +7,25 @@
 <?php
     session_start();
 
-    require "../../../model/khachhangclass.php";
+    $str1 = "../../model/khachhangclass.php";
+    $str2 = "../../../model/khachhangclass.php";
+    $str3 = "../../../../model/khachhangclass.php";
+
+    if(file_exists($str1)){
+        $file = $str1;
+    }else if(file_exists($str2)){
+        $file = $str2;
+    }else{
+        $file = $str3;
+    }
+    require $file;
 
     $khachhang = new khachhangclass();
 
     if(isset($_SESSION['khachhang'])){
+        # lay ten khach hang bang SESSION
         $tentaikhoan = $_SESSION['khachhang'];
+        # lay duoc nhung thong tin cua khach
         $thongtinkhachang = $khachhang->LayMotKhachHangBangTen($tentaikhoan);
         ?>
             <div class="card mb-3">

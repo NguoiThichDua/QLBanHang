@@ -42,6 +42,7 @@
             return $count;
         }
 
+        # kiem tra mat khau cu cua tai khoan co trung khong
         public function checkMatKhauDoiMatKhauMoi($makhachhang, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? AND matkhau=?");
             $check->setFetchMode(PDO::FETCH_OBJ);
@@ -126,10 +127,24 @@
         }
 
          # chuc nang danh cho khach hang muon sua thong tin mat khau
-         public function KhachHangSuaMatKhau($matkhau, $makhachhang){
+        public function KhachHangSuaMatKhau($matkhau, $makhachhang){
             $cauLenh = 'UPDATE khachhang SET matkhau = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($matkhau, $makhachhang));
+        }
+    
+        # chuc nang danh cho admin => chuyen khach thanh nghi ban
+        public function NghiBan($makhachhang){
+            $cauLenh = 'UPDATE khachhang SET danghi= "đã nghĩ" WHERE khachhang.makhachhang = ?';
+            $capNhat = $this->connect->prepare($cauLenh);
+            $capNhat->execute(array($makhachhang));
+        }
+
+        # chuc nang danh cho admin => chuyen khach thanh con ban
+        public function ConBan($makhachhang){
+            $cauLenh = 'UPDATE khachhang SET danghi= "chưa nghĩ" WHERE khachhang.makhachhang = ?';
+            $capNhat = $this->connect->prepare($cauLenh);
+            $capNhat->execute(array($makhachhang));
         }
 
         # Xoa tai khoan khach hang

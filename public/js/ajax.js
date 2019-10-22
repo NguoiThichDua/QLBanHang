@@ -4,7 +4,7 @@ $(document).ready(function(e) {
 	$(".suathongtin").click(function(){
 		// lay ten khach hang  de thay doi thong tin tai suakhachhang.php
 		var hotenkhachhang = document.getElementById("hotenkhachhang").innerHTML;
-        $("#suathongtincanhan").load("view/component/khachhang/suathongtincanhan.php" , {hotenkhachhang: hotenkhachhang});
+        $("#suathongtincanhan").load("view/component/khachhang/canhan/suathongtincanhan.php" , {hotenkhachhang: hotenkhachhang});
 		
 	});
 

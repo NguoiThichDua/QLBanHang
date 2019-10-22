@@ -17,6 +17,7 @@
   
     class chitiethanghoaclass extends databaseChiTietKetNoiHangHoa{
 
+        # lay hang hoa va so luong cua don hang cho bang madonhangcho
         public function LayHangHoaCuaDonHangDangTao($madonhangcho){
             $donhangcho = $this->connect->prepare("SELECT hh.mahanghoa, hh.tenhanghoa, cthh.soluong, cthh.macthh, cthh.madonhangcho FROM hanghoa hh, chitiethanghoa cthh, donhangcho dhc WHERE hh.mahanghoa = cthh.mahanghoa AND cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
