@@ -4,6 +4,9 @@
         
         if(isset($_SESSION['admin'])){
             require "view/component/include/navbar.php";
+            ?>
+                <div class="container mt-5 ">
+            <?php
             require "view/component/include/message.php";
             
             switch ($page) {
@@ -27,9 +30,15 @@
                     break;
                 default:
                     break;
+            ?>
+                </div>
+            <?php
             }
         }else if(isset($_SESSION['khachhang'])){
             require "view/component/include/navbar.php";
+            ?>
+                <div class="container mt-5">
+            <?php
             require "view/component/include/message.php";
 
             switch ($page) {
@@ -45,14 +54,25 @@
                 case 'trangcanhan':
                     require "view/component/khachhang/canhan/trangcanhan.php";
                     break;
-                    
+                case 'quanlihangton':
+                    require "view/component/khachhang/quanlihangton.php";
+                    break; 
+                case 'taodonhangtonmoi':
+                    require "view/component/khachhang/taodonhangton/taodonhangton.php";
+                    break; 
                 default:
 
                     break;
+                ?>
+                    </div>
+                <?php
             }
         }else{
-
+            ?>
+                <div class="container mt-5">
+            <?php
             switch ($page) {
+                
                 case 'dangki':
                     require "view/component/dangki/dangki.php";
                     break;
@@ -61,19 +81,29 @@
                     require "view/component/dangnhap/dangnhap.php";
                     break;
             }
-
-            
+            ?>
+                </div>
+            <?php
         }
-
-       
-         
     }else{
         if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){
             require "view/component/include/navbar.php";
+            ?>
+                <div class="container mt-5">
+            <?php
             require "view/component/quanli/index.php";
+            ?>
+                </div>
+            <?php
 
         }else{
+            ?>
+                <div class="container mt-5">
+            <?php
             require "view/component/dangnhap/dangnhap.php";
+            ?>
+                </div>
+            <?php
         }
        
     }

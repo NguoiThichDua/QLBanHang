@@ -79,5 +79,14 @@
             $xoa = $this->connect->prepare($cauLenh);
             $xoa->execute(array($madonhang));
         }
+
+         # ten hang hoa va tong san pham cua 1 khach hang
+         public function TongSanPhamChoHangTon($tentaikhoan){
+            $donhangcho = $this->connect->prepare("SELECT DISTINCT hh.tenhanghoa, SUM(cthh.soluong) AS soluong FROM donhangcho dhc, donhang dh, khachhang kh, chitiethanghoa cthh, hanghoa hh WHERE dh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = cthh.madonhangcho AND cthh.mahanghoa = hh.mahanghoa AND kh.makhachhang = dhc.makhachhang AND kh.tentaikhoan = ? GROUP BY hh.tenhanghoa");
+            $donhangcho->setFetchMode(PDO::FETCH_OBJ);
+			$donhangcho->execute(array($tentaikhoan));
+			$list = $donhangcho->fetchAll(); 
+            return $list;
+        }
     }
 ?>

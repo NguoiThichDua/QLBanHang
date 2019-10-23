@@ -12,9 +12,8 @@
     <?php require "view/require/css.php"?>
 </head>
 <body>
-    <div class="container">
-        <?php require "view/app.php" ?>
-    </div>
+  
+    <?php require "view/app.php" ?>
    
    <!-- Javascript JQ -->
     <?php require "view/require/javascript.php"?>

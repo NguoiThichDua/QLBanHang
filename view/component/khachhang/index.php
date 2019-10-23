@@ -13,8 +13,22 @@
         </a>
     </div>  <!-- END QLDH-->
 
-    <!-- CA NHAN -->
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
+     <!-- HANG TON -->
+     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
+        <a href="index.php?page=quanlihangton" class="w-100 text-decoration-none">
+            <div class="card w-100 ">
+            <div class="d-flex justify-content-center">
+                <img src="public/images/hangton.png" alt="" srcset="" width="auto" class="img-quanli">
+            </div>
+                <div class="card-body">
+                    <h3 class="card-title text-center">QL Hàng Tồn</h3>
+                </div>
+            </div>
+        </a>
+    </div>  <!-- END HANG TON -->
+
+     <!-- CA NHAN -->
+     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
         <a href="index.php?page=trangcanhan" class="w-100 text-decoration-none">
             <div class="card w-100 ">
             <div class="d-flex justify-content-center">

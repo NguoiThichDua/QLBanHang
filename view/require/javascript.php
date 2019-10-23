@@ -8,3 +8,5 @@
 <script src="public/js/donhangcho.js"></script>
 <script src="public/js/checkdangki.js"></script>
 <script src="public/js/donhang.js"></script>
+<script src="public/js/hangton.js"></script>
+<script src="public/js/navbar.js"></script>
