@@ -1,5 +1,5 @@
  <!-- NAVBAR CHO ADMIN -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light p-0" id="navbar">
     <div class="container">
         <!-- LOGO -->
         <a class="nav-link font-weight-bold" href="index.php?page=quanli">

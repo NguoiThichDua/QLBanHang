@@ -3,7 +3,7 @@
 ?>
 
 <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3">
         <h3>QUẢN LÍ HÀNG TỒN</h3>
     </div>
     

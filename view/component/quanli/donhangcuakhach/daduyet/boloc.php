@@ -50,7 +50,34 @@
         </p>
         <div class="collapse" id="lochangton">
             <div class="card card-body">
-                Lọc theo hàng tồn ở đây
+                <form action="" method="post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="">Nhập tên: </label>
+                                <input type="text" class="form-control rounded-pill" id="tenkhachhangtimcongno" onkeyup="LocTheoCongNo()">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Nhập số điện thoại: </label>
+                                <input type="text" class="form-control rounded-pill" id="sodienthoaikhachhangtimcongno" onkeyup="LocTheoCongNo()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="">Ngày bắt đầu: </label>
+                                <input type="date" class="form-control rounded-pill" id="ngaybatdautimcongno" onkeyup="LocTheoCongNo()">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Ngày kết thúc tìm: </label>
+                                <input type="date" class="form-control rounded-pill" id="ngayketthuctimcongno" onkeyup="LocTheoCongNo()">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-danger col-3" onclick="LocTheoCongNo()">Lọc theo ngày</button>
             </div>
         </div>
     </div>

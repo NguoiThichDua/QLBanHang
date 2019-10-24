@@ -1,3 +1,23 @@
+
+    <thead>
+            <tr>
+                <th scope="col">#</th>
+                <!-- <th scope="col">Mã đơn hàng chờ</th> -->
+                <th scope="col">Tên khách hàng</th>
+                <th scope="col">Ghi chú</th>
+                <th scope="col">Ngày duyệt</th>
+                <th scope="col">Hàng đã đặt</th>
+
+                <th scope="col">Số lô - NXS</th>
+                <th scope="col">Thành tiền</th>
+                <th scope="col">Công nợ</th>
+                <th scope="col">SĐT</th>
+
+                <th scope="col">Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+
 <?php
     require "../../../../../model/donhangchoclass.php";
     require "../../../../../model/khachhangclass.php";
@@ -135,3 +155,5 @@
        <?php
     }
 ?>
+
+        </tbody>

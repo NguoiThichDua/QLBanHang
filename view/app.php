@@ -5,7 +5,7 @@
         if(isset($_SESSION['admin'])){
             require "view/component/include/navbar.php";
             ?>
-                <div class="container mt-5 ">
+                <div class="container">
             <?php
             require "view/component/include/message.php";
             
@@ -69,7 +69,7 @@
             }
         }else{
             ?>
-                <div class="container mt-5">
+                <div class="container mt-3">
             <?php
             switch ($page) {
                 
@@ -89,7 +89,7 @@
         if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){
             require "view/component/include/navbar.php";
             ?>
-                <div class="container mt-5">
+                <div class="container mt-3">
             <?php
             require "view/component/quanli/index.php";
             ?>
@@ -98,7 +98,7 @@
 
         }else{
             ?>
-                <div class="container mt-5">
+                <div class="container mt-3">
             <?php
             require "view/component/dangnhap/dangnhap.php";
             ?>

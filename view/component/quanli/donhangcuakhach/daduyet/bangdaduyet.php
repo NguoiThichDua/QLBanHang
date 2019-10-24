@@ -1,5 +1,5 @@
-<div class="table-responsive">
-    <table class="table table-dark mt-3 text-center table-hover rounded-lg">
+<div class="table-responsive" >
+    <table class="table table-dark mt-3 text-center table-hover rounded-lg" id="loc">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -17,7 +17,7 @@
                 <th scope="col">Chức năng</th>
             </tr>
         </thead>
-        <tbody id="loctheodieukien">
+        <tbody>
         <?php 
             try {
             

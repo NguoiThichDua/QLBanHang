@@ -6,7 +6,7 @@
 ?>
 <!-- ROW -->
 <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
         <!-- TITLE -->
         <div class="card w-100">
             <div class="card-body d-flex justify-content-center ">
