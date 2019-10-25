@@ -10,3 +10,4 @@
 <script src="public/js/donhang.js"></script>
 <script src="public/js/hangton.js"></script>
 <script src="public/js/navbar.js"></script>
+<script src="public/js/app.js"></script>

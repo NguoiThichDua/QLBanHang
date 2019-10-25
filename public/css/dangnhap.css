@@ -1,0 +1,63 @@
+.box{
+    padding: 40px;
+    background: rgba(0, 0, 0, .7);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px;
+    top: 20%;
+}
+
+.box .inputBox{
+    position: relative;
+    box-shadow: #fff;
+}
+
+.box .inputBox input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.eye{
+    position: relative;
+}
+.eye img{
+    position: absolute;
+    left: 95%;
+    top: 15px;
+}
+
+.box .inputBox label{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 20px 0px;
+    font-size: 18px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    opacity: 0.8;
+}
+
+.box .inputBox input:focus ~label,
+.box .inputBox input:valid ~label{
+    top: -30px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 14px;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 480px){
+    .eye img{
+        position: absolute;
+        left: 90%;
+        top: 15px;
+    }
+}

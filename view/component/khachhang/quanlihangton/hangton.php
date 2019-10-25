@@ -1,7 +1,7 @@
 
 <div class="card">
     <div class="card-header bg-dark text-light">
-        Hàng tồn cập nhật
+        Tất cả hàng tồn cập nhật
     </div>
     <div class="card-body">
 

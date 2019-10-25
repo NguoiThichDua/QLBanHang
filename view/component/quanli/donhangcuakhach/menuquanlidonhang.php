@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <a href="index.php?page=quanlidonhang" class="btn btn-info w-100">Tạo mới đơn hàng</a>
+                        <a href="index.php?page=quanlidonhang&yc=taodonhangchokhach" class="btn btn-info w-100">Tạo mới đơn hàng</a>
                     </div>
 
                     <div class="col-md-4">

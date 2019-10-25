@@ -5,7 +5,7 @@
         if(isset($_SESSION['admin'])){
             require "view/component/include/navbar.php";
             ?>
-                <div class="container">
+                <div class="container mt-5">
             <?php
             require "view/component/include/message.php";
             
@@ -27,6 +27,9 @@
                     break;
                 case 'quanlihanghoa':
                     require "view/component/quanli/hanghoa/quanlihanghoa.php";
+                    break;
+                case 'taodonhangcho':
+                    require "view/component/quanli/donhangcuakhach/taomoidonhang/taodonhangcho.php";
                     break;
                 default:
                     break;

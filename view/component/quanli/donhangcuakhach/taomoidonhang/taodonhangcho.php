@@ -19,10 +19,3 @@
         <?php require "taomoidonhang/ghichuvaxacnhangui.php"; ?>
     </div>
 </div>
-
-<div class="mt-3">
-    <?php
-        # MODAL (THAY DOI SO LUONG HANG CUA DON HANG DA THEM)
-        require "modal/modaldonhangcho.php"
-    ?>
-</div>

@@ -1,4 +1,6 @@
-
+<?php
+    require "model/khachhangclass.php";
+?>
 <div class="card mt-3">
     <div class="card-body">
         <h4>Bước 2. Kiểm tra giỏ hàng</h4>
@@ -15,17 +17,15 @@
             <tbody>
             <?php 
                 try {
-                    # lay session cua khach hang => lay ten dang nhap (sodienthoai)
-                    $tentaikhoan = $_SESSION['khachhang'];
+                    $khachhang = new khachhangclass();
+                    $tentaikhoan = $_REQUEST['sodienthoai'];
 
-                    # lay ma khach hang bang ten dang nhap (SESSION)
-                    $nguoidung = new khachhangclass();
-                    $thongtin = $nguoidung->LayMotKhachHangBangTen($tentaikhoan);
-                    $makhachhang = $thongtin->makhachhang;
+                    $thongtin = $khachhang->LayMotkhachhangBangTenTaiKhoan($tentaikhoan);
+                    $makhach = $thongtin->makhachhang;
 
                     # lay don hang cho hien tai cua khach hang dua vao makhach hang ben tren
                     $donhang = new donhangchoclass();
-                    $thongtin = $donhang->LayMotDonHangChoDuaVaoKhachHang($makhachhang);
+                    $thongtin = $donhang->LayMotDonHangChoDuaVaoKhachHang($makhach);
                     $madonhangcho = $thongtin->MAX;
 
                     # lay tat ca ten hang va so luong hang hoa cua don hang hien tai da duoc them vao
@@ -46,18 +46,10 @@
                                 </td>
                                 <td><?php echo $tt->soluong;?></td>
                                 <td>
-                                    <div class=row>
-                                        <div class="col-md-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#thaydoisoluonghanghoa" onclick="ThayDoiSoLuongHang('<?php echo $tt->macthh?>', '<?php echo $tt->madonhangcho;?>', '<?php echo $tt->soluong?>')">
-                                                Thay đổi số lượng
-                                            </button>
-                                        </div>
-                                        <div class="col-md-6 d-flex justify-content-start">
-                                            <form action="controller/donhangchocontroller.php?yc=xoahanghoatrongdonhangcho&madonhangcho=<?php echo $madonhangcho?>&macthh=<?php echo $tt->macthh?>" method="post">
-                                                <input type="submit" class="btn btn-danger ml-3" value="Loại bỏ">
-                                            </form>
-                                        </div>
-                                    </div>  <!-- END ROW-->
+                                    <form action="controller/donhangchocontroller.php?yc=xoahanghoatrongdonhangcho&madonhangcho=<?php echo $madonhangcho?>&macthh=<?php echo $tt->macthh?>" method="post">
+                                        <input type="text" class="form-control rounded-pill d-none" name="makhachtaodonhang" value="<?php echo $_REQUEST['sodienthoai']?>" id="makhachthemdonhang" placeholder="Số điện thoại" readonly>
+                                        <input type="submit" class="btn btn-danger ml-3" value="Loại bỏ">
+                                    </form>
                                 </td>
                             </tr>
                         <?php
@@ -67,6 +59,6 @@
                 }
             ?>
             </tbody>
-</table>    <!-- END TABLE -->
+        </table>    <!-- END TABLE -->
     </div>
 </div>

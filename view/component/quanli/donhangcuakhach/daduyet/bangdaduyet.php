@@ -2,6 +2,9 @@
     <table class="table table-dark mt-3 text-center table-hover rounded-lg" id="loc">
         <thead>
             <tr>
+                <th scope="col" colspan="10"><h4>Tất Cả Đơn Hàng Đã Duyệt</h4></th>
+            </tr>
+            <tr>
                 <th scope="col">#</th>
                 <!-- <th scope="col">Mã đơn hàng chờ</th> -->
                 <th scope="col">Tên khách hàng</th>

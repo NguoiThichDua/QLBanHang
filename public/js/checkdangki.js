@@ -9,6 +9,17 @@ function checktentaikhoandangki(){
    });
 }
 
+function chektaikhoanthemdonhang(){
+    /* Xử dụng Ajax để load thông tin email đã được sử dụng chưa ngay và luôn */
+    $(document).ready(function(e) {
+        var tentaikhoan = document.getElementById("makhachnhap").value.trim();
+
+        /* #ShowCheckEmailDangKi sẻ load dữ liệu được xử lí ở file checkEmail.php */
+        $("#showtentaikhoandangkii").load("view/component/dangki/checkthemdonhang.php" , {tentaikhoan: tentaikhoan});
+       
+   });
+}
+
 function checkmatkhau(){
     var MatKhauDangKi = document.getElementById("matkhaudangki").value.trim() + "";
     var DoDaiMatKhauDangKi = document.getElementById("dodaimatkhaudangki");

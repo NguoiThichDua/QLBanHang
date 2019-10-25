@@ -37,6 +37,15 @@
 			return $list;
         }
 
+        public function LayHangTonTheoThang($makhach, $thang){
+            $hangton = $this->connect->prepare("SELECT DISTINCT * FROM hangton WHERE makhachhang = ? AND MONTH(ngaytao) IN( SELECT MONTH(?))");
+			$hangton->setFetchMode(PDO::FETCH_OBJ);
+			$hangton->execute(array($makhach, $thang));
+			$list = $hangton->fetchAll(); 
+			return $list;
+           
+        }
+
         # lay tat ca chi tiet hang ton
         public function TatCaHangTonTheoTen($tenkhach){
             $hangton = $this->connect->prepare("SELECT * FROM hangton ht, khachhang kh WHERE ht.makhacHhang = kh.makhachhang AND kh.hoten LIKE '%$tenkhach%' ");

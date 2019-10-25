@@ -31,6 +31,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="">Ngày bắt đầu: </label>
+                                
                                 <input type="date" class="form-control rounded-pill" id="ngaybatdautim" onkeyup="TimTenKhachHang()">
                             </div>
                             <div class="col-md-6">
@@ -39,9 +40,12 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <a class="btn btn-success col-3" onclick="TimTenKhachHang()">Lọc</a>
+                    <input type="reset" value="Clear" class="btn btn-warning">
+
                 </form>
-                <button class="btn btn-success col-3" onclick="TimTenKhachHang()">Lọc theo ngày</button>
+
             </div>
         </div>
 
@@ -76,8 +80,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <a class="btn btn-danger col-3" onclick="LocTheoCongNo()">Lọc</a>
+                    <input type="reset" value="Clear" class="btn btn-warning">
+                   
                 </form>
-                <button class="btn btn-danger col-3" onclick="LocTheoCongNo()">Lọc theo ngày</button>
             </div>
         </div>
     </div>

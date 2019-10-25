@@ -46,6 +46,14 @@
             return $count;
         }
 
+        public function LayMotkhachhangBangTenTaiKhoan($tentaikhoan){
+            $khachhang = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=?");
+			$khachhang->setFetchMode(PDO::FETCH_OBJ);
+			$khachhang->execute(array($tentaikhoan));
+			$list = $khachhang->fetch(); 
+			return $list;
+        }
+
         # kiem tra mat khau cu cua tai khoan co trung khong
         public function checkMatKhauDoiMatKhauMoi($makhachhang, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE makhachhang=? AND matkhau=?");
@@ -108,6 +116,13 @@
             $count = count($checkSDT->fetchAll());
             return $count;
         }
+
+         # Them tai khoan khach hang moi
+         public function AdminThemKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $ngaytao){
+            $cauLenh = 'INSERT INTO khachhang (tentaikhoan, matkhau, hoten, diachi, sodienthoai, ngaytao) VALUES (?,?,?,?,?,?)';
+            $themMoi = $this->connect->prepare($cauLenh);
+            $themMoi->execute(array($tentaikhoan, $matkhau,$hoten, $diachi,$sodienthoai, $ngaytao));
+        }
         
         # Them tai khoan khach hang moi
         public function ThemKhachHang($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $ngaytao){
@@ -124,10 +139,10 @@
         }
 
         # chuc nang danh cho khach hang muon sua thong tin tai khoan
-        public function KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang){
-            $cauLenh = 'UPDATE khachhang SET hoten = ?, diachi = ?, sodienthoai = ? WHERE khachhang.makhachhang = ?';
+        public function KhachHangSuaThongTin($hoten, $diachi, $tructhuoc, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET hoten = ?, diachi = ?, tructhuoc = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
-            $capNhat->execute(array($hoten, $diachi, $sodienthoai, $makhachhang));
+            $capNhat->execute(array($hoten, $diachi, $tructhuoc, $makhachhang));
         }
 
          # chuc nang danh cho khach hang muon sua thong tin mat khau

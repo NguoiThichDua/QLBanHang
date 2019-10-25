@@ -1,5 +1,8 @@
 
-    <thead>
+        <thead>
+            <tr>
+                <th scope="col" colspan="10"><h4>Lọc Theo Tên & SĐT</h4></th>
+            </tr>
             <tr>
                 <th scope="col">#</th>
                 <!-- <th scope="col">Mã đơn hàng chờ</th> -->
@@ -134,7 +137,9 @@
                 <tr>
                     <td colspan="10">
                         <?php foreach ($tongcongnocuakhach as $cn) {
-                            if($_REQUEST['tenkhach'] != ""){
+                            if($_REQUEST['sodienthoai'] != ""){
+                                echo "<h3>TỔNG CÔNG NỢ: <span class='text-info'>" . $cn->tongcongno . "</span> nghìn đồng</h3> ";
+                            }else{
                                 echo "<h3>TỔNG CÔNG NỢ: <span class='text-info'>" . $cn->tongcongno . "</span> nghìn đồng</h3> ";
                             }
                         }; ?>

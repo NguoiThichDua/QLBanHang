@@ -9,9 +9,14 @@
             case 'daduyet':
                 require "daduyet.php";
                 break; 
+            case 'taodonhangchokhach':
+                require "taomoidonhang/menu.php";
+                break;
             default:
                 echo "Yêu cầu không xác định";
                 break;
         }
+    }else{
+        require "duyetdonhang.php";
     }
 ?>

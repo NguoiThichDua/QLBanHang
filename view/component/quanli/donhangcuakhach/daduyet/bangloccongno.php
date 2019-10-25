@@ -1,6 +1,9 @@
 
         <thead>
             <tr>
+                <th scope="col" colspan="5"><h4>Lọc Công Nợ</h4></th>
+            </tr>
+            <tr>
                 <th scope="col">#</th>
                 <th csope="col">Tên khách hàng</th>
                 <th csope="col">Số điện thoại</th>

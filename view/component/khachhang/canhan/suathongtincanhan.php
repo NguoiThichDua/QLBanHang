@@ -43,8 +43,8 @@
                         </div>
 
                          <div class="form-group">
-                         <label for="">Số điện thoại: </label>
-                            <input type="number" name="sodienthoai" value="<?php echo $thongtinkhachang->sodienthoai?>" required class="form-control rounded-pill">
+                         <label for="">Trực thuộc: </label>
+                            <input type="text" name="tructhuoc" value="<?php echo $thongtinkhachang->tructhuoc?>" required class="form-control rounded-pill">
                         </div>
 
                         <div class="form-group">

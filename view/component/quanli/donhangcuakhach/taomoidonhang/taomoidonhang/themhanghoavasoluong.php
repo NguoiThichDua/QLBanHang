@@ -7,6 +7,10 @@
                     <h4>Bước 1. Thêm hàng hóa và số lượng</h4>
                     <hr>
                     <div class="form-group">
+                        <input type="text" class="form-control rounded-pill" name="makhachtaodonhang" value="<?php echo $_REQUEST['sodienthoai']?>" id="makhachthemdonhang" placeholder="Số điện thoại" readonly>
+                    </div>
+                    <div class="form-group">
+                    
                         <select class="form-control rounded-pill" name="mahang">
                         <?php 
                             try {

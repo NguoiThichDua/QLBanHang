@@ -34,7 +34,7 @@
         
         # them hang hoa moi
         public function ThemHangHoa($tenhanghoa){
-            $cauLenh = 'INSERT INTO hanghoa (tenhanghoa) VALUES (?,?)';
+            $cauLenh = 'INSERT INTO hanghoa (tenhanghoa) VALUES (?)';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($tenhanghoa));
         }

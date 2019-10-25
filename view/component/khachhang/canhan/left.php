@@ -20,6 +20,11 @@
             <strong><div id="sodienthoaikhachhang"><?php echo $thongtinkhachang->sodienthoai?></div></strong>
         </div>
 
+        <label for="">Trực thuộc: </label>
+        <div class="alert alert-info" role="alert">
+            <strong><div id="sodienthoaikhachhang"><?php echo $thongtinkhachang->tructhuoc?></div></strong>
+        </div>
+
         <button class="btn btn-success suathongtin">Sửa thông tin</button>
     </div>
 </div>

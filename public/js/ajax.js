@@ -13,4 +13,6 @@ $(document).ready(function(e) {
 		$("#hanghoagia").load("view/component/quanli/donhangcuakhach/tenhangvagia.php" , {madonhangcho: madonhangcho});
 
 	});
+
+	
 });

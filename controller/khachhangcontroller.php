@@ -8,6 +8,35 @@
         $yeuCau = $_GET["yc"];
 
         switch ($yeuCau) {
+            case 'adminthemmoi':
+            # co tim thay makhachhang duoc truyen qua hay khong
+            if(isset($_POST['tentaikhoan']) && isset($_POST['matkhau']) && isset($_POST['diachi']) && isset($_POST['hoten'])){
+                $sodienthoai = trim($_POST['tentaikhoan']);
+                $matkhau = trim($_POST['matkhau']);
+                $hoten = trim($_POST['hoten']);
+                $diachi = trim($_POST['diachi']);
+
+                $khachhang = new khachhangclass();
+                $tentaikhoankhachhang = $khachhang->checkTenKhachHang($sodienthoai);
+    
+                # tai khoan da ton tais
+                if($tentaikhoankhachhang >= 1){
+                    header("Location: ../index.php?page=dangki&kq=tentaikhoantontai");
+                }else if(strlen($sodienthoai) <= 9 || strlen($matkhau) < 6 || strlen($hoten) < 0 || strlen($diachi) < 0){
+                    header("Location: ../index.php?page=quanlikhachhang&kq=khonghople");
+                }else{
+                    $ngaytao = date("Y-m-d");
+                    $md5 = md5($matkhau, false);
+                    # tien hanh xoa
+                    $khachhang = new khachhangclass();
+                    $khachhang->AdminThemKhachHang($sodienthoai, $md5, $hoten, $diachi, $sodienthoai, $ngaytao);
+                    header("Location: ../index.php?page=quanlidonhang&yc=taodonhangchokhach&kq=dathemkhachhang");
+                }
+            }else{
+                # khong truyen duoc makhachhang qua
+                header("Location: ../index.php?page=quanlidonhang&yc=taodonhangchokhach&kq=thongtinrong");
+            }
+            break;
             case 'them':
             # kiem tra cac truong du lieu bat buoc co truyen qua du hay khong
             if(isset($_POST['tentaikhoan']) && isset($_POST['matkhau']) && isset($_POST['diachi']) &&  isset($_POST['hoten']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){
@@ -162,39 +191,22 @@
                 break;
             case 'khachhangsua':
                 # kiem tra du lieu bat buoc truyen vao co du hay khong
-                if(isset($_POST['hoten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['makhachhang'])){
+                if(isset($_POST['hoten']) && isset($_POST['tructhuoc']) && isset($_POST['diachi']) && isset($_POST['makhachhang'])){
                     $hoten = trim($_POST['hoten']);
-                    $sodienthoai = trim($_POST['sodienthoai']);
+                    $tructhuoc = trim($_POST['tructhuoc']);
                     $diachi = trim($_POST['diachi']);
                     $makhachhang =  trim($_POST['makhachhang']);
     
                     # kiem tra rong cua cac truong du lieu
-                    if(strlen($hoten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($makhachhang) <= 0){
+                    if(strlen($hoten) <= 0 || strlen($tructhuoc) <= 0 || strlen($diachi) <= 0 || strlen($makhachhang) <= 0){
                         header("Location: ../index.php?page=trangcanhan&kq=dulieurong");
                     }else{
                         $khachhang = new khachhangclass();
-                        # kiem tra so dien thoai da duoc su dung hay chua
-                        $dienthoai = $khachhang->KiemTraSoDienThoai($sodienthoai);
-
-                        # lay so dien thoai hien tai cua tai khoan de kiem tra voi sdt moi duoc POST quas
-                        $thongtin = $khachhang->LayMotkhachhangBangSoDienThoai($sodienthoai,$makhachhang);
-                        $somacdinh = $thongtin->sodienthoai;
-
-                        # so dien thoai moi bang so dien thoai cu => thanh cong
-                        if($somacdinh == $sodienthoai){
-                            $khachhang->KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang);
+                            # so dien thoai chua ai su dung
+                            $khachhang->KhachHangSuaThongTin($hoten, $diachi, $tructhuoc, $makhachhang);
                             header("Location: ../index.php?page=trangcanhan&kq=thaydoithanhcong");
-                        }else{
-                            # so dien thoai moi da co nguoi su khac dung
-                             if($dienthoai >= 1){
-                                header("Location: ../index.php?page=trangcanhan&kq=sodienthoaitontai");
-                            }else {
-                                # so dien thoai chua ai su dung
-                                $khachhang->KhachHangSuaThongTin($hoten, $diachi, $sodienthoai, $makhachhang);
-                                header("Location: ../index.php?page=trangcanhan&kq=thaydoithanhcong");
-                            }
+                        
                         }
-                    }
                 # khong nhan day du cac thong tin can thiet
                 }else{
                     header("Location: ../index.php?page=trangcanhan&kq=dulieurong");

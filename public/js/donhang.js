@@ -32,3 +32,11 @@ function LocTheoCongNo(){
       
    });
 }
+
+function LayMaKhach(){
+    var makhachnhap = document.getElementById("makhachnhap");
+
+    var makhachxacnhan = document.getElementById("makhachtaodonhang");
+
+    makhachxacnhan.value = makhachnhap.value;
+}
