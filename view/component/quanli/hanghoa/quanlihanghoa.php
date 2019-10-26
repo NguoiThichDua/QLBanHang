@@ -79,7 +79,7 @@
 </div>  <!-- END ROW -->
 
 <?php 
-    require "modalhanghoa.php";
+    require "view/component/quanli/model/modalhanghoa.php";
 ?>
 
 

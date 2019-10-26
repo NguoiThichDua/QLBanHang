@@ -1,7 +1,6 @@
 <?php
-    # Từ hàm checkEmailDangKi() của checkDangKi-DangNhap lấy được email để kiểm tra tài khoản email đã được sử dụng chưa
-
-    require "../../../model/khachhangclass.php";
+    
+    require "../../../../../model/khachhangclass.php";
 
    if(isset($_REQUEST['tentaikhoan'])){
         $tentaikhoan = $_REQUEST['tentaikhoan'];

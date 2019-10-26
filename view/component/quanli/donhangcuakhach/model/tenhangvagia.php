@@ -1,5 +1,5 @@
 <?php 
-    require "../../../../model/chitiethanghoaclass.php";
+    require "../../../../../model/chitiethanghoaclass.php";
 
     //$donhangcho = new donhangchoclass();
 

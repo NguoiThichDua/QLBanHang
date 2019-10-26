@@ -29,7 +29,7 @@
                     require "view/component/quanli/hanghoa/quanlihanghoa.php";
                     break;
                 case 'taodonhangcho':
-                    require "view/component/quanli/donhangcuakhach/taomoidonhang/taodonhangcho.php";
+                    require "view/component/quanli/donhangcuakhach/taodonhangchokhach/taodonhangcho.php";
                     break;
                 default:
                     break;
@@ -71,9 +71,6 @@
                 <?php
             }
         }else{
-            ?>
-                <div class="container mt-3">
-            <?php
             switch ($page) {
                 
                 case 'dangki':
@@ -84,9 +81,6 @@
                     require "view/component/dangnhap/dangnhap.php";
                     break;
             }
-            ?>
-                </div>
-            <?php
         }
     }else{
         if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){

@@ -3,6 +3,7 @@
     $str2 = '../database/ketnoichitiethanghoa.php';
     $str3 = '../../../database/ketnoichitiethanghoa.php';
     $str4 = '../../../../database/ketnoichitiethanghoa.php';
+    $str5 = '../../../../../database/ketnoichitiethanghoa.php';
 
     if(file_exists($str1)){
         $file = $str1;
@@ -10,8 +11,10 @@
         $file = $str2;
     }else if(file_exists($str3)){
         $file = $str3;
-    }else{
+    }else if(file_exists($str4)){
         $file = $str4;
+    }else{
+        $file = $str5;
     }
     require $file;
   

@@ -24,7 +24,7 @@
 
     <!-- BANG DON HANG CHO DA GUI -->
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <?php require "quanlidonhangdangcho/bangdonhangdangcho.php"; ?>
+        <?php require "donhangcho/bangdonhangcho.php"; ?>
     </div>
 </div>  <!-- END ROW -->
 

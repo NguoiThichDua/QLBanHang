@@ -104,5 +104,5 @@
 </div>
 
 <?php
-    require "modalduyetdonhang.php";
+    require "view/component/quanli/donhangcuakhach/model/modalduyetdonhang.php";
 ?>

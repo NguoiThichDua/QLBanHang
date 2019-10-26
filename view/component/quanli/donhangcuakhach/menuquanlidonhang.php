@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <a href="index.php?page=quanlidonhang&yc=daduyet" class="btn btn-primary w-100">Quản lí xuất kho</a>
+                        <a href="index.php?page=quanlidonhang&yc=xuatkho" class="btn btn-primary w-100">Quản lí xuất kho</a>
                     </div>
                 </div>
             </div>

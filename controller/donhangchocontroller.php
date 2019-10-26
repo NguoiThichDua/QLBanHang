@@ -247,7 +247,7 @@
                     $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
     
                     if(isset($_SESSION['admin'])){
-                        header("Location: ../index.php?page=quanlidonhang&yc=daduyet&kq=daloaibohangkhoidonhangcho");
+                        header("Location: ../index.php?page=quanlidonhang&yc=xuatkho&kq=daloaibohangkhoidonhangcho");
                     }else{
                         header("Location: ../index.php?page=donhangcho&kq=daxoadonhangcho");
                     }

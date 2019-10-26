@@ -4,19 +4,19 @@
 
         switch ($yeucau) {
             case 'duyetdonhang':
-                require "duyetdonhang.php";
+                require "duyetdonhang/duyetdonhang.php";
                 break;
-            case 'daduyet':
-                require "daduyet.php";
+            case 'xuatkho':
+                require "xuatkho/xuatkho.php";
                 break; 
             case 'taodonhangchokhach':
-                require "taomoidonhang/menu.php";
+                require "taodonhangchokhach/menu.php";
                 break;
             default:
                 echo "Yêu cầu không xác định";
                 break;
         }
     }else{
-        require "duyetdonhang.php";
+        require "duyetdonhang/duyetdonhang.php";
     }
 ?>

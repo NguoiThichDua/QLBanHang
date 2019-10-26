@@ -159,7 +159,7 @@
 
 
 <?php 
-    require "modalkhachhang.php";
+   require "view/component/quanli/model/modalkhachhang.php";
 ?>
 
 
