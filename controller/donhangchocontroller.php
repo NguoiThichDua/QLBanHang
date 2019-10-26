@@ -222,8 +222,6 @@
                 }else{
                     header("Location: ../index.php?page=donhangcho&kq=daxoadonhangcho");
                 }
-                
-               
                 break;
 
             case 'xoahanghoatrongdonhangcho':
@@ -239,9 +237,6 @@
                 }else{
                     header("Location: ../index.php?page=taodonhangcho&kq=daloaibohangkhoidonhangcho");
                 }
-
-                
-
                 break;
 
             case 'thaydoisoluonghang':

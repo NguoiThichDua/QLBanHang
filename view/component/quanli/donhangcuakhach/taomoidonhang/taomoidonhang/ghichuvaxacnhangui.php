@@ -5,7 +5,7 @@
         <hr>
         <form action="controller/donhangchocontroller.php?yc=guichoadmin" method="post">
 
-        <input type="text" class="form-control rounded-pill d-none" name="makhachtaodonhang" value="<?php echo $_REQUEST['sodienthoai']?>" id="makhachthemdonhang" placeholder="Số điện thoại" readonly>
+            <input type="text" class="form-control rounded-pill d-none" name="makhachtaodonhang" value="<?php echo $_REQUEST['sodienthoai']?>" id="makhachthemdonhang" placeholder="Số điện thoại" readonly>
             <div class="form-group">
                 <textarea name="ghichu" id="" cols="" rows="3" class="form-control pb-2" placeholder="Bạn có thể bỏ trống ghi chú của đơn hàng này"></textarea>
             </div>
@@ -24,7 +24,6 @@
                         ?>
                     </div>
                 </div>
-               
             </div>
         </form>
 

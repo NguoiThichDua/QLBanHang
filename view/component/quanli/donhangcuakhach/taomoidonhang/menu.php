@@ -4,12 +4,11 @@
         <div class="card mb-3">
             <div class="card-header bg-dark text-light">
                 Tạo đơn hàng cho khách
-            </div>
+            </div>  <!-- END CARD HEADER-->
             <div class="card-body bg-secondary">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="accordion" id="accordionExample">
-
                             <div class="row">
                                 <div class="col-3">
                                     <div class="card">
@@ -30,7 +29,7 @@
                                             </h2>
                                         </div>
                                     </div>
-                                </div>
+                                </div>  <!-- END MENU -->
 
                                 <div class="col-9">
                                     <div class="card">
@@ -53,17 +52,15 @@
                                                     <div class="form-group">
                                                         <input type="submit" class="btn btn-success" value="Đăng kí tài khoản này">
                                                     </div>
-                                                    
                                                 </form>
                                             </div>
                                         </div>
 
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                             <div class="card-body">
-
-                                                        <label for="">Số điện thoại: (<span class="text-danger"></span>)</label>
-                                                        <input type="number" name="makhachnhap" id="makhachnhap" class="form-control rounded-pill" onkeyup="chektaikhoanthemdonhang()" required title="Không được để rỗng trường này">
-                                                        <small class="d-flex justify-content-end mt-3" id="showtentaikhoandangkii"></small>
+                                                <label for="">Số điện thoại: (<span class="text-danger"></span>)</label>
+                                                <input type="number" name="makhachnhap" id="makhachnhap" class="form-control rounded-pill" onkeyup="chektaikhoanthemdonhang()" required title="Không được để rỗng trường này">
+                                                <small class="d-flex justify-content-end mt-3" id="showtentaikhoandangkii"></small>
 
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#taodonhangmoi" onclick="LayMaKhach()">
@@ -72,20 +69,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>  <!-- END TUY CHON -->
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>  
+                </div>  <!-- END ROW -->
+            </div>  <!-- END CARD BODY-->
+        </div>  <!-- END CARD -->
+    </div>  <!-- END COL -->
+</div>  <!-- END ROW --> 
 
 
-
-
-<!-- Modal -->
+<!-- MODEL -->
 <div class="modal fade" id="taodonhangmoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
