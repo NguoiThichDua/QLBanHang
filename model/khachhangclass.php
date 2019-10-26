@@ -72,7 +72,7 @@
             return $count;
         }
 
-        # Lay tat ca tai khoan khach hang
+        # Lay tat ca tai khoan khach hang - da check
         public function LayTatCaKhachHang(){
             $khachhang = $this->connect->prepare('SELECT * FROM khachhang');
             $khachhang->setFetchMode(PDO::FETCH_OBJ);
@@ -81,7 +81,7 @@
             return $listkhachhang;
         }
 
-        # Lay thong tin cua 1 khach hang bang ma khach hang
+        # Lay thong tin cua 1 khach hang bang ma khach hang - da check
         public function LayMotkhachhang($makhachhang){
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where makhachhang = ?");
 			$khachhang->setFetchMode(PDO::FETCH_OBJ);
@@ -131,11 +131,18 @@
             $themMoi->execute(array($tentaikhoan, $matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $ngaytao));
         }
 
-        # Chinh sua tai khoan khach hang
+        # Chinh sua tai khoan khach hang co mat khau - da check
         public function SuaKhachHang($matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang){
             $cauLenh = 'UPDATE khachhang SET matkhau = ?, hoten = ?, diachi = ?, sodienthoai = ?, tructhuoc = ?, capbac = ? WHERE khachhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($matkhau, $hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang));
+        }
+
+        # sua tai khoan khach khong mat khau - da check
+        public function SuaKhachHangKhongMatKhau($hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang){
+            $cauLenh = 'UPDATE khachhang SET hoten = ?, diachi = ?, sodienthoai = ?, tructhuoc = ?, capbac = ? WHERE khachhang.makhachhang = ?';
+            $capNhat = $this->connect->prepare($cauLenh);
+            $capNhat->execute(array($hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang));
         }
 
         # chuc nang danh cho khach hang muon sua thong tin tai khoan

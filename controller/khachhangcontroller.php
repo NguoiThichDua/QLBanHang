@@ -123,7 +123,19 @@
 
                     # kiem tra rong cua cac truong du lieu
                     if(strlen($matkhau) == 0 || strlen($diachi) == 0 || strlen($sodienthoai) == 0 || strlen($hoten) == 0 || strlen($tructhuoc) == 0 || strlen($capbac) == 0){
-                        header("Location: ../index.php?page=quanlikhachhang&kq=dulieurong");
+                        
+                        if(strlen($matkhau) == "" || strlen($matkhau) <= 0){
+
+                            # kiem tra rong cua cac truong du lieu
+                            if(strlen($diachi) == 0 || strlen($sodienthoai) == 0 || strlen($hoten) == 0 || strlen($tructhuoc) == 0 || strlen($capbac) == 0){
+                                header("Location: ../index.php?page=quanlikhachhang&kq=dulieurong2");
+                            }else{
+                                
+                                $khachhang = new khachhangclass();
+                                $khachhang->SuaKhachHangKhongMatKhau($hoten, $diachi, $sodienthoai, $tructhuoc, $capbac, $makhachhang);
+                                header("Location: ../index.php?page=quanlikhachhang&kq=dasuakhachhang");
+                            }
+                        }
                     }else{
                         # ma hoa mat khau
                         $md5 = md5($matkhau, false);

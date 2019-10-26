@@ -37,14 +37,12 @@
                                 }else{
                                     echo "Không nhận được dữ liệu <br>" ;
                                 }
-                              
-                                //echo $tt->mahanghoa .":". $tt->soluong . "<br>";
                            }
                         }
-                        // $i++;
                     }
                    
                     $thanhtien = 0;
+                    
                     foreach ($tong as $value) {
                         $thanhtien += $value;
                     }

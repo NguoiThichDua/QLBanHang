@@ -18,7 +18,7 @@ function SuaKhachHang(makhachhang, tentaikhoan, matkhau, hoten, sodienthoai, dia
 
     makhachhangsua.value = makhachhang;
     tentaikhoansua.value = tentaikhoan;
-    matkhausua.value = matkhau;
+    // matkhausua.value = matkhau;
     hotensua.value = hoten;
     sodienthoaisua.value = sodienthoai;
     diachisua.value = diachi;

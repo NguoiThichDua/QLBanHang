@@ -21,6 +21,7 @@
   
     class donhangchoclass extends databaseDonHangCho{
 
+        # lay tat ca don hang cho duyet - da check
         public function LayTatCaDonHangCho(){
             $donhangcho = $this->connect->prepare('SELECT * FROM donhangcho');
             $donhangcho->setFetchMode(PDO::FETCH_OBJ);

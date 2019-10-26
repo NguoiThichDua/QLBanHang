@@ -1,4 +1,4 @@
-<!-- Modal xóa -->
+<!-- MODEL XOA TAI KHOAN -->
 <div class="modal fade" id="XoaKhachHang" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -14,7 +14,7 @@
                   <input type="text" name="makhachhang" class="form-control rounded-pill" id="makhachhangxoa" required readonly style="display:none"> 
                </div>
                <div class="form-group">
-                  <label for="" class="text-dark">Bạn muốn khách hàng:</label>
+                  <label for="" class="text-dark">Bạn muốn khách hàng <span class="text-danger">(Cẩn thận chức năng này)</span></label>
                   <input type="text" name="tenkhachhang" class="form-control rounded-pill" id="tenkhachhangxoa" required readonly style="border:none;">
                </div>
                <div class="form-group">
@@ -29,7 +29,7 @@
    </div>
 </div>
 
-<!-- Modal Sửa  -->
+<!-- MODEL SUA TAI KHOAN  -->
 <div class="modal fade" id="SuaKhachHang" tabindex="-1" role="dialog" aria-labelledby="SuaHangHoaModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
    <div class="modal-content">
@@ -52,7 +52,7 @@
                 
                 <div class="form-group">
                     <label for="" class="text-dark">Mật khẩu: (<span class="need">*</span>)</label>
-                    <input type="text" name="matkhau" id="matkhausua" class="form-control rounded-pill" required title="Không được để rỗng trường này">
+                    <input type="text" name="matkhau" id="matkhausua" class="form-control rounded-pill" placeholder="bỏ trống nếu không đổi mật mẩu mới" title="Có thể bỏ trống trường này">
                 </div>
 
                 <div class="form-group">

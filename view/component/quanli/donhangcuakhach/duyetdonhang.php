@@ -30,10 +30,9 @@
                 <?php 
                     try {
                         $donhangcho = new donhangchoclass();
+                        $thongtin = $donhangcho->LayTatCaDonHangCho();
 
                         $stt = 1;
-
-                        $thongtin = $donhangcho->LayTatCaDonHangCho();
 
                         foreach ($thongtin as $tt) {
                             if($tt->trangthai == "dagui"){

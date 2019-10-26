@@ -14,12 +14,13 @@
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
-    <a class="btn btn-primary mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Thêm mới
-    </a>
+        <a class="btn btn-primary mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Thêm mới
+        </a>
 
-    <div class="collapse" id="collapseExample">
-        <div class="card mt-3">
+        <!--  -->
+        <div class="collapse" id="collapseExample">
+            <div class="card mt-3">
                 <div class="card-body">
                     <form action="controller/khachhangcontroller.php?yc=them" method="post" class="w-100">   
                         <div class="form-group">
@@ -64,9 +65,8 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-
+        </div>  <!-- END CARD THEM-->
+    </div>  <!-- END COL -->
         
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -151,10 +151,10 @@
                         
                     ?>
                  </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+            </table>    <!-- END TABLE -->
+        </div>  <!-- END RESPONSIVE -->
+    </div>  <!-- END COL -->
+</div>  <!-- END ROW -->
 
 
 

@@ -12,6 +12,7 @@
         </div>
     </div>
 
+    <!-- CARD THEM HANG HOA -->
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="card mt-3">
             <div class="card-body">
@@ -31,10 +32,12 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>  <!-- END CARD THEM HANG HOA-->
 
+    <!-- TABLE HIEN THI TAT CA HANG -->
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="table-responsive">
+            <!-- TABLE -->
             <table class="table table-dark mt-3">
                 <thead>
                     <tr class="text-center">
@@ -59,7 +62,7 @@
                                         <td><?php echo $tt->tenhanghoa; ?></td>
                                         <!-- <td><?php echo $tt->gia; ?></td> -->
                                         <td>
-                                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>', '<?php echo $tt->gia?>')">Sửa</div>
+                                            <div class="btn btn-primary" data-toggle="modal" data-target="#SuaHangHoa" onclick="SuaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Sửa</div>
                                             <div class="btn btn-danger" data-toggle="modal" data-target="#XoaHangHoa" onclick="XoaHangHoa('<?php echo $tt->mahanghoa?>', '<?php echo $tt->tenhanghoa?>')">Xóa</div>
                                         </td>
                                     </tr>
@@ -70,10 +73,10 @@
                         }
                        ?>
                 </tbody>
-            </table>
+            </table>    <!-- END TABLE -->
         </div>
     </div>
-</div>
+</div>  <!-- END ROW -->
 
 <?php 
     require "modalhanghoa.php";

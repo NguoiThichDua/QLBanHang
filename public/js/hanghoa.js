@@ -1,11 +1,9 @@
-function SuaHangHoa(mahanghoa, tenhanghoa, gia){
+function SuaHangHoa(mahanghoa, tenhanghoa){
    var mahanghoasua = document.getElementById("mahanghoasua");
    var tenhanghoasua = document.getElementById("tenhanghoasua");
-   var giahanghoasua = document.getElementById("giahanghoasua");
 
    mahanghoasua.value = mahanghoa;
    tenhanghoasua.value = tenhanghoa;
-   giahanghoasua.value = gia;
 }
 
 function XoaHangHoa(mahanghoa, tenhanghoa){

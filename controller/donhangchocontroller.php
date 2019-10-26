@@ -206,15 +206,20 @@
                     
                 break;
             case 'xoadonhangchuagui':
-                $madonhangcho = $_REQUEST['madonhangcho'];
+                if(isset($_REQUEST['madonhangcho'])){
+                    $madonhangcho = $_REQUEST['madonhangcho'];
 
-                $chitiethanghoa = new chitiethanghoaclass();
-                $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
-
-                $donhang = new donhangchoclass();
-                $donhang->XoaDonHangCho($madonhangcho);
-
-                header("Location: ../index.php?page=donhangcho&kq=daxoadonhangcho");
+                    $chitiethanghoa = new chitiethanghoaclass();
+                    $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
+    
+                    $donhang = new donhangchoclass();
+                    $donhang->XoaDonHangCho($madonhangcho);
+    
+                    header("Location: ../index.php?page=donhangcho&kq=daxoadonhangcho");
+                }else{
+                    header("Location: ../index.php?page=donhangcho&kq=dulieurong");
+                }
+               
                 
                 break;
 
