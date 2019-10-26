@@ -9,21 +9,19 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
         <!-- TITLE -->
         <div class="card w-100">
-            <div class="card-body d-flex justify-content-center ">
+            <div class="card-body d-flex justify-content-center">
                 <h2>ĐƠN HÀNG CHỜ</h2>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" id="dongytaodonhangcho">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="dongytaodonhangcho">
         <!-- GOI MODAL XAC NHAN TAO DON HANG -->
         <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">
             Tạo mới đơn hàng
         </button>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-    </div>
     <!-- BANG DON HANG CHO DA GUI -->
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <?php require "quanlidonhangdangcho/bangdonhangdangcho.php"; ?>
@@ -31,5 +29,6 @@
 </div>  <!-- END ROW -->
 
 <?php
+    # modal xac nhan tao don hang cho
     require "modal/modalkhachhang.php";
 ?>

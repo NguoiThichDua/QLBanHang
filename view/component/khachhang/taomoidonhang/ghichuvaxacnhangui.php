@@ -7,28 +7,22 @@
             <div class="form-group">
                 <textarea name="ghichu" id="" cols="" rows="3" class="form-control pb-2" placeholder="Bạn có thể bỏ trống ghi chú của đơn hàng này"></textarea>
             </div>
-
-            <div class="row">
-                
-                <div class="col-6">
-                    <div class="form-group">
-                        <?php
-                            if(isset($_REQUEST['kq'])){
-                                if($_REQUEST['kq'] == "dathemhang" || $_REQUEST['kq'] == "datontaimonhang" || $_REQUEST['kq'] == "thaydoisoluongthanhcong"){
-                                ?>
-                                    <input type="submit" class="btn btn-success " value="Gửi đơn hàng">
-                                <?php
-                                }
-                            }
+            
+            <div class="form-group">
+                <?php
+                    if(isset($_REQUEST['kq'])){
+                        if($_REQUEST['kq'] == "dathemhang" || $_REQUEST['kq'] == "datontaimonhang" || $_REQUEST['kq'] == "thaydoisoluongthanhcong"){
                         ?>
-                    </div>
-                </div>
-               
+                            <input type="submit" class="btn btn-success " value="Gửi đơn hàng">
+                        <?php
+                        }
+                    }
+                ?>
             </div>
-        </form>
+        </form> <!-- END FORM -->
 
         <div class="row">
-            <div class="col-6 d-flex justify-content-start">
+            <div class="col-12 d-flex justify-content-start">
                 <div class="form-group">
                     <?php
                         # FORM HUY DON HANG CHO HIEN TAI
@@ -37,5 +31,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>  <!-- END CARD BODY -->
+</div> <!-- END CARD -->

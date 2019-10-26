@@ -26,20 +26,21 @@
 			return $list;
         }
 
+        # them mot mon hang vao don hang - da check
         public function ThemChiTietHangHoa($mahanghoa, $soluong, $madonhangcho){
             $cauLenh = 'INSERT INTO chitiethanghoa (mahanghoa, soluong, madonhangcho) VALUES (?,?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($mahanghoa, $soluong, $madonhangcho));
         }
 
-        # Chỉnh sửa tài khoản
+        # 
         public function SuaChiTietHangHoa($mahanghoa, $soluong, $madonhangcho, $macthh){
             $cauLenh = 'UPDATE chitiethanghoa SET mahanghoa = ?, soluong = ?, madonhangcho = ? WHERE chitiethanghoa.macthh = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($mahanghoa, $soluong, $madonhangcho, $macthh));
         }
 
-        # Xóa tài khoản
+        # Xoa chi tiet hang hoa cua don hang cho - da check
         public function XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho){
             $cauLenh = 'DELETE FROM chitiethanghoa WHERE chitiethanghoa.madonhangcho = ?';
             $xoa = $this->connect->prepare($cauLenh);

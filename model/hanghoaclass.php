@@ -14,7 +14,7 @@
   
     class hanghoaclass extends databaseHangHoa{
 
-        # lay tat ca cac hang hoa
+        # lay tat ca cac hang hoa da them
         public function LayTatCaHangHoa(){
             $hanghoa = $this->connect->prepare('SELECT * FROM hanghoa');
             $hanghoa->setFetchMode(PDO::FETCH_OBJ);

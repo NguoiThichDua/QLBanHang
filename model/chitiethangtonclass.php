@@ -26,7 +26,7 @@
             return $listchitiethangton;
         }
 
-        # lay tat ca chi tiet hang ton
+        # lay tat ca chi tiet hang ton - da check 
         public function LayTatCaChiTietHangTonBoiMaHangTon($mahangton){
             $chitiethangton = $this->connect->prepare("SELECT * FROM chitiethangton WHERE mahangton = ?");
 			$chitiethangton->setFetchMode(PDO::FETCH_OBJ);
@@ -53,7 +53,7 @@
 			return $list;
         }
         
-        # them hang ton moi
+        # them hang ton moi - da check
         public function ThemChiTietHangTon($tenhanghoa, $soluong, $mahangton){
             $cauLenh = 'INSERT INTO chitiethangton (tenhanghoa, soluong, mahangton) VALUES (?,?,?)';
             $themMoi = $this->connect->prepare($cauLenh);

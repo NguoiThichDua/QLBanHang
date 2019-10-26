@@ -127,6 +127,7 @@
 			return $list;
         }
 
+        # kiem tra hang hoa da chon hay chua - neu chon roi khong cho phep them - da check
         public function KiemTraHangHoaCoTrongDonHangCho($madonhangcho, $mahanghoa){
             $donhangcho = $this->connect->prepare("SELECT COUNT(cthh.mahanghoa) AS soluong FROM chitiethanghoa cthh, donhangcho dhc WHERE cthh.madonhangcho = dhc.madonhangcho AND dhc.madonhangcho = ? AND cthh.mahanghoa = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -144,7 +145,7 @@
         }
 
         # lay don hang cho dang tao hien tai cua 1 khach hang bang makhachhang
-        # thuat toan la lay ma don hang cho lon nhat de tim
+        # thuat toan la lay ma don hang cho lon nhat de tim - da check
         public function LayMotDonHangChoDuaVaoKhachHang($makhachhang){
             $donhangcho = $this->connect->prepare("SELECT MAX(dhc.madonhangcho) AS MAX FROM donhangcho dhc, khachhang kh WHERE kh.makhachhang = dhc.makhachhang AND kh.makhachhang = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -153,12 +154,14 @@
 			return $list;
         }
         
+        # tao moi don hang cho dua tren ma khach - check roi
         public function ThemDonHangCho($ngaytao, $makhachhang){
             $cauLenh = 'INSERT INTO donhangcho (ngaytao, makhachhang) VALUES (?,?)';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($ngaytao, $makhachhang));
         }
 
+        #  nguoi dung gui don hang cho cho admin -> trangthai = "dagui" - da check
         public function GuiDonHangChoAdmin($ghichu, $madonhangcho){
             $cauLenh = 'UPDATE donhangcho SET trangthai = "dagui", ghichu = ? WHERE donhangcho.madonhangcho = ?';
             $capNhat = $this->connect->prepare($cauLenh);
@@ -177,7 +180,7 @@
             $capNhat->execute(array($soluong, $macthh, $madonhangcho));
         }
 
-
+        # xoa mot don hang cho - da check
         public function XoaDonHangCho($madonhangcho){
             $cauLenh = 'DELETE FROM donhangcho WHERE donhangcho.madonhangcho = ?';
             $xoa = $this->connect->prepare($cauLenh);

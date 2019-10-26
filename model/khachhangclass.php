@@ -22,7 +22,7 @@
   
     class khachhangclass extends databaseKhachHang{
         
-        # Kiem tra dang nhap cho khach hang
+        # Kiem tra dang nhap cho khach hang tra ve SESSION
         public function checkDangNhap($tentaikhoan, $matkhau){
             $check = $this->connect->prepare("SELECT * FROM khachhang WHERE tentaikhoan=? AND matkhau=?");
             $check->setFetchMode(PDO::FETCH_OBJ);
@@ -99,7 +99,7 @@
 			return $list;
         }
 
-        # Lay thong tin cua 1 khach hang bang ten tai khoan (khi dang nhap thanh cong thi tai khoan dang nhap duoc gan session bang tentaikhoan, dua vao ten tai khoan nay de dieu huong)
+        # Lay thong tin cua 1 khach hang bang ten tai khoan (khi dang nhap thanh cong thi tai khoan dang nhap duoc gan session bang tentaikhoan, dua vao ten tai khoan nay de dieu huong) - da check
         public function LayMotKhachHangBangTen($tentaikhoan){
             $khachhang = $this->connect->prepare("SELECT * FROM khachhang Where tentaikhoan = ?");
             $khachhang->setFetchMode(PDO::FETCH_OBJ);

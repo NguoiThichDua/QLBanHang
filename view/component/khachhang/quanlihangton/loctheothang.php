@@ -6,7 +6,6 @@
 ?>
 
 <?php
- 
 
     if(isset($_REQUEST['thang'])){
         $thang = $_REQUEST['thang'];
@@ -22,9 +21,10 @@
 
                 # lay ma khach hang
                 $khachhang = new khachhangclass(); 
-                $makhachhang = $khachhang-> LayMotKhachHangBangTen($tenkhachhang);
+                $makhachhang = $khachhang->LayMotKhachHangBangTen($tenkhachhang);
                 $makhach = $makhachhang->makhachhang;
 
+                # tim don hang ton theo ten ma khach
                 $hangton = new hangtonclass();
                 $thongtintheothang = $hangton->LayHangTonTheoThang($makhach, $thang);
                 
@@ -58,6 +58,8 @@
                                                     ?>
                                                 </td>
                                                 <td>
+
+<!-- CHỖ NÀY BỊ LỖI NÈ -->
                                                     <?php
                                                         $hangton = new hangtonclass();
                                                         $mahangton = $hangton->LayMaxHangTon($makhach);

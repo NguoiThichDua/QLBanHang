@@ -51,6 +51,7 @@
                                 ?>
                             </td>
                             <td>
+<!-- CHỖ NÀY BỊ LỖI NÈ -->
                                 <?php
                                     $hangton = new hangtonclass();
                                     $mahangton = $hangton->LayMaxHangTon($makhach);

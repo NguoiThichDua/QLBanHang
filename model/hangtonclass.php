@@ -37,6 +37,7 @@
 			return $list;
         }
 
+        # tim hang ton theo thang da chon - da check
         public function LayHangTonTheoThang($makhach, $thang){
             $hangton = $this->connect->prepare("SELECT DISTINCT * FROM hangton WHERE makhachhang = ? AND MONTH(ngaytao) IN( SELECT MONTH(?))");
 			$hangton->setFetchMode(PDO::FETCH_OBJ);
@@ -72,6 +73,7 @@
 			return $list;
         }
 
+        # lay tat ca cac mon hang da cap nhat trong hang ton - da check
         public function LayTatCaHangTonBangMaKhachHang($makhachhang, $mahangton){
             $hangton = $this->connect->prepare("SELECT * FROM hangton ht, chitiethangton ctht WHERE ctht.mahangton = ht.mahangton AND ht.makhachhang = ? AND ht.mahangton = ?");
 			$hangton->setFetchMode(PDO::FETCH_OBJ);
@@ -80,6 +82,7 @@
 			return $list;
         }
 
+        # lay ma hang ton lon nhat dang tao de cap nhat - da check
         public function LayMaxHangTon($makhachhang){
             $donhangcho = $this->connect->prepare("SELECT MAX(mahangton) AS donhangtonmoinhat FROM hangton WHERE makhachhang = ?");
 			$donhangcho->setFetchMode(PDO::FETCH_OBJ);
@@ -97,7 +100,7 @@
 			return $list;
         }
         
-        # them hang ton moi
+        # them hang ton moi - da check
         public function Themhangton($ngaytao, $makhachhang){
             $cauLenh = 'INSERT INTO hangton (ngaytao, makhachhang) VALUES (?,?)';
             $themMoi = $this->connect->prepare($cauLenh);

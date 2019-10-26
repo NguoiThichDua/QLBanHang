@@ -1,3 +1,4 @@
+<!-- MODAL TAO DON HANG CHO -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -15,14 +16,13 @@
             <form action="controller/donhangchocontroller.php?yc=themdonhangcho" method="post">
                 <input type="submit" value="Đồng ý" class="btn btn-success">
             </form>
-            <!-- <button type="button" class="btn btn-primary themmoidonhangcho" data-dismiss="modal">Đồng ý</a> -->
         </div>
         </div>
     </div>
 </div>
 
 
-<!-- Modal -->
+<!--  -->
 <div class="modal fade" id="thaymatkhau" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

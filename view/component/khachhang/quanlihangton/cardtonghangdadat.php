@@ -9,9 +9,9 @@
 
                 $tentaikhoan = $_SESSION['khachhang'];
 
+                # lay nhung san pham ma khach hang da tung mua
                 $hangdamua = new donhangclass();
                 $thongtinhangdamua = $hangdamua->TongSanPhamChoHangTon($tentaikhoan);
-                
                 ?>
                     <div class="table-responsive table-hover">
                         <table class="table text-center">
@@ -36,7 +36,7 @@
                     <?php
                     }
                     else{
-                        echo "Bạn chưa có đơn hàng được duyệt... không thể hiển thị thông tin...!";
+                        echo "Bạn chưa có đơn hàng được duyệt... không có thông tin để hiển thị...!";
                     }
                 }
                     ?>
@@ -46,20 +46,12 @@
                     <?php
 
             }else{
-                echo "Không nhận được dữ liệu";
+                echo "Lỗi..! Không nhận được dữ liệu từ khách hàng";
             }
-            
         ?>
     </div>
 </div>
 
-<div class="card mb-3">
-    <div class="card-header bg-dark text-light">
-        <input type="month" id="hangtonthang"> 
-        <button class="btn btn-primary lochangtontheothang">Xem theo tháng</button>     
-    </div>
-
-    <div class="card-body" id="lochangtontheothang">
-        Vui lòng chọn tháng cần xem cập nhật
-    </div>
-</div>
+<?php
+    require "boloc.php";
+?>
