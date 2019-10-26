@@ -58,15 +58,8 @@
                                                     ?>
                                                 </td>
                                                 <td>
-
-<!-- CHỖ NÀY BỊ LỖI NÈ -->
-                                                    <?php
-                                                        $hangton = new hangtonclass();
-                                                        $mahangton = $hangton->LayMaxHangTon($makhach);
-                                                        $mahangtonmax = $mahangton->donhangtonmoinhat;
-                                                    ?>
                                                     <!-- Huy don hang ton hien tai bang mahangton max -->
-                                                    <form action="controller/hangtoncontroller.php?yc=huybocapnhathangton&mahangton=<?php echo $mahangtonmax?>" method="post">
+                                                    <form action="controller/hangtoncontroller.php?yc=huybocapnhathangton&mahangton=<?php echo $tt->mahangton;?>" method="post">
                                                         <button type="submit" class="btn btn-danger">Hủy cập nhật này</button>
                                                     </form>
                                                 </td>
