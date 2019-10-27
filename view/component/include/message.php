@@ -48,8 +48,8 @@
                         break;
                     case 'tentaikhoanngan':
                     ?>
-                        <div class="alert alert-success alert-dismissible fade show rounded-pill mt-3" role="alert" id="message">
-                            <strong>Thất bại!</strong> tên tài khoản phải từ 5 kí tự..!
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill mt-3" role="alert" id="message">
+                            <strong>Thất bại!</strong> số điện thoại không hợp lệ.!
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

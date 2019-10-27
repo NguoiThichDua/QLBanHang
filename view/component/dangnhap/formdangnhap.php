@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
         <img src="public/images/logowhite.png" alt="" srcset="" width="auto" height="100px">
     </div>
-
+    
     <div>
         <?php
             require "view/component/include/message.php";
@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <div class="d-flex justify-content-center">
-                <a href="index.php?page=dangki" class="btn btn-warning m-3 rounded-lg">Đăng Kí</a>
+                <a href="index.php?page=dangki" class="btn btn-warning text-light m-3 rounded-lg">Đăng Kí</a>
                 <input type="submit" value="Đăng Nhập" class="btn btn-success m-3 rounded-lg">
             </div>
         </div>
