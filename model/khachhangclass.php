@@ -185,15 +185,17 @@
             $xoa = $this->connect->prepare($cauLenh);
             $xoa->execute(array($makhachhang));
 
+            # xoa don hang cho cua khach hang
+            $cauLenh = 'DELETE donhangcho, chitiethanghoa FROM donhangcho, chitiethanghoa WHERE chitiethanghoa.madonhangcho = donhangcho.madonhangcho AND donhangcho.makhachhang = ?';
+            $xoa = $this->connect->prepare($cauLenh);
+            $xoa->execute(array($makhachhang));
+
             # xoa don hang cua khach hang
             $cauLenh = 'DELETE donhangcho, donhang FROM donhangcho, donhang WHERE donhangcho.madonhangcho = donhang.madonhangcho AND donhangcho.makhachhang = ?';
             $xoa = $this->connect->prepare($cauLenh);
             $xoa->execute(array($makhachhang));
 
-            # xoa don hang cho cua khach hang
-            $cauLenh = 'DELETE FROM donhangcho WHERE donhangcho.makhachhang = ?';
-            $xoa = $this->connect->prepare($cauLenh);
-            $xoa->execute(array($makhachhang));
+           
         }
     }
 ?>

@@ -1,7 +1,7 @@
 <div class="container">
     <form action="controller/khachhangcontroller.php?yc=khachhangthem" method="post" class="mb-3">
         <div class="row d-flex justify-content-center">
-            <div class="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-7 mb-3 box ">
+            <div class="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-7 mb-3 box " id="dangkitaikhoan">
                 <!-- LOGO -->
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3">
                     <img src="public/images/logowhite.png" alt="" srcset="" width="auto" height="100px">
@@ -10,7 +10,7 @@
                 <!--  TAI KHOAN -->
                 <div class=" pb-4 mt-3">
                     <div class="text-light text-center">
-                        <h3>Đăng Kí Tài Khoản</h3>
+                        <h4>Đăng Kí Tài Khoản</h4>
                     </div>
 
                      <!-- MESSAGE -->
@@ -44,16 +44,33 @@
                            
                             <small class="d-flex justify-content-end mt-3" id="showmatkhaunhaplai"></small>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group inputBox d-flex justify-content-start text-light">
+                                    1/2
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group inputBox d-flex justify-content-end">
+                                    <div class="btn btn-success" onclick="NextDangKi()">Tiếp tục</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>  <!-- END  TAI KHOAN -->
             </div>  <!-- END CLASS COL-->
 
 
-            <div class="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-7 box">
+            <div class="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-7 box" id="thongtincanhandangki">
+                <!-- LOGO -->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center mt-3">
+                    <img src="public/images/logowhite.png" alt="" srcset="" width="auto" height="100px">
+                </div>
                 <!--  THONG TIN CA NHAN -->
                 <div class=" mt-3">
                     <div class="text-light text-center">
-                        Thông Tin Cá Nhân
+                        <h4>Thông Tin Cá Nhân</h4>  
                     </div>
                     <div class="mt-3">
                         <div class="form-group inputBox">
@@ -87,14 +104,24 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class="form-group inputBox d-flex justify-content-start text-light">
+                                        2/2
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                    <div class="form-group inputBox d-flex justify-content-end">
+                                        <div class="btn btn-warning" onclick="BackDangKi()">Về trước</div>
+                                    </div>
+                                </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <div class=" d-flex justify-content-start">
                                         <input type="submit" value="Đăng Kí" class="btn btn-success">
                                     </div>
                                 </div>
-                                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <div class=" d-flex justify-content-end">
-                                        <a href="index.php" class="btn btn-danger">Đăng Nhập</a>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <div class=" d-flex justify-content-center">
+                                        <a href="index.php" class="btn btn-outline-danger">Về Đăng Nhập</a>
                                     </div> 
                                 </div> 
                             </div>

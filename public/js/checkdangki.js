@@ -68,3 +68,14 @@ function showpassdangnhap(){
         pass.type = "password"
     }
 }
+
+
+function NextDangKi(){
+    document.getElementById("dangkitaikhoan").style.display = "none";
+    document.getElementById("thongtincanhandangki").style.display = "block";
+}
+
+function BackDangKi(){
+    document.getElementById("dangkitaikhoan").style.display = "block";
+    document.getElementById("thongtincanhandangki").style.display = "none";
+}
