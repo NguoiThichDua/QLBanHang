@@ -64,9 +64,9 @@
 
                     $donhang = new donhangclass();
                     $donhang->SuaCongNoDonHang($congno, $madonhang);
-                    header("Location: ../index.php?page=quanlidonhang&yc=daduyet&kq=thaydoithanhcong");
+                    header("Location: ../index.php?page=quanlidonhang&yc=xuatkho&kq=thaydoithanhcong");
                 }else{
-                    header("Location: ../index.php?page=quanlidonhang&yc=daduyet&kq=thongtinrong");
+                    header("Location: ../index.php?page=quanlidonhang&yc=xuatkho&kq=thongtinrong");
                 }
                 break;
             default:

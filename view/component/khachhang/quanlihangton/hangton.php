@@ -52,9 +52,10 @@
                             </td>
                             <td>
                                 <!-- Huy don hang ton hien tai bang mahangton max -->
-                                <form action="controller/hangtoncontroller.php?yc=huybocapnhathangton&mahangton=<?php echo $tt->mahangton; ?>" method="post">
-                                    <button type="submit" class="btn btn-danger">Hủy cập nhật này</button>
-                                </form>
+                               <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huycapnhathangton" onclick="KhachXoaDonHangTon('<?php echo $tt->mahangton;?>')">
+                                    Hủy cập nhật này
+                                </button>
                             </td>
                         </tr>
                 <?php
@@ -67,6 +68,12 @@
 ?>
     </div>
 </div>
+
+
+<?php
+    require "view/component/khachhang/modal/modalxoacapnhathangton.php";
+?>
+
 
 
 

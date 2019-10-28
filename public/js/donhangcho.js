@@ -10,5 +10,14 @@ function ThayDoiSoLuongHang( macthh, madonhangcho,soluong){
 
 function LayMaDonHangCho(madonhangcho){
    var madonhangchothem = document.getElementById("madonhangchothem");
+   var madonhangchoxoa = document.getElementById("madonhangchoxoa");
+
    madonhangchothem.value = madonhangcho;
+   madonhangchoxoa.value = madonhangcho;
+}
+
+function KhachHuyDonHangCho(madonhangcho){
+   var madonhangchoxoa = document.getElementById("madonhangchoxoa");
+
+   madonhangchoxoa.value = madonhangcho;
 }

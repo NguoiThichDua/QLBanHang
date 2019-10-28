@@ -3,7 +3,7 @@
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Xóa hàng hóa</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">THÔNG BÁO</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -14,13 +14,14 @@
                   <input type="text" name="mahanghoa" class="form-control rounded-pill" id="mahanghoaxoa" required readonly style="display:none"> 
                </div>
                <div class="form-group">
-                  <label for="" class="text-dark">Bạn muốn xóa món hàng:</label>
-                  <input type="text" name="tenhanghoa" class="form-control rounded-pill" id="tenhanghoaxoa" required readonly style="border:none;">
+                  <label for="" class="text-dark"><span class="text-danger">CẨN THẬN XÓA <br> - Các dữ liệu liên quan đến hàng hóa này có thể bị lỗi <br> - Hoặc dữ liệu trên các đơn hàng sẽ mất đi không thể không phục</span></label>
+				  <label for="" class="text-dark">Bạn vẫn muốn xóa món hàng ?</label>
+				  <input type="text" name="tenhanghoa" class="form-control rounded-pill" id="tenhanghoaxoa" required readonly style="border:none;">
                </div>
                <div class="form-group">
                   <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                     <input type="submit" class="btn btn-danger" value="Tiến hành xóa">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                     <input type="submit" class="btn btn-danger" value="Tiến hành xóa" title="CẨN THẬN TRƯỚC KHI XÓA KHỎI HỆ THỐNG">
                   </div>
                </div>
             </form>
@@ -34,7 +35,7 @@
 <div class="modal-dialog" role="document">
    <div class="modal-content">
       <div class="modal-header">
-         <h5 class="modal-title" id="SuaHangHoaModalLabel">Sửa hàng hóa</h5>
+         <h5 class="modal-title" id="SuaHangHoaModalLabel">SỬA HÀNG HÓA</h5>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
          <span aria-hidden="true">&times;</span>
          </button>

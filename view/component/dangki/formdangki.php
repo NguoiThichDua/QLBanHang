@@ -52,7 +52,7 @@
             <div class="col-10 col-sm-10 col-md-8 col-lg-7 col-xl-7 box">
                 <!--  THONG TIN CA NHAN -->
                 <div class=" mt-3">
-                    <div class="text-light">
+                    <div class="text-light text-center">
                         Thông Tin Cá Nhân
                     </div>
                     <div class="mt-3">

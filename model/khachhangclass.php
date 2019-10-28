@@ -175,7 +175,23 @@
 
         # Xoa tai khoan khach hang
         public function XoaKhachHang($makhachhang){
+            # xoa khach hang
             $cauLenh = 'DELETE FROM khachhang WHERE khachhang.makhachhang = ?';
+            $xoa = $this->connect->prepare($cauLenh);
+            $xoa->execute(array($makhachhang));
+
+            # xoa hang ton cua khach hang
+            $cauLenh = 'DELETE chitiethangton, hangton FROM hangton, chitiethangton WHERE hangton.mahangton = chitiethangton.mahangton AND hangton.makhachhang = ?';
+            $xoa = $this->connect->prepare($cauLenh);
+            $xoa->execute(array($makhachhang));
+
+            # xoa don hang cua khach hang
+            $cauLenh = 'DELETE donhangcho, donhang FROM donhangcho, donhang WHERE donhangcho.madonhangcho = donhang.madonhangcho AND donhangcho.makhachhang = ?';
+            $xoa = $this->connect->prepare($cauLenh);
+            $xoa->execute(array($makhachhang));
+
+            # xoa don hang cho cua khach hang
+            $cauLenh = 'DELETE FROM donhangcho WHERE donhangcho.makhachhang = ?';
             $xoa = $this->connect->prepare($cauLenh);
             $xoa->execute(array($makhachhang));
         }

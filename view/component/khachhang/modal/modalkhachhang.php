@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+            <h5 class="modal-title" id="exampleModalLabel">THÔNG BÁO</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -12,7 +12,7 @@
             Xác nhận tạo đơn hàng chờ mới...?
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
             <form action="controller/donhangchocontroller.php?yc=themdonhangcho" method="post">
                 <input type="submit" value="Đồng ý" class="btn btn-success">
             </form>
@@ -27,7 +27,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Đổi mật khẩu mới</h5>
+                <h5 class="modal-title" id="exampleModalLabel">ĐỔI MẬT KHẨU</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -61,6 +61,7 @@
                     </div>
 
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                         <input type="submit" value="Đồng ý" class="btn btn-success">
                     </div>
                 </form>

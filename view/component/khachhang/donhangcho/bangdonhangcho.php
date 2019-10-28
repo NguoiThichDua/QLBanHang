@@ -58,9 +58,11 @@
                                         # lay ten hang hoa va so luong cua 1 don hang cho tu ma khach hang 
                                         $thongtinhangcuadonhangcho = $donhangcho->ChiTietMotDonHangDaGui($makhachhang, $tt->madonhangcho);
                                         foreach ($thongtinhangcuadonhangcho as $tth) {
-                                            ?>
-                                                <?php echo $tth->tenhanghoa .": <span class='text-info'>".  $tth->soluong . "</span><br>"?>
-                                            <?php
+                                            if(isset($tth->tenhanghoa)){
+                                                echo $tth->tenhanghoa .": <span class='text-info'>".  $tth->soluong . "</span><br>";
+                                            }else{
+                                                echo "Món hàng đã ngừng cung cấp - hoặc bị xóa bởi admin<br>";
+                                            }
                                         }
                                     ?>
                                 </td>
@@ -68,9 +70,10 @@
                                     <?php
                                         if($tt->trangthai=="chuagui" || $tt->trangthai == "dagui"){
                                         ?>
-                                            <form action="controller/donhangchocontroller.php?yc=xoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
-                                                <input type="submit" value="Xóa" class="btn btn-danger">
-                                            </form>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydonhangcho" onclick="KhachHuyDonHangCho('<?php echo $tt->madonhangcho?>')">
+                                                Hủy
+                                            </button>
                                         <?php
                                         }else{
                                             ?>
@@ -90,3 +93,9 @@
         </tbody>
     </table>    <!-- END TABLE -->
 </div>  <!-- END RESPONSIVE -->
+
+
+<?php
+    require "view/component/khachhang/modal/modalhuydonhangcho.php";
+?>
+

@@ -2,6 +2,10 @@
     <table class="table table-dark text-center table-hover">
         <thead>
             <tr>
+                <th colspan="6" scope="col">NHỮNG ĐƠN HÀNG ĐÃ DUYỆT</th>
+            </tr>
+            <tr>
+               
                 <th scope="col">#</th>
                 <th scope="col">Trạng thái</th>
                 <th scope="col">Hàng đã đặt</th>
@@ -9,6 +13,7 @@
                 <th scope="col">Thành tiền</th>
                 <th scope="col">Công nợ</th>
             </tr>
+
         </thead>
         <tbody>
         <?php 

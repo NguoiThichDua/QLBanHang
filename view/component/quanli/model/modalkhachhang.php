@@ -3,7 +3,7 @@
    <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Xóa khách hàng</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">THÔNG BÁO</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -14,12 +14,13 @@
                   <input type="text" name="makhachhang" class="form-control rounded-pill" id="makhachhangxoa" required readonly style="display:none"> 
                </div>
                <div class="form-group">
-                  <label for="" class="text-dark">Bạn muốn khách hàng <span class="text-danger">(Cẩn thận chức năng này)</span></label>
+                  <label for="" class="text-dark"><br><span class="text-danger">Cẩn thận chức năng này <br> - Các dữ liệu liên quan đến người dùng sẽ biến mất <br> - Hoặc sẽ xảy ra lỗi</span></label>
                   <input type="text" name="tenkhachhang" class="form-control rounded-pill" id="tenkhachhangxoa" required readonly style="border:none;">
+                  <label for="">Bạn vẫn muốn xóa khách hàng này ?</label>
                </div>
                <div class="form-group">
                   <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                      <input type="submit" class="btn btn-danger" value="Tiến hành xóa">
                   </div>
                </div>
@@ -34,7 +35,7 @@
 <div class="modal-dialog" role="document">
    <div class="modal-content">
       <div class="modal-header">
-         <h5 class="modal-title" id="SuaHangHoaModalLabel">Sửa thông tin</h5>
+         <h5 class="modal-title" id="SuaHangHoaModalLabel">SỬA THÔNG TIN</h5>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
          <span aria-hidden="true">&times;</span>
          </button>
@@ -86,6 +87,7 @@
                   </select>
                </div>
                 <div class="form-group">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                     <input type="submit" value="Thay đổi" class="btn btn-success">
                 </div>
             </form>

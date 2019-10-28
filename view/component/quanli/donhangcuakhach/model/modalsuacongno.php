@@ -11,9 +11,16 @@
             <div class="modal-body">
                 <form action="controller/donhangcontroller.php?yc=suacongno" method="post">
                     <div class="form-group">
-                    <input type="text" name="madonhang" id="madonhangsuacongno" value="" class="form-control rounded-pill d-none" readonly required>
-                        <label for="">Công nợ</label>
-                        <input type="number" name="congno" value="" min="0" id="congnosua" class="form-control rounded-pill" required title="Giá trị phải lớn hơn 0">
+                        <input type="text" name="madonhang" id="madonhangsuacongno" value="" class="form-control rounded-pill d-none" readonly required>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" id="congnosua" class="form-control round-pill" disabled>
+                            </div>
+                            =>
+                            <div class=col>
+                                <input type="number" name="congno" value="" min="0" class="form-control rounded-pill" required title="Giá trị phải lớn hơn 0">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="submit" value="Thay đổi" class="btn btn-danger">

@@ -15,4 +15,10 @@ function BindinSoLuong(soluongmacdinh, machitiethangton){
     machitiethangtonsua.value = machitiethangton;
 }
 
+function KhachXoaDonHangTon(mahangton){
+    var mahangtonxoa = document.getElementById("mahangtonxoa");
+
+    mahangtonxoa.value = mahangton;
+}
+
 

@@ -21,6 +21,10 @@
                     $khachhang = $khachhang->LayMotKhachHangBangTen($tentaikhoan);
                     $makhachhang = $khachhang->makhachhang;
 
+                    if(!isset($makhachhang)){
+                        header("Location: ../index.php?page=quanlihangton&kq=khonglayduocthontinkhachhang");
+                    }
+
                     $hangton = new hangtonclass();
                     $hangton->Themhangton($ngaytao, $makhachhang);
 

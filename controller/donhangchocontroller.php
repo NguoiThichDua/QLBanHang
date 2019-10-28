@@ -206,8 +206,8 @@
                     
                 break;
             case 'xoadonhangchuagui':
-                if(isset($_REQUEST['madonhangcho'])){
-                    $madonhangcho = $_REQUEST['madonhangcho'];
+                if(isset($_POST['madonhangcho'])){
+                    $madonhangcho = $_POST['madonhangcho'];
 
                     $chitiethanghoa = new chitiethanghoaclass();
                     $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
@@ -224,15 +224,21 @@
                 break;
 
             case 'adminxoadonhangchuagui':
-                $madonhangcho = $_REQUEST['madonhangcho'];
+                if(isset($_POST['madonhangcho'])){
+                    $madonhangcho = $_POST['madonhangcho'];
 
-                $chitiethanghoa = new chitiethanghoaclass();
-                $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
+                    $chitiethanghoa = new chitiethanghoaclass();
+                    $chitiethanghoa->XoaChiTietHangHoaDuaVaoDonHangCho($madonhangcho);
+    
+                    $donhang = new donhangchoclass();
+                    $donhang->XoaDonHangCho($madonhangcho);
+    
+                    header("Location: ../index.php?page=quanlidonhang&yc=duyetdonhang");
+                }else{
+                    header("Location: ../index.php?page=quanlidonhang&yc=dulieurong");
+                }
 
-                $donhang = new donhangchoclass();
-                $donhang->XoaDonHangCho($madonhangcho);
-
-                header("Location: ../index.php?page=quanlidonhang&yc=duyetdonhang");
+                
                 break;
             case 'huydonhangcho':
                 if(isset($_REQUEST['madonhangcho'])){

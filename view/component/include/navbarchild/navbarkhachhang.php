@@ -40,8 +40,7 @@
                         $thongtin = $nguoidung->LayMotKhachHangBangTen($tentaikhoan);
                 ?>
                     <li class="nav-item text-center float-right">
-
-                        <div class="dropdown">
+                        <div class="dropdown" style="cursor: pointer">
                             <span class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <strong><?php echo $thongtin->hoten;?></strong>
                             </span>

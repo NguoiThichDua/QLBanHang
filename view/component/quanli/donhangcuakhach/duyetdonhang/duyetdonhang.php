@@ -46,6 +46,7 @@
                                             $thongtinkhach = $khachhang->LayMotkhachhang($tt->makhachhang);
 
                                             echo $thongtinkhach->hoten;
+
                                         ?>
                                     </td>
                                     <td>
@@ -81,10 +82,12 @@
                                                     <button type="button" class="btn btn-primary" onclick="LayMaDonHangCho('<?php echo $tt->madonhangcho; ?>')" data-toggle="modal" data-target="#duyetdonhang">
                                                         Duyệt
                                                     </button>
+                                                   
+                                                    <button type="button" class="btn btn-danger" onclick="LayMaDonHangCho('<?php echo $tt->madonhangcho; ?>')" data-toggle="modal" data-target="#exampleModal">
+                                                        Không duyệt
+                                                    </button>
 
-                                                    <form action="controller/donhangchocontroller.php?yc=adminxoadonhangchuagui&madonhangcho=<?php echo $tt->madonhangcho;?>" method="post">
-                                                        <input type="submit" value="Xóa" class="btn btn-danger">
-                                                    </form>
+                                                   
                                                 <?php
                                             }
                                         ?>
@@ -105,4 +108,6 @@
 
 <?php
     require "view/component/quanli/donhangcuakhach/model/modalduyetdonhang.php";
+    require "view/component/quanli/donhangcuakhach/model/modalhuydonhangcho.php";
 ?>
+
