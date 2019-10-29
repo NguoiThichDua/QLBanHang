@@ -12,6 +12,7 @@
     if(isset($_SESSION['khachhang'])){
         $tenkhachhang = $_SESSION['khachhang'];
 
+        require "model/khachhangclass.php";
         # lay ma khach hang
         $khachhang = new khachhangclass(); 
         $makhachhang = $khachhang-> LayMotKhachHangBangTen($tentaikhoan);

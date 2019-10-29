@@ -13,6 +13,8 @@
         <tbody>
         <?php 
             try {
+
+                require "model/khachhangclass.php";
                 # lay ten tai khoan khach hang (so dien thoai) bang session
                 $tentaikhoan = $_SESSION['khachhang'];
 

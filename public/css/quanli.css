@@ -1,0 +1,23 @@
+@media only screen and (max-width: 576px){
+    .card-them-hang-hoa{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .table-quan-li-hang-hoa{
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .them-moi-khach{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .menu-quan-li-don-hang{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

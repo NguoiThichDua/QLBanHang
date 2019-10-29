@@ -1,8 +1,8 @@
 <div class="card mb-3">
-    <div class="card-header bg-dark text-light">
-        Lọc / Tìm kiếm
+    <div class="card-header bg-browns text-light">
+        LỌC / TÌM KIẾM
     </div>
-    <div class="card-body bg-secondary">
+    <div class="card-body bg-brown">
         <p>
             <a class="btn btn-success" data-toggle="collapse" href="#loccongno" role="button" aria-expanded="false" aria-controls="collapseExample">
                 Lọc theo công nợ

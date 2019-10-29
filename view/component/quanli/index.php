@@ -2,12 +2,13 @@
     if(isset($_SESSION['admin'])){
        ?>
         <div class="row">
-
-            <div class="position-absolute" style="z-index: 999">       
-                <a class="btn btn-outline-brown btn-lg dangxuat" href="controller/nguoidungcontroller.php?yc=dangxuat">Đăng xuất</a>
-            </div>
+            
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
+                
+                <div class="position-absolute" style="z-index: 999; left: 10px">       
+                    <a class="btn btn-outline-brown btn-lg dangxuat rounded-pill" href="controller/nguoidungcontroller.php?yc=dangxuat">Đăng Xuất</a>
+                </div>
                 <img src="public/images/default/logo.png" class="logo" alt="" srcset="" width="auto" height="150px">
             </div>
 

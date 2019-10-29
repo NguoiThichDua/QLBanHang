@@ -5,6 +5,17 @@
  -->
 
 <?php
+
+    require "model/khachhangclass.php";
+
+    # kiem tra xem co session khachhang dang nhap hay khong de hien thi ten
+    if(isset($_SESSION['khachhang'])){
+        $tentaikhoan = $_SESSION['khachhang'];
+
+        $nguoidung = new khachhangclass();
+        $thongtin = $nguoidung->LayMotKhachHangBangTen($tentaikhoan);
+    }
+
     // kiem tra lay duoc $tentaikhoan khong, $tentaikhoan lay duoc tu navbar 
     if($tentaikhoan == NULL || $tentaikhoan == ""){
         ?>

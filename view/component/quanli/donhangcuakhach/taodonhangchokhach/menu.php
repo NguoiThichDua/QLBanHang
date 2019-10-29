@@ -2,40 +2,40 @@
 <div class="row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="card mb-3">
-            <div class="card-header bg-dark text-light">
-                Tạo đơn hàng cho khách
+            <div class="card-header bg-browns text-light">
+                TẠO ĐƠN HÀNG CHO KHÁCH
             </div>  <!-- END CARD HEADER-->
-            <div class="card-body bg-secondary">
+            <div class="card-body bg-brown">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="accordion" id="accordionExample">
                             <div class="row">
-                                <div class="col-3">
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
+                                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                    <div class="card rounded-pill">
+                                        <div class="card-header rounded-pill" id="headingOne">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    1. Chưa có tài khoản
+                                                <button class="btn btn-link text-decoration-none text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <strong>1. Chưa có tài khoản</strong>
                                                 </button>
                                             </h2>
                                         </div>
                                     </div>
-                                    <div class="card mt-3">
-                                        <div class="card-header" id="headingTwo">
+                                    <div class="card mt-3 rounded-pill">
+                                        <div class="card-header rounded-pill" id="headingTwo">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    2. Đã có tài khoản 
+                                                <button class="btn btn-link collapsed text-decoration-none text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <strong>2. Đã có tài khoản</strong> 
                                                 </button>
                                             </h2>
                                         </div>
                                     </div>
                                 </div>  <!-- END MENU -->
 
-                                <div class="col-9">
-                                    <div class="card">
+                                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                                    <div class="card mt-3">
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <h4>Chưa có tài khoản: </h4>
+                                                <h4>Chưa có tài khoản</h4>
                                                 <hr>
                                                 <form action="controller/khachhangcontroller.php?yc=adminthemmoi" method="post">
                                                     <div class="form-group">
@@ -58,7 +58,9 @@
 
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                             <div class="card-body">
-                                                <label for="">Số điện thoại: (<span class="text-danger"></span>)</label>
+                                                <h4>Tạo mới</h4>
+                                                <hr>
+                                                <label for="">Số điện thoại: (<span class="text-danger">*</span>)</label>
                                                 <input type="number" name="makhachnhap" id="makhachnhap" class="form-control rounded-pill" onkeyup="chektaikhoanthemdonhang()" required title="Không được để rỗng trường này">
                                                 <small class="d-flex justify-content-end mt-3" id="showtentaikhoandangkii"></small>
 

@@ -5,18 +5,15 @@
 ?>
 
 <div class="row">
-   
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-        <div class="card w-100 text-center">
-            <h3>Chờ Duyệt</h3>
-        </div>
-    </div> 
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="table-responsive ">
-            <table class="table table-dark mt-3 text-center table-hover">
+            <table class="table table-light mt-3 text-center table-hover">
                 <thead>
                     <tr>
+                        <th colspan="7"><strong>NHỮNG ĐƠN HÀNG CHỜ DUYỆT</strong></th>
+                    </tr>
+                    <tr class="bg-browns text-light">
                         <th scope="col">#</th>
                         <th scope="col">Mã đơn hàng chờ</th>
                         <th scope="col">Tên khách hàng</th>
@@ -26,7 +23,7 @@
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-browns text-dark">
                 <?php 
                     try {
                         $donhangcho = new donhangchoclass();
