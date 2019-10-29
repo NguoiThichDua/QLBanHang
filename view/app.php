@@ -3,7 +3,7 @@
         $page = $_GET['page'];
         
         if(isset($_SESSION['admin'])){
-            require "view/component/include/navbar.php";
+            #require "view/component/include/navbar.php";
             ?>
                 <div class="container mt-5">
             <?php
@@ -38,7 +38,7 @@
             <?php
             }
         }else if(isset($_SESSION['khachhang'])){
-            require "view/component/include/navbar.php";
+            #require "view/component/include/navbar.php";
             ?>
                 <div class="container mt-5">
             <?php
@@ -71,8 +71,10 @@
                 <?php
             }
         }else{
+            ?>
+                <div class="container mt-5">
+            <?php
             switch ($page) {
-                
                 case 'dangki':
                     require "view/component/dangki/dangki.php";
                     break;
@@ -81,10 +83,13 @@
                     require "view/component/dangnhap/dangnhap.php";
                     break;
             }
+            ?>
+                </div>
+            <?php
         }
     }else{
         if(isset($_SESSION['admin']) || isset($_SESSION['khachhang'])){
-            require "view/component/include/navbar.php";
+            #require "view/component/include/navbar.php";
             ?>
                 <div class="container mt-3">
             <?php

@@ -27,7 +27,7 @@ function LocTheoCongNo(){
 
         var ngaybatdautimcongno = document.getElementById("ngaybatdautimcongno").value;
         var ngayketthuctimcongno = document.getElementById("ngayketthuctimcongno").value;
-      
+
         $("#loc").load("view/component/quanli/donhangcuakhach/xuatkho/bangloccongno.php" , {tenkhachhangtimcongno: tenkhachhangtimcongno, sodienthoaikhachhangtimcongno: sodienthoaikhachhangtimcongno, ngaybatdautimcongno: ngaybatdautimcongno, ngayketthuctimcongno: ngayketthuctimcongno});
       
    });

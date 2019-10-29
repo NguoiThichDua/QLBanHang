@@ -15,5 +15,8 @@ window.onkeypress = function(event){
 
 window.onload = function()
 {
-    document.getElementById("thongtincanhandangki").style.display = "none";
+    if ($('#thongtincanhandangki').length) {
+        document.getElementById("thongtincanhandangki").style.display = "none";
+    }
+    
 };

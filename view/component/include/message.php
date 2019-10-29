@@ -155,7 +155,7 @@
                     }
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill mt-3" role="alert" id="message" >
-                            Chào mừng bạn đã trở lại <strong><?php echo $hoten;?></strong>
+                            Chào Mừng <strong><u><?php echo $hoten;?></u> </strong>, bạn đã đăng nhập với quyền quản trị
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

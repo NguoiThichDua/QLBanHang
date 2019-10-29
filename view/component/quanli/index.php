@@ -2,52 +2,65 @@
     if(isset($_SESSION['admin'])){
        ?>
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-                <h1 class="titlequanli">N'Store Thanh Nhi</h1>
+
+            <div class="position-absolute" style="z-index: 999">       
+                <a class="btn btn-outline-brown btn-lg dangxuat" href="controller/nguoidungcontroller.php?yc=dangxuat">Đăng xuất</a>
             </div>
 
-            <!-- QUAN LI KHACH -->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-3 d-flex justify-content-center">
-                <a href="index.php?page=quanlikhachhang" class="w-100 text-decoration-none">
-                    <div class="card  w-100">
-                    <div class="d-flex justify-content-center">
-                        <img src="public/images/quanlikhachhang.png" alt="" srcset="" width="auto" class="img-quanli">
-                    </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
+                <img src="public/images/default/logo.png" class="logo" alt="" srcset="" width="auto" height="150px">
+            </div>
+
+            <div class="col col-sm col-md col-lg col-xl"></div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center m-3">
+                <h4><strong class="chaomung">CHÀO MỪNG ADMIN ĐÃ ĐĂNG NHẬP !</strong></h4>    
+            </div>
+
+            <!-- QUAN LI DON HANG -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center mt-3">
+                <a href="index.php?page=quanlidonhang" class="w-100 text-decoration-none">
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                        <div class="d-flex justify-content-center ">
+                            <img src="public/images/default/QLDH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top">
+                        </div>
+                      
                         <div class="card-body">
-                            <h3 class="card-title text-center">QL Khách Hàng</h3>
+                            <h3 class="card-title text-center text-dark title-qlad"><strong>QUẢN LÍ ĐƠN HÀNG</strong></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>  <!-- END QUAN LI DON HANG-->
+
+            <!-- QUAN LI KHACH -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 d-flex justify-content-center">
+                <a href="index.php?page=quanlikhachhang" class="w-100 text-decoration-none">
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                        <div class="d-flex justify-content-center ">
+                            <img src="public/images/default/QLKH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="img-quanli card-img-top">
+                        </div>
+                      
+                        <div class="card-body">
+                            <h3 class="card-title text-center text-dark title-qlad"><strong>QUẢN LÍ KHÁCH HÀNG</strong></h3>
                         </div>
                     </div>
                 </a>
             </div>  <!-- END QUAN LI KHACH-->
 
             <!-- QUAN LI HANG HOA -->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-3 d-flex justify-content-center">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 d-flex justify-content-center">
                 <a href="index.php?page=quanlihanghoa" class="w-100 text-decoration-none">
-                    <div class="card  w-100">
-                    <div class="d-flex justify-content-center">
-                        <img src="public/images/quanlihanghoa.png" alt="" srcset="" width="auto" class="img-quanli">
-                    </div>
-                
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                        <div class="d-flex justify-content-center">
+                            <img src="public/images/default/QLHH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top">
+                        </div>
+                      
                         <div class="card-body">
-                            <h3 class="card-title text-center">QL Hàng Hóa</h3>
+                            <h3 class="card-title text-center text-dark title-qlad"><strong>QUẢN LÍ HÀNG HÓA</strong></h3>
                         </div>
                     </div>
                 </a>
             </div>  <!-- END QUAN LI HANG HOA -->
-
-            <!-- QUAN LI DON HANG -->
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-                <a href="index.php?page=quanlidonhang" class="w-100 text-decoration-none">
-                    <div class="card w-100">
-                    <div class="d-flex justify-content-center">
-                        <img src="public/images/donhangcho.png" alt="" srcset="" width="auto" class="img-quanli">
-                    </div>
-                        <div class="card-body">
-                            <h3 class="card-title text-center">QL Đơn Hàng</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>  <!-- END QUAN LI DON HANG-->
         </div>  <!-- END ROW -->
        <?php
     }else if(isset($_SESSION['khachhang'])){

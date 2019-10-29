@@ -3,7 +3,7 @@
     <div class="container">
         <!-- LOGO -->
         <a class="nav-link font-weight-bold" href="index.php?page=quanli">
-            <img src="public/images/logo.png" alt="" srcset="" width="auto" height="50px">
+            <img src="public/images/default/logo.png" alt="" srcset="" width="auto" height="50px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

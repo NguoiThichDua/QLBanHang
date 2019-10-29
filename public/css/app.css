@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url("../images/bg.jpg");
+    background-image: url("../images/default/background_2.jpg");
     background-attachment:fixed;
 	background-position:center;	
 	background-size:cover;
@@ -18,10 +18,6 @@ body{
 }
 .titlequanli{
     color: red;
-}
-.img-quanli{
-    width: 250px;
-    height: 250px;
 }
 
 span.need{
@@ -53,4 +49,19 @@ a{
 
 /* Style the navbar links */
 
+.btn-brown {
+    color: #000;
+    background-color: #835c3e;
+    border-color: #835c3e;
+  }
   
+  .btn-outline-brown {
+    color: #835c3e;
+    border-color: #835c3e;
+  }
+  
+  .btn-outline-brown:hover {
+    color: #fff;
+    background-color: #835c3e;
+    border-color: #835c3e;
+  }

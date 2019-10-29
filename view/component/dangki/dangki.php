@@ -1,8 +1,13 @@
 
 <div class="row">
      <!-- FORM DANG KI -->
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
-        <?php require "formdangki.php"; ?>
-    </div>
-
+    <div class="col col-sm col-md col-lg col-xl"></div>
+        <div class="col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 ">
+            <div class="formdangki box card mb-3">
+                <?php
+                    require "formdangki.php"; 
+                ?>
+            </div>
+        </div>
+    <div class="col col-sm col-md col-lg col-xl"></div>
 </div>  <!-- END CLASS ROW-->

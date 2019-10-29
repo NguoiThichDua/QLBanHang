@@ -1,0 +1,44 @@
+@media only screen and (max-width: 480px){
+    img.logo{
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    img.logo{
+        width: 170px;
+        height: 100px;
+   }
+    strong.chaomung{
+        font-size: 19px;
+    }
+
+    div.card-index-quanli{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    a.dangxuat{
+        font-size: 14px;
+    }
+
+  
+}
+
+@media only screen and (max-width: 768px){
+    img.logo{
+       width: 170px;
+       height: 100px;
+   }
+
+    .card-img-top{
+        min-height: 300px;
+        max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+   .title-qlad{
+       font-size: 24px;
+   }
+}
