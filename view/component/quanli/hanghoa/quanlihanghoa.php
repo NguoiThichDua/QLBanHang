@@ -29,7 +29,7 @@
                         <input type="text" name="tenhanghoa" class="form-control rounded-pill" required  title="Không được để trống tên hàng">
                     </div> 
                     <div class="form-group">
-                        <input type="submit" value="Thêm" class="btn btn-success">
+                        <input type="submit" value="THÊM" class="btn btn-success">
                     </div>
                 </form>
             </div>
@@ -45,9 +45,9 @@
                 <thead class="bg-browns">
                     <tr class="text-center text-light border border-white">
                         <th scope="col">#</th>
-                        <th scope="col">Tên hàng</th>
+                        <th scope="col">TÊN HÀNG</th>
                         <!-- <th scope="col">Giá</th> -->
-                        <th scope="col">Chức năng</th>
+                        <th scope="col">CHỨC NĂNG</th>
                     </tr>
                 </thead>
                 <tbody>

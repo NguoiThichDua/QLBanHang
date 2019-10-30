@@ -42,7 +42,7 @@
                                 </td>
                                 <td>
                                     <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>', '<?php echo $tt->tructhuoc;?>', '<?php echo $tt->capbac; ?>')">SỬA</div>
-                                    <div class="btn btn-warning" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">XÓA</div>
+                                    <div class="btn btn-danger" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">XÓA</div>
                                 </td>
                             </tr>
                         <?php
@@ -67,7 +67,7 @@
                             </td>
                             <td>
                                 <div class="btn btn-primary" data-toggle="modal" data-target="#SuaKhachHang" onclick="SuaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->tentaikhoan?>', '<?php echo $tt->matkhau?>', '<?php echo $tt->hoten?>', '<?php echo $tt->sodienthoai?>', '<?php echo $tt->diachi?>', '<?php echo $tt->tructhuoc;?>', '<?php echo $tt->capbac; ?>')">SỬA</div>
-                                <div class="btn btn-warning" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">XÓA</div>
+                                <div class="btn btn-danger" data-toggle="modal" data-target="#XoaKhachHang" onclick="XoaKhachHang('<?php echo $tt->makhachhang?>', '<?php echo $tt->hoten?>')">XÓA</div>
                             </td>
                         </tr>
                         <?php

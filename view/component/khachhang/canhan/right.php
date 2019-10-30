@@ -1,10 +1,10 @@
 <div class="table-responsive">
-    <table class="table table-dark text-center table-hover">
+    <table class="table table-light text-center table-hover">
         <thead>
             <tr>
                 <th colspan="6" scope="col">NHỮNG ĐƠN HÀNG ĐÃ DUYỆT</th>
             </tr>
-            <tr>
+            <tr class="bg-browns text-light">
                
                 <th scope="col">#</th>
                 <th scope="col">Trạng thái</th>

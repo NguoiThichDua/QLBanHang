@@ -1,6 +1,6 @@
 <div class="them-moi-khach">
-    <a class="btn btn-primary mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Thêm mới
+    <a class="btn btn-brown text-light mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        THÊM MỚI KHÁCH HÀNG
     </a>
 
     <div class="collapse" id="collapseExample">
@@ -47,7 +47,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Thêm" class="btn btn-success">
+                        <input type="submit" value="THÊM" class="btn btn-success">
                     </div>
                 </form>
             </div>

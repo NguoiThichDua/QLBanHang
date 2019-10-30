@@ -1,8 +1,9 @@
 <!-- THEM GHI CHU VA GUI DON HANG CHO ADMIN -->
 <div class="card mt-3">
+    <div class="card-header bg-browns text-light">
+        <h4><strong>Bước 3. Thêm ghi chú và gửi</strong></h4><small>(khi đã chọn xong các món hàng)</small>
+    </div>
     <div class="card-body">
-        <h4>Bước 3. Thêm ghi chú và gửi</h4><small>(khi đã chọn xong các món hàng)</small>
-        <hr>
         <form action="controller/donhangchocontroller.php?yc=guichoadmin" method="post">
             <div class="form-group">
                 <textarea name="ghichu" id="" cols="" rows="3" class="form-control pb-2" placeholder="Bạn có thể bỏ trống ghi chú của đơn hàng này"></textarea>

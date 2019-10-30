@@ -1,11 +1,13 @@
 
 <div class="card mt-3">
+    <div class="card-header bg-browns text-light">
+        <strong> <h4>Bước 2. Kiểm tra giỏ hàng</h4></strong></div>
     <div class="card-body">
-        <h4>Bước 2. Kiểm tra giỏ hàng</h4>
+       
         <!-- HIEN THI CAC MON HANG VA SO LUONG DUOC THEM VAO DON HANG CHO HIEN TAI -->
-        <table class="table table-dark mt-3 text-center">
+        <table class="table table-light mt-3 text-center">
             <thead>
-                <tr>
+                <tr class="bg-browns text-light">
                     <th scope="col">#</th>
                     <th scope="col">Tên hàng</th>
                     <th scope="col">Số lượng</th>
@@ -18,6 +20,8 @@
                     if(isset($_SESSION['khachhang'])){
                         # lay session cua khach hang => lay ten dang nhap (sodienthoai)
                         $tentaikhoan = $_SESSION['khachhang'];
+
+                        require "model/khachhangclass.php";
 
                         # lay ma khach hang bang ten dang nhap (SESSION)
                         $nguoidung = new khachhangclass();

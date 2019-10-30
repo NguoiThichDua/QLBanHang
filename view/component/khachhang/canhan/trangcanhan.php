@@ -40,15 +40,15 @@
         }else if($thongtinkhachang->tentaikhoan == $_SESSION['khachhang']){
             ?>
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
                     <?php require "title.php"?> 
                 </div>
 
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" id="suathongtincanhan">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 left-ca-nhan" id="suathongtincanhan">
                     <?php require "left.php"?>       
                 </div>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 table-ca-nhan">
                     <?php require "right.php"?>        
                 </div>
             </div>

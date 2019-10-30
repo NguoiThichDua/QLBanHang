@@ -4,3 +4,4 @@
 <link rel="stylesheet" href="public/css/dangnhap.css">
 <link rel="stylesheet" href="public/css/indexquanli.css">
 <link rel="stylesheet" href="public/css/quanli.css">
+<link rel="stylesheet" href="public/css/trangcanhan.css">

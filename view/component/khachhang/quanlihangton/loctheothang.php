@@ -29,7 +29,7 @@
                 $thongtintheothang = $hangton->LayHangTonTheoThang($makhach, $thang);
                 
                 ?>
-                    <div class="table-responsive table-hover">
+                    <div class="table-responsive table-hover table-light">
                         <table class="table text-center">
                             <thead>
                                 <tr>

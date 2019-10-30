@@ -1,16 +1,16 @@
 <div class="card mt-3">
+    <div class="card-header bg-browns text-light">
+        <h4><strong>Bước 1. Thêm hàng hóa và số lượng</strong></h4>
+    </div>
     <div class="card-body">
         <!-- FORM -->
         <form action="controller/donhangchocontroller.php?yc=themhanghoachodonhangcho" method="post">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Bước 1. Thêm hàng hóa và số lượng</h4>
-                    <hr>
                     <div class="form-group">
                         <input type="text" class="form-control rounded-pill" name="makhachtaodonhang" value="<?php echo $_REQUEST['sodienthoai']?>" id="makhachthemdonhang" placeholder="Số điện thoại" readonly>
                     </div>
                     <div class="form-group">
-                    
                         <select class="form-control rounded-pill" name="mahang">
                         <?php 
                             try {

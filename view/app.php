@@ -40,7 +40,7 @@
         }else if(isset($_SESSION['khachhang'])){
             #require "view/component/include/navbar.php";
             ?>
-                <div class="container mt-5">
+                <div class="container ">
             <?php
             require "view/component/include/message.php";
 

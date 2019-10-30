@@ -152,7 +152,8 @@
 
                     if(isset($_REQUEST['hoten'])){
                         $hoten = $_REQUEST['hoten'];
-                    }
+                        if(isset($_SESSION['admin'])){
+                    
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill mt-3" role="alert" id="message" >
                             Chào Mừng <strong><u><?php echo $hoten;?></u> </strong>, bạn đã đăng nhập với quyền quản trị
@@ -161,6 +162,17 @@
                             </button>
                             </div>
                         <?php
+                            }else{
+                                ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill mt-3" role="alert" id="message" >
+                            Chào Mừng trở lại <strong><u><?php echo $hoten;?></u> </strong>, chúc bạn một ngày tốt lành
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                                <?php
+                            }
+                        }
                         break; 
                     case 'thaydoisoluongthanhcong':
                     ?>

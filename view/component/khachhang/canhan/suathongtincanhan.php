@@ -29,10 +29,10 @@
         $thongtinkhachang = $khachhang->LayMotKhachHangBangTen($tentaikhoan);
         ?>
             <div class="card mb-3">
-                <div class="card-header">
+                <div class="card-header bg-browns text-light">
                     Thông tin của bạn:
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-brown text-light">
                     <form action="controller/khachhangcontroller.php?yc=khachhangsua" method="post">
                         <div class="form-group">
                             <input type="text" name="makhachhang" value="<?php echo $thongtinkhachang->makhachhang?>" class="form-control rounded-pill d-none" required>

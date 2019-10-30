@@ -2,10 +2,7 @@
     if(isset($_SESSION['admin'])){
        ?>
         <div class="row">
-            
-
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-                
                 <div class="position-absolute" style="z-index: 999; left: 10px">       
                     <a class="btn btn-outline-brown btn-lg dangxuat rounded-pill" href="controller/nguoidungcontroller.php?yc=dangxuat">Đăng Xuất</a>
                 </div>
@@ -21,7 +18,7 @@
             <!-- QUAN LI DON HANG -->
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center mt-3">
                 <a href="index.php?page=quanlidonhang" class="w-100 text-decoration-none">
-                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px; box-shadow: 0 15px 25px rgba(0,0,0,.1);">
                         <div class="d-flex justify-content-center ">
                             <img src="public/images/default/QLDH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top">
                         </div>
@@ -36,7 +33,7 @@
             <!-- QUAN LI KHACH -->
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 d-flex justify-content-center">
                 <a href="index.php?page=quanlikhachhang" class="w-100 text-decoration-none">
-                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px; box-shadow: 0 15px 25px rgba(0,0,0,.1);">
                         <div class="d-flex justify-content-center ">
                             <img src="public/images/default/QLKH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="img-quanli card-img-top">
                         </div>
@@ -51,7 +48,7 @@
             <!-- QUAN LI HANG HOA -->
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 d-flex justify-content-center">
                 <a href="index.php?page=quanlihanghoa" class="w-100 text-decoration-none">
-                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px;">
+                    <div class="card mb-3 border border-white card-index-quanli" style=" border-radius: 50px 50px; box-shadow: 0 15px 25px rgba(0,0,0,.1);">
                         <div class="d-flex justify-content-center">
                             <img src="public/images/default/QLHH.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top">
                         </div>

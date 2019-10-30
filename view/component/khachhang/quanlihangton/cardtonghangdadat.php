@@ -1,9 +1,9 @@
 <div class="card mb-3">
-    <div class="card-header bg-dark text-light"> 
-        Tất cả món hàng đã mua
+    <div class="card-header bg-browns text-light"> 
+        TẤT CẢ MÓN HÀNG ĐÃ MUA
     </div>
 
-    <div class="card-body" >
+    <div class="card-body bg-brown" >
         <?php
             if(isset($_SESSION['khachhang'])){
 
@@ -13,7 +13,7 @@
                 $hangdamua = new donhangclass();
                 $thongtinhangdamua = $hangdamua->TongSanPhamChoHangTon($tentaikhoan);
                 ?>
-                    <div class="table-responsive table-hover">
+                    <div class="table-responsive table-hover table-light">
                         <table class="table text-center">
                         <thead>
                             <tr>

@@ -86,8 +86,8 @@
 <div class="modal fade" id="taodonhangmoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Xác nhận tạo đơn hàng mới</h5>
+            <div class="modal-header bg-browns text-light">
+                <h5 class="modal-title " id="exampleModalLabel">XÁC NHẬN TẠO ĐƠN HÀNG MỚI</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -95,11 +95,14 @@
             <div class="modal-body">
                 Bạn muốn tạo đơn hàng mới cho số điện thoại này ?
             </div>
-            <div class="p-3">
+            <div class="mb-3">
                 <form action="controller/donhangchocontroller.php?yc=themdonhangcho" method="post">
                     <input type="text" name="makhachtaodonhang" id="makhachtaodonhang" class="form-control rounded-pill w-100" title="Không được bỏ trống" required readonly>
-                    <input type="submit" value="Đồng ý" class="btn btn-success mt-3">
-                    <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Hủy</button>
+                    
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary mt-3 mr-3" data-dismiss="modal">Hủy</button>
+                        <input type="submit" value="Đồng ý" class="btn btn-success mt-3">
+                    </div>
                 </form>
             </div>
         </div>

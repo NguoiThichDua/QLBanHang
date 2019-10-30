@@ -1,11 +1,13 @@
 <div class="card mt-3">
+    <div class="card-header bg-browns text-light">
+        <h4><strong>Bước 1. Thêm hàng hóa và số lượng</strong></h4>
+    </div>
     <div class="card-body">
         <!-- FORM -->
         <form action="controller/donhangchocontroller.php?yc=themhanghoachodonhangcho" method="post">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h4>Bước 1. Thêm hàng hóa và số lượng</h4>
-                    <hr>
+                  
                     <div class="form-group">
                         <select class="form-control rounded-pill" name="mahang">
                         <?php 

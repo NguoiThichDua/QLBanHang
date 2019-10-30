@@ -1,9 +1,9 @@
 
 <div class="card">
-    <div class="card-header bg-dark text-light">
+    <div class="card-header bg-browns text-light">
         Tất cả hàng tồn cập nhật
     </div>
-    <div class="card-body">
+    <div class="card-body bg-brown">
 
 <?php
     require "model/chitiethangtonclass.php";
@@ -24,7 +24,7 @@
         
  ?>
     <!-- Lay ra cac du lieu can thiet -->
-    <table class="table text-center">
+    <table class="table text-center table-light">
         <thead>
             <tr>
                 <th scope="col">#</th>

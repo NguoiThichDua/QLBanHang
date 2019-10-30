@@ -23,7 +23,7 @@
                         <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
-                <tbody class="bg-browns text-dark">
+                <tbody class="text-dark">
                 <?php 
                     try {
                         $donhangcho = new donhangchoclass();
