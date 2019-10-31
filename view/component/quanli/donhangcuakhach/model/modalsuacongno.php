@@ -8,7 +8,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bg-brown text-light">
                 <form action="controller/donhangcontroller.php?yc=suacongno" method="post">
                     <div class="form-group">
                         <input type="text" name="madonhang" id="madonhangsuacongno" value="" class="form-control rounded-pill d-none" readonly required>

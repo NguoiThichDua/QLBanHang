@@ -6,7 +6,7 @@
         <img src="public/images/default/logo.png" class="logo" alt="" srcset="" width="auto" height="150px">
     </div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center m-3">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center mb-3 mt-3">
         <h4><strong class="chaomung">QUẢN LÍ ĐƠN HÀNG</strong></h4>    
     </div>
 

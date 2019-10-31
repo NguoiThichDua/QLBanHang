@@ -1,5 +1,5 @@
 <div class="card mt-3">
-    <div class="card-header bg-browns text-light">
+    <div class="card-header bg-browns text-light ">
         <h4><strong>Bước 1. Thêm hàng hóa và số lượng</strong></h4>
     </div>
     <div class="card-body">

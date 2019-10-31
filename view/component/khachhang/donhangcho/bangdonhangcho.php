@@ -1,8 +1,8 @@
-<div class="table-responsive">
-    <table class="table table-light mt-3 text-center table-hover w-100">
+<div class="table-responsive mt-3">
+    <table class="table table-light text-center table-hover">
         <thead>
             <tr>
-                <th colspan="6">NHỮNG ĐƠN HÀNG ĐANG CHỜ DUYỆT</th>
+                <th scope="col" colspan="6">NHỮNG ĐƠN HÀNG ĐANG CHỜ DUYỆT</th>
             </tr>
             <tr class="bg-browns text-light w-100">
                 <th scope="col">#</th>
@@ -86,7 +86,7 @@
                                             <?php
                                         }
                                     ?>
-                                <td/>
+                                </td>
                             </tr>
                         <?php
                     }

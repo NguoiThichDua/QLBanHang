@@ -10,7 +10,7 @@
             <div class="modal-body bg-brown text-light">
                 Bạn muốn loại bỏ đơn hàng này ?
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer bg-brown">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                 <form action="controller/donhangchocontroller.php?yc=adminxoadonhangchuagui" method="post">
                     <input type="text" name="madonhangcho" id="madonhangchoxoa" class="d-none" readonly>

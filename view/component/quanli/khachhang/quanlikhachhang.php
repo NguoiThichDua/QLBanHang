@@ -13,17 +13,17 @@
             <img src="public/images/default/logo.png" class="logo" alt="" srcset="" width="auto" height="150px">
         </div>
 
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center m-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center mt-3 mb-3">
             <h4><strong class="chaomung">QUẢN LÍ KHÁCH HÀNG</strong></h4>    
         </div>
     </div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
         <?php require "themmoi.php"; ?>
     </div>  <!-- END COL -->
         
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 left-ca-nhan">
         <?php require "danhsachkhachhang.php"; ?>
     </div>  <!-- END COL -->
 </div>  <!-- END ROW -->

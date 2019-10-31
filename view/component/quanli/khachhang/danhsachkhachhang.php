@@ -1,4 +1,4 @@
-<div class="danh-sach-khach table-responsive">
+<div class="danh-sach-khach table-responsive-xl">
     <table class="table table-light mt-3">
         <thead class=" text-light bg-browns">
             <tr class="text-center " >

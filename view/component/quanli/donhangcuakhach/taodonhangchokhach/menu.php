@@ -85,17 +85,17 @@
 <!-- MODEL -->
 <div class="modal fade" id="taodonhangmoi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content bg-brown text-light">
             <div class="modal-header bg-browns text-light">
                 <h5 class="modal-title " id="exampleModalLabel">XÁC NHẬN TẠO ĐƠN HÀNG MỚI</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bg-brown text-light">
                 Bạn muốn tạo đơn hàng mới cho số điện thoại này ?
             </div>
-            <div class="mb-3">
+            <div class="mb-3 bg-brown text-light">
                 <form action="controller/donhangchocontroller.php?yc=themdonhangcho" method="post">
                     <input type="text" name="makhachtaodonhang" id="makhachtaodonhang" class="form-control rounded-pill w-100" title="Không được bỏ trống" required readonly>
                     

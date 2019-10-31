@@ -10,8 +10,8 @@
 
 @media only screen and (max-width: 576px){
     .them-moi-khach{
-        margin-left: 30px;
-        margin-right: 30px;
+        padding-left: 15px;
+        margin-right: 10px;
     }
 }
 

@@ -1,0 +1,15 @@
+/* .layer1:hover{
+    transition: 2s;
+    /* filter: blur(10px);
+    position: absolute;
+    margin: 30px; 
+}
+*/
+/* 
+.layer1:hover ~ body{
+    filter: blur(10px);
+}
+
+.layer1:hover{
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .8);
+} */

@@ -12,7 +12,7 @@
         <img src="public/images/default/logo.png" class="logo" alt="" srcset="" width="auto" height="150px">
     </div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center m-3">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center mt-3 mb-3">
         <h4><strong class="chaomung">QUẢN LÍ HÀNG HÓA</strong></h4>    
     </div>
 

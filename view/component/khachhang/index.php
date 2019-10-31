@@ -60,7 +60,7 @@
         <a href="index.php?page=trangcanhan" class="w-100 text-decoration-none">
             <div class="card mb-3 border border-white card-index-quanli" style="border-radius: 50px 50px; box-shadow: 0 15px 25px rgba(0,0,0,.1);">
                 <div class="d-flex justify-content-center ">
-                    <img src="public/images/default/user.jpg" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top rounded-pill">
+                    <img src="public/images/default/boy.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="card-img-top rounded-pill">
                 </div>
                 
                 <div class="card-body">
